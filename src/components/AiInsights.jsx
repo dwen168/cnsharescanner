@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { getT, translateInsight } from '../utils/translations';
+import { getT, translateInsight, STOCK_NAME_MAP } from '../utils/translations';
 
 export default function AiInsights({ stocks, lang }) {
   const t = getT(lang);
@@ -247,7 +247,12 @@ export default function AiInsights({ stocks, lang }) {
           ) : (
             filteredNotables.map(stock => {
               const ticker = stock.symbol.split('.')[0];
-              const tvUrl = `https://www.tradingview.com/symbols/ASX-${ticker}/`;
+              const stockName = STOCK_NAME_MAP[ticker] || '';
+              const displaySymbol = stockName ? `${stock.symbol} (${stockName})` : stock.symbol;
+
+              const tvUrl = ticker.startsWith('6') || ticker.startsWith('9')
+                ? `https://www.tradingview.com/symbols/SSE-${ticker}/`
+                : `https://www.tradingview.com/symbols/SZSE-${ticker}/`;
               
               let cardClass = 'neutral';
               if (stock.zone === 'momentum') {
@@ -279,14 +284,14 @@ export default function AiInsights({ stocks, lang }) {
                     title={lang === 'zh' ? '在 TradingView 中查看交互式 K 线图' : 'View interactive chart on TradingView'}
                   >
                     <div className="insight-sym" style={{ borderBottom: '1px dashed var(--cyan)', cursor: 'pointer', display: 'inline-flex', alignItems: 'baseline' }}>
-                      {stock.symbol}
+                      {displaySymbol}
                       <span style={{ fontSize: '0.6rem', color: 'var(--cyan)', marginLeft: '2px', opacity: 0.8 }}>↗</span>
                     </div>
                   </a>
                   <div className="insight-text">
                     {translateInsight(stock.ai_insight, lang)}
                     <span style={{ display: 'block', marginTop: '0.4rem', fontSize: '0.75rem', color: 'var(--text-3)', fontFamily: 'var(--mono)' }}>
-                      ${stock.price} · {stock.chg_pct >= 0 ? '+' : ''}{stock.chg_pct.toFixed(1)}% · {t('volRatio')} {stock.vol_ratio}x · {stock.volume}
+                      ¥{stock.price} · {stock.chg_pct >= 0 ? '+' : ''}{stock.chg_pct.toFixed(1)}% · {t('volRatio')} {stock.vol_ratio}x · {stock.volume}
                     </span>
                   </div>
                 </div>

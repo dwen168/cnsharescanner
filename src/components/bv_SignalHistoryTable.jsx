@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { SIGNAL_MAP, formatSectorName } from '../utils/translations';
+import { SIGNAL_MAP, formatSectorName, STOCK_NAME_MAP } from '../utils/translations';
 
 export default function BvSignalHistoryTable({
   activeTab,
@@ -163,13 +163,15 @@ export default function BvSignalHistoryTable({
                 return (
                   <tr key={idx} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.02)', background: idx % 2 === 0 ? 'rgba(255,255,255,0.01)' : 'transparent' }}>
                     <td className="font-mono" style={{ padding: '0.75rem 1rem', color: 'var(--text-2)' }}>{log.date}</td>
-                    <td className="font-mono" style={{ padding: '0.75rem 1rem', fontWeight: 700, color: 'var(--cyan)' }}>{log.symbol}</td>
+                    <td className="font-mono" style={{ padding: '0.75rem 1rem', fontWeight: 700, color: 'var(--cyan)' }}>
+                      {STOCK_NAME_MAP[log.symbol.split('.')[0]] ? `${log.symbol} (${STOCK_NAME_MAP[log.symbol.split('.')[0]]})` : log.symbol}
+                    </td>
                     <td style={{ padding: '0.75rem 1rem' }}>
-                      <span className={`zone-badge ${log.signal.includes('主升浪') ? 'momentum' : 'accumulation'}`} style={{ padding: '0.1rem 0.35rem', fontSize: '0.68rem', borderRadius: '3px' }}>
+                      <span className={`zone-badge ${log.zone === 'momentum' ? 'momentum' : (log.zone === 'accumulation' ? 'accumulation' : (log.zone === 'watch' ? 'watch' : 'neutral'))}`} style={{ padding: '0.1rem 0.35rem', fontSize: '0.68rem', borderRadius: '3px' }}>
                         {s_signal}
                       </span>
                     </td>
-                    <td className="font-mono" style={{ padding: '0.75rem 1rem' }}>${log.price.toFixed(2)}</td>
+                    <td className="font-mono" style={{ padding: '0.75rem 1rem' }}>¥{log.price.toFixed(2)}</td>
                     <td className={`font-mono ${getReturnClass(getLogReturnVal(log, '1d'))}`} style={{ padding: '0.75rem 1rem', textAlign: 'right', fontWeight: 600 }}>
                       {formatReturn(getLogReturnVal(log, '1d'))}
                     </td>
@@ -278,14 +280,16 @@ export default function BvSignalHistoryTable({
                             {dayLog.date}
                           </td>
                         ) : null}
-                        <td className="font-mono" style={{ padding: '0.75rem 1rem', fontWeight: 700, color: 'var(--cyan)' }}>{sel.symbol}</td>
+                        <td className="font-mono" style={{ padding: '0.75rem 1rem', fontWeight: 700, color: 'var(--cyan)' }}>
+                          {STOCK_NAME_MAP[sel.symbol.split('.')[0]] ? `${sel.symbol} (${STOCK_NAME_MAP[sel.symbol.split('.')[0]]})` : sel.symbol}
+                        </td>
                         <td style={{ padding: '0.75rem 1rem' }}>
                           <span className={`zone-badge ${sel.signal.includes('主升浪') ? 'momentum' : 'accumulation'}`} style={{ padding: '0.1rem 0.35rem', fontSize: '0.68rem', borderRadius: '3px' }}>
                             {s_signal}
                           </span>
                         </td>
                         <td className="font-mono" style={{ padding: '0.75rem 1rem', color: 'var(--gold)', fontWeight: 600 }}>{sel.composite_score.toFixed(1)}</td>
-                        <td className="font-mono" style={{ padding: '0.75rem 1rem' }}>${sel.price.toFixed(2)}</td>
+                        <td className="font-mono" style={{ padding: '0.75rem 1rem' }}>¥{sel.price.toFixed(2)}</td>
                         <td className={`font-mono ${getReturnClass(retVal)}`} style={{ padding: '0.75rem 1rem', textAlign: 'right', fontWeight: 600 }}>
                           {formatReturn(retVal)}
                         </td>
@@ -307,14 +311,16 @@ export default function BvSignalHistoryTable({
                       }}
                     >
                       <td className="font-mono" style={{ padding: '0.75rem 1rem', color: 'var(--text-2)' }}>{sel.date}</td>
-                      <td className="font-mono" style={{ padding: '0.75rem 1rem', fontWeight: 700, color: 'var(--cyan)' }}>{sel.symbol}</td>
+                      <td className="font-mono" style={{ padding: '0.75rem 1rem', fontWeight: 700, color: 'var(--cyan)' }}>
+                        {STOCK_NAME_MAP[sel.symbol.split('.')[0]] ? `${sel.symbol} (${STOCK_NAME_MAP[sel.symbol.split('.')[0]]})` : sel.symbol}
+                      </td>
                       <td style={{ padding: '0.75rem 1rem' }}>
                         <span className={`zone-badge ${sel.signal.includes('主升浪') ? 'momentum' : 'accumulation'}`} style={{ padding: '0.1rem 0.35rem', fontSize: '0.68rem', borderRadius: '3px' }}>
                           {s_signal}
                         </span>
                       </td>
                       <td className="font-mono" style={{ padding: '0.75rem 1rem', color: 'var(--gold)', fontWeight: 600 }}>{sel.composite_score.toFixed(1)}</td>
-                      <td className="font-mono" style={{ padding: '0.75rem 1rem' }}>${sel.price.toFixed(2)}</td>
+                      <td className="font-mono" style={{ padding: '0.75rem 1rem' }}>¥{sel.price.toFixed(2)}</td>
                       <td className={`font-mono ${getReturnClass(retVal)}`} style={{ padding: '0.75rem 1rem', textAlign: 'right', fontWeight: 600 }}>
                         {formatReturn(retVal)}
                       </td>

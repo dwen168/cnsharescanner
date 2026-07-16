@@ -1,6 +1,7 @@
-yfinance
+akshare
 pandas
 numpy
 beautifulsoup4
 psycopg2-binary
 python-dotenv
+yfinance

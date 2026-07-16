@@ -26,7 +26,7 @@ export default function App() {
   const [selectedStrategyVersion, setSelectedStrategyVersion] = useState('');
   const [loading, setLoading]       = useState(true);
   const [error, setError]           = useState(null);
-  const [lang, setLang]             = useState('en');
+  const [lang, setLang]             = useState('zh');
   const [activeTab, setActiveTab]   = useState('terminal');
   const [theme, setTheme]           = useState(() => localStorage.getItem('theme') || 'dark');
 
@@ -37,8 +37,8 @@ export default function App() {
 
   useEffect(() => {
     document.title = lang === 'zh'
-      ? 'ASX 短线专家 - 龙头股追踪终端'
-      : 'ASX Trader Expert - Leading Stock Terminal';
+      ? 'A股短线专家 - 龙头股追踪终端'
+      : 'CN Share Trader Expert - Leading Stock Terminal';
   }, [lang]);
 
   useEffect(() => {
@@ -233,7 +233,7 @@ export default function App() {
   }
 
   return (
-    <div className="app">
+    <div className={`app ${activeTab === 'live_analyzer' ? 'full-width' : ''}`}>
       <Header 
         updatedAt={data.generated_at} 
         lang={lang} 

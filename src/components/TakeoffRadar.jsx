@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getT, SIGNAL_MAP } from '../utils/translations';
+import { getT, SIGNAL_MAP, STOCK_NAME_MAP } from '../utils/translations';
 
 export default function TakeoffRadar({ radar, lang, tradingState }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -104,7 +104,7 @@ export default function TakeoffRadar({ radar, lang, tradingState }) {
                       <li><strong>主升浪(超买) ▶</strong>：符合主升浪形态，但 RSI 超过了 75，提示警惕追高风险。</li>
                       <li><strong>V型反转 ⚡</strong>：前期深跌（5天跌幅超过 5%）后，今日突然倍量大涨并收复 20日均线（MA20），且无负面新闻。</li>
                       <li><strong>主升浪 (轻仓)</strong>：在市场处于低/中/高风险防守状态时，主升浪推荐信号会降级带上“轻仓”警示。</li>
-                      <li><strong>主升浪 ▶ (低流动性)</strong>：触发主升浪，但 20日平均日成交额处于 [500K, 2M] AUD 之间，提示注意流动性摩擦。</li>
+                      <li><strong>主升浪 ▶ (低流动性)</strong>：触发主升浪，但 20日平均日成交额处于 [10M, 50M] 元 之间，提示注意流动性摩擦。</li>
                     </ul>
                   </div>
 
@@ -130,7 +130,7 @@ export default function TakeoffRadar({ radar, lang, tradingState }) {
                       <li><strong>形态突破(利空降级)</strong>：虽然技术上符合 momentum 突破，但最新个股消息偏利空，被降级在此。</li>
                       <li><strong>底部放量(利空降级)</strong>：虽然符合 accumulation 底部放量建仓，但个股有偏空负面消息。</li>
                       <li><strong>多头排列</strong>：仅满足均线多头排列（MA5 &gt; MA10 &gt; MA20）且价格在五日线之上，但量能或大盘相对强度尚未达标，等待资金异动信号。</li>
-                      <li><strong>观望</strong>：如果股票 20日平均日成交额低于 500K AUD（极低流动性），即使技术形态触发了主升浪或潜伏区，也会被强行拦截并降级显示为观望。</li>
+                      <li><strong>观望</strong>：如果股票 20日平均日成交额低于 10M 元（极低流动性），即使技术形态触发了主升浪或潜伏区，也会被强行拦截并降级显示为观望。</li>
                     </ul>
                   </div>
 
@@ -306,7 +306,12 @@ function RadarRow({ stock, lang }) {
   const translatedSignal = SIGNAL_MAP[lang]?.[stock.signal] || stock.signal;
 
   const ticker = stock.symbol.split('.')[0];
-  const tvUrl = `https://www.tradingview.com/symbols/ASX-${ticker}/`;
+  const stockName = STOCK_NAME_MAP[ticker] || '';
+  const displaySymbol = stockName ? `${stock.symbol} (${stockName})` : stock.symbol;
+
+  const tvUrl = ticker.startsWith('6') || ticker.startsWith('9')
+    ? `https://www.tradingview.com/symbols/SSE-${ticker}/`
+    : `https://www.tradingview.com/symbols/SZSE-${ticker}/`;
 
   return (
     <div className="radar-row">
@@ -319,7 +324,7 @@ function RadarRow({ stock, lang }) {
           title={lang === 'zh' ? '在 TradingView 中查看交互式 K 线图' : 'View interactive chart on TradingView'}
         >
           <div className="radar-symbol" style={{ borderBottom: '1px dashed var(--cyan)', cursor: 'pointer' }}>
-            {stock.symbol}
+            {displaySymbol}
           </div>
           <span style={{ fontSize: '0.62rem', color: 'var(--cyan)', marginLeft: '2px', opacity: 0.8 }}>↗</span>
         </a>

@@ -45,9 +45,9 @@ def run_replay_backtest(algo_version=None):
     try:
         # 1. Load historical price history
         clean_symbols = [s.replace(".AX", "") for s in ALL_SYMBOLS]
-        unique_benchmarks = list({meta.get("benchmark", "^AORD") for meta in SECTOR_META.values()})
-        if "^AORD" not in unique_benchmarks:
-            unique_benchmarks.append("^AORD")
+        unique_benchmarks = list({meta.get("benchmark", "sh000300") for meta in SECTOR_META.values()})
+        if "sh000300" not in unique_benchmarks:
+            unique_benchmarks.append("sh000300")
             
         end_date_dt = datetime.now()
         start_date_dt = end_date_dt - timedelta(days=730)
@@ -74,7 +74,7 @@ def run_replay_backtest(algo_version=None):
             price_df['low'] = price_df[['open', 'close']].min(axis=1) * 0.99
         
         # 2. Extract trading days from benchmark
-        benchmark_name = "^AORD"
+        benchmark_name = "sh000300"
         if benchmark_name not in price_df['symbol'].unique():
             # fallback
             benchmark_name = price_df['symbol'].unique()[0] if len(price_df['symbol'].unique()) > 0 else 'XFJ'
@@ -285,7 +285,7 @@ def run_replay_backtest(algo_version=None):
             df_sector = df_sector.rename(columns={'name': 'sector_name'})
         
         # Vectorized returns calculation (exact copy of audit logic)
-        benchmark_aord = price_df[price_df['symbol'] == '^AORD'].copy()
+        benchmark_aord = price_df[price_df['symbol'] == 'sh000300'].copy()
         if benchmark_aord.empty:
             benchmark_aord = price_df[price_df['symbol'] == 'XFJ'].copy()
         if benchmark_aord.empty:
@@ -389,18 +389,18 @@ def run_replay_backtest(algo_version=None):
         symbol_to_bench = {}
         symbol_to_sector = {}
         for sec_name, symbols in SECTORS.items():
-            bench_ticker = SECTOR_META.get(sec_name, {}).get("benchmark", "^AORD").replace(".AX", "")
+            bench_ticker = SECTOR_META.get(sec_name, {}).get("benchmark", "sh000300").replace(".AX", "")
             for sym in symbols:
                 clean_s = sym.replace(".AX", "")
                 symbol_to_bench[clean_s] = bench_ticker
                 symbol_to_sector[clean_s] = sec_name
                 
-        df_merged['benchmark_symbol'] = df_merged['symbol'].map(symbol_to_bench).fillna("^AORD")
+        df_merged['benchmark_symbol'] = df_merged['symbol'].map(symbol_to_bench).fillna("sh000300")
         df_merged['sector_name'] = df_merged['symbol'].map(symbol_to_sector)
         df_merged = pd.merge(df_merged, bench_combined, on=['date', 'benchmark_symbol'], how='left')
         
-        # Join broad market index benchmark returns (^AORD)
-        market_df = bench_cols.get('^AORD')
+        # Join broad market index benchmark returns (sh000300)
+        market_df = bench_cols.get('sh000300')
         if market_df is not None:
             market_df = market_df.reset_index().rename(columns={'index': 'date'})
             market_df['date'] = pd.to_datetime(market_df['date']).dt.tz_localize(None).dt.normalize()
@@ -439,8 +439,8 @@ def run_replay_backtest(algo_version=None):
             sector_daily_returns, on=['date', 'sector_name'], how='inner'
         )
         
-        sector_to_bench = {sec_name: meta.get("benchmark", "^AORD").replace(".AX", "") for sec_name, meta in SECTOR_META.items()}
-        df_sector_subset['benchmark_symbol'] = df_sector_subset['sector_name'].map(sector_to_bench).fillna("^AORD")
+        sector_to_bench = {sec_name: meta.get("benchmark", "sh000300").replace(".AX", "") for sec_name, meta in SECTOR_META.items()}
+        df_sector_subset['benchmark_symbol'] = df_sector_subset['sector_name'].map(sector_to_bench).fillna("sh000300")
         df_sector_subset = pd.merge(df_sector_subset, bench_combined, on=['date', 'benchmark_symbol'], how='left')
 
         for p in ['1d', '3d', '5d', '10d']:
@@ -469,7 +469,7 @@ def run_replay_backtest(algo_version=None):
             df_sector.drop(columns=['ret_1d', 'ret_3d', 'ret_5d', 'ret_10d', 'ret_1d_executable', 'ret_3d_executable', 'ret_5d_executable', 'ret_10d_executable'], errors='ignore'),
             df_sector_broad_rets, on=['date', 'sector_name'], how='inner'
         )
-        df_sector_broad['benchmark_symbol'] = df_sector_broad['sector_name'].map(sector_to_bench).fillna("^AORD")
+        df_sector_broad['benchmark_symbol'] = df_sector_broad['sector_name'].map(sector_to_bench).fillna("sh000300")
         df_sector_broad = pd.merge(df_sector_broad, bench_combined, on=['date', 'benchmark_symbol'], how='left')
 
         for p in ['1d', '3d', '5d', '10d']:
@@ -480,7 +480,7 @@ def run_replay_backtest(algo_version=None):
         def is_trigger_signal(sig):
             if not sig:
                 return False
-            base_triggers = ['主升浪 ▶', '主升浪(超买) ▶', 'V型反转 ⚡', '潜伏区 ◉', '消息共振 ◉', '主升浪 (轻仓)', '潜伏区 (轻仓)', '形态突破(利空降级)', '底部放量(利空降级)']
+            base_triggers = ['主升浪', 'V型反转', '潜伏区', '消息共振', '形态突破', '底部放量']
             return any(base in sig for base in base_triggers)
 
         MIN_SAMPLE_SIZE = cfg["min_sample_size"]
@@ -892,7 +892,33 @@ def run_replay_backtest(algo_version=None):
             with open("public/backtest_replay.json", "w", encoding="utf-8") as f:
                 json.dump(output, f, ensure_ascii=False, indent=2)
 
-        print(f"[REPLAY BACKTEST] Successfully generated {version_filename}")
+        # Update versions registry dynamically
+        registry_file = "public/backtest_replay_versions.json"
+        existing_versions = {algo_version}
+        if os.path.exists(registry_file):
+            try:
+                with open(registry_file, "r", encoding="utf-8") as f:
+                    reg = json.load(f)
+                    if "versions" in reg:
+                        existing_versions.update(reg["versions"])
+            except Exception:
+                pass
+        
+        import datetime as dt_module
+        current_date_str = dt_module.date.today().strftime("%Y-%m-%d")
+        details = {}
+        for v in existing_versions:
+            details[v] = {"start_date": "2026-07-10", "end_date": current_date_str}
+            
+        registry = {
+            "latest": algo_version,
+            "versions": sorted(list(existing_versions), reverse=True),
+            "details": details
+        }
+        with open(registry_file, "w", encoding="utf-8") as f:
+            json.dump(registry, f, ensure_ascii=False, indent=2)
+
+        print(f"[REPLAY BACKTEST] Successfully generated {version_filename} and updated registries")
 
     except Exception as e:
         print(f"[REPLAY BACKTEST] Error running backtester for {algo_version}: {e}")

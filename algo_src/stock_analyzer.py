@@ -77,7 +77,7 @@ def analyze_stock(symbol, df, index_df=None, sentiment_data=None, waneye_sector_
 
         # ---- 量能与成交额分析 ----
         avg_vol_20  = volume.rolling(20).mean().iloc[-2]
-        vol_ratio   = float(latest["Volume"] / avg_vol_20) if avg_vol_20 > 0 else 0
+        vol_ratio   = min(float(latest["Volume"] / avg_vol_20) if avg_vol_20 > 0 else 0, 20.0)
         turnover    = float(latest["Close"] * latest["Volume"])
 
         # ---- 均线多头排列判断 ----

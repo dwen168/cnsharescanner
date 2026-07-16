@@ -62,12 +62,12 @@ def main():
     print(f"  ✓ 宏观监测结果: {macro_data['summary']}")
 
     # 3. 下载大盘指数基准
-    print("\n[3/7] 正在拉取大盘基准 (^AORD)...")
-    index_df = fetch_ticker("^AORD", period="3mo")
+    print("\n[3/7] 正在拉取大盘基准 (sh000300)...")
+    index_df = fetch_ticker("sh000300", period="3mo")
     if index_df is None or index_df.empty:
-        print("  ⚠️ 无法获取 ^AORD，尝试拉取 ^AXJO...")
-        warnings_list.append("大盘基准 ^AORD 抓取失败，降级至 ^AXJO 基准")
-        index_df = fetch_ticker("^AXJO", period="3mo")
+        print("  ⚠️ 无法获取 sh000300，尝试拉取 sh000001...")
+        warnings_list.append("大盘基准 sh000300 抓取失败，降级至 sh000001 基准")
+        index_df = fetch_ticker("sh000001", period="3mo")
         
     if index_df is not None and not index_df.empty and len(index_df) >= STRATEGY_CONFIG['stock_analyzer']['min_data_len_initial']:
         print(f"  ✓ 大盘基准下载成功 (数据天数: {len(index_df)})")
@@ -117,7 +117,7 @@ def main():
                 failed_count += 1
 
         if index_df is not None and not index_df.empty:
-            stock_dfs["^AORD"] = index_df
+            stock_dfs["sh000300"] = index_df
 
         if failed_count > 0:
             warnings_list.append(f"个股拉取出现部分缺失，失败数: {failed_count}/{len(ALL_SYMBOLS)}，系统在降级数据源下运行")

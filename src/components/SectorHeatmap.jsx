@@ -425,7 +425,7 @@ function SectorDetailPanel({ sector, lang, onClose, maxHeight }) {
                     borderBottom: '1px solid var(--border-row-subtle)' 
                   }}>
                     <span className="font-mono" style={{ fontWeight: 600, color: 'var(--cyan)' }}>{stock.symbol}</span>
-                    <span style={{ color: 'var(--text-2)', textAlign: 'right' }}>${stock.price}</span>
+                    <span style={{ color: 'var(--text-2)', textAlign: 'right' }}>¥{stock.price}</span>
                     <span className={`font-mono ${stock.chg_pct >= 0 ? 'pos' : 'neg'}`} style={{ fontWeight: 600, textAlign: 'right' }}>
                       {stock.chg_pct >= 0 ? '+' : ''}{stock.chg_pct}%
                     </span>

@@ -18,7 +18,7 @@ def generate_offline_backtest_data(algo_version):
         
     # 2. Build mock price dataframe for symbols and benchmarks
     clean_symbols = [s.replace(".AX", "") for s in ALL_SYMBOLS]
-    benchmarks = ["XFJ", "XMJ", "XGD", "XTX", "XHJ", "XSJ", "XPJ", "XEJ", "^AORD"]
+    benchmarks = ["sh000947", "sz399975", "sh000934", "sz399976", "sh000928", "sh000935", "sh000933", "sh000932", "sz399959", "sh000300"]
     all_tickers = clean_symbols + benchmarks
     
     np.random.seed(42)  # Fixed seed for stable offline stats
@@ -26,8 +26,8 @@ def generate_offline_backtest_data(algo_version):
     
     for t in all_tickers:
         price = 100.0 if t in benchmarks else np.random.uniform(5.0, 150.0)
-        volatility = 0.015 if "Lithium" in t or "Technology" in t or t in ["XTX", "XGD"] else 0.008
-        drift = 0.0003 if t in ["XTX", "XFJ", "XMJ"] else 0.0001
+        volatility = 0.015 if "Lithium" in t or "Tech" in t or t in ["sh000935"] else 0.008
+        drift = 0.0003 if t in ["sh000935", "sh000947"] else 0.0001
         
         for date_str in dates:
             ret = np.random.normal(drift, volatility)

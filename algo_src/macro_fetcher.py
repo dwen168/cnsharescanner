@@ -1,16 +1,52 @@
 import time
+import pandas as pd
+import akshare as ak
 import yfinance as yf
 from waneye_scraper import FINANCIAL_POLARITY, calculate_sentiment_score
 
+def to_yahoo_ticker(symbol):
+    # Sector indices are not reliably carried by Yahoo Finance; map them to CSI 300 (000300.SS) as proxy
+    if symbol in ["sh000300", "000300"]:
+        return "000300.SS"
+    if symbol in ["sh000001", "000001"]:
+        return "000001.SS"
+    if symbol.startswith("sh000") or symbol.startswith("sz399"):
+        return "000300.SS"
+        
+    if symbol.startswith("sh") and len(symbol) == 8:
+        return f"{symbol[2:]}.SS"
+    elif symbol.startswith("sz") and len(symbol) == 8:
+        return f"{symbol[2:]}.SZ"
+    # Stock codes
+    if symbol.startswith("6") or symbol.startswith("9"):
+        return f"{symbol}.SS"
+    elif symbol.startswith("0") or symbol.startswith("3"):
+        return f"{symbol}.SZ"
+    return symbol
+
 def fetch_ticker(symbol, period="3mo"):
-    """单只股票下载，稳定性最佳"""
+    """Fetch index or stock history using yfinance"""
     try:
-        ticker = yf.Ticker(symbol)
-        df = ticker.history(period=period)
-        return df
+        yf_sym = to_yahoo_ticker(symbol)
+        df = yf.download(yf_sym, period=period, progress=False)
+        if not df.empty:
+            if isinstance(df.columns, pd.MultiIndex):
+                df.columns = df.columns.get_level_values(0)
+            df = df.reset_index()
+            df = df.rename(columns={
+                "Date": "Date",
+                "Open": "Open",
+                "High": "High",
+                "Low": "Low",
+                "Close": "Close",
+                "Volume": "Volume"
+            })
+            df["Date"] = pd.to_datetime(df["Date"])
+            df.set_index("Date", inplace=True)
+            return df
     except Exception as e:
         print(f"  Download error {symbol}: {e}")
-        return None
+    return None
 
 def analyze_news_sentiment(news_list):
     """通过文本极性词袋计算平均新闻情绪面得分 (-1.0 至 +1.0) 以及新鲜度"""
@@ -36,43 +72,23 @@ def analyze_news_sentiment(news_list):
             item_freshness = 1.0
         freshness_list.append(item_freshness)
             
-    # Calculate average sentiment (if news list exists, default to 0.0 unless matching polarity scores)
     sentiment_val = 0.0
     if scores:
         sentiment_val = round(sum(scores) / len(scores), 2)
     
-    # Calculate average freshness
     avg_freshness = 1.0
     if freshness_list:
         avg_freshness = round(sum(freshness_list) / len(freshness_list), 2)
         
     return sentiment_val, avg_freshness
-
 def fetch_ticker_news_sentiment(symbol):
-    """获取个股最新新闻并计算情绪分以及元数据"""
-    try:
-        ticker = yf.Ticker(symbol)
-        news = ticker.news
-        if news:
-            sentiment, freshness = analyze_news_sentiment(news)
-            latest_headline = news[0].get("title", "")
-            # 仅当获取到非空新闻标题时，才采信个股新闻舆情
-            if latest_headline.strip():
-                return {
-                    "sentiment_value": sentiment,
-                    "sentiment_source": "news" if sentiment is not None else None,
-                    "news_freshness": freshness,
-                    "latest_headline": latest_headline
-                }
-    except Exception:
-        pass
+    """个股新闻抓取非常容易被东财封禁且速度慢，默认采用板块舆情融合"""
     return {
         "sentiment_value": None,
         "sentiment_source": None,
         "news_freshness": None,
         "latest_headline": ""
     }
-
 def fetch_macro_indicators():
     """拉取大宗汇率与国债利率，用于计算板块宏观环境乘数"""
     macro_data = {
@@ -81,31 +97,35 @@ def fetch_macro_indicators():
         "summary": "大盘宏观面平静"
     }
     try:
-        # 10年美债收益率 ^TNX 作为宏观估值锚
-        bond = yf.Ticker("^TNX")
-        bond_df = bond.history(period="5d")
-        if bond_df is not None and len(bond_df) >= 2:
-            yield_change = float(bond_df["Close"].iloc[-1] - bond_df["Close"].iloc[0])
-            macro_data["yield_trend"] = round(yield_change, 3)
+        # 使用美债十年期收益率作为全球流动性风向标 proxy
+        df_bond = yf.download("^TNX", period="10d", progress=False)
+        if not df_bond.empty:
+            if isinstance(df_bond.columns, pd.MultiIndex):
+                df_bond.columns = df_bond.columns.get_level_values(0)
+            df_bond = df_bond.reset_index()
+            closes = df_bond["Close"].tolist()
+            if len(closes) >= 5:
+                yield_change = float(closes[-1] - closes[-5])
+                macro_data["yield_trend"] = round(yield_change, 3)
             
-        # 澳元兑美元 AUDUSD=X
-        aud = yf.Ticker("AUDUSD=X")
-        aud_df = aud.history(period="5d")
-        if aud_df is not None and len(aud_df) >= 2:
-            aud_change = float((aud_df["Close"].iloc[-1] - aud_df["Close"].iloc[0]) / aud_df["Close"].iloc[0]) * 100
-            macro_data["aud_trend"] = round(aud_change, 2)
-            
+        # 美元兑人民币汇率 (USD/CNY)
+        df_fx = yf.download("CNY=X", period="10d", progress=False)
+        if not df_fx.empty:
+            if isinstance(df_fx.columns, pd.MultiIndex):
+                df_fx.columns = df_fx.columns.get_level_values(0)
+            df_fx = df_fx.reset_index()
+            closes = df_fx["Close"].tolist()
+            if len(closes) >= 5:
+                fx_change = float(closes[-1] - closes[-5])
+                macro_data["aud_trend"] = round(fx_change, 4)
+                
         # 总结描述
-        if macro_data["yield_trend"] > 0.15:
-            macro_data["summary"] = "美债收益率持续攀升，估值端对高成长科技与医疗板块形成明显压制。"
-        elif macro_data["yield_trend"] < -0.15:
-            macro_data["summary"] = "收益率大幅下行，分红派息板块及高成长科技股迎来流动性估值修复。"
-        elif macro_data["aud_trend"] > 1.2:
-            macro_data["summary"] = "澳元汇率走强，大宗商品及矿业板块资金吸引力显著上升。"
-        elif macro_data["aud_trend"] < -1.2:
-            macro_data["summary"] = "澳元汇率走弱，利好出口及跨国资源龙头企业汇兑收益。"
+        if macro_data["yield_trend"] > 0.1:
+            macro_data["summary"] = "十年期国债收益率走强，流动性边际收紧，对成长股及科技板块估值形成一定压制。"
+        elif macro_data["yield_trend"] < -0.1:
+            macro_data["summary"] = "十年期国债收益率显著下行，无风险利率走低，高分红资产估值迎来修复。"
         else:
-            macro_data["summary"] = "国债收益率与澳元汇率宽幅震荡，宏观面流动性对大盘影响均衡。"
+            macro_data["summary"] = "宏观十年期收益率与人民币汇率宽幅震荡，宏观面流动性对A股市场整体影响中性。"
     except Exception:
         pass
     return macro_data

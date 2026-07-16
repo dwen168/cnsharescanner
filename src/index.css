@@ -104,7 +104,8 @@ body {
 /* ============================================================
    LAYOUT
    ============================================================ */
-.app { max-width: 1680px; margin: 0 auto; padding: 0 2rem 4rem; }
+.app { max-width: 1680px; margin: 0 auto; padding: 0 2rem 4rem; transition: max-width 0.2s ease-in-out; }
+.app.full-width { max-width: 98%; padding: 0 1.5rem 4rem; }
 
 /* ============================================================
    HEADER / NAV
@@ -356,6 +357,8 @@ body {
 
 .zone-badge.momentum    { background: var(--green-soft); color: var(--green); border: 1px solid var(--green-glow); }
 .zone-badge.accumulation{ background: var(--gold-soft);  color: var(--gold);  border: 1px solid rgba(246,201,14,0.3); }
+.zone-badge.watch       { background: rgba(99,179,237,0.1); color: var(--cyan); border: 1px solid rgba(99,179,237,0.3); }
+.zone-badge.neutral     { background: rgba(255,255,255,0.05); color: var(--text-3); border: 1px solid var(--border); }
 
 .radar-zone-title { font-size: 0.95rem; font-weight: 600; }
 .radar-zone-sub   { font-size: 0.75rem; color: var(--text-2); margin-left: auto; }

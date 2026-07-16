@@ -58,12 +58,12 @@ STRATEGY_CONFIG = {
         "macro_bonus_gold_multiplier": -10.0,
         
         # Turnover/Liquidity filter limits
-        "turnover_tier2_limit": 2000000.0,  # AUD 2M
-        "turnover_tier3_limit": 500000.0,   # AUD 500K
+        "turnover_tier2_limit": 50000000.0,  # 50M CNY
+        "turnover_tier3_limit": 10000000.0,  # 10M CNY
     },
     "backtest_engine": {
         "min_sample_size": 30,
-        "transaction_cost_pct": 0.2,
+        "transaction_cost_pct": 0.1,
         "holding_periods": [1, 3, 5, 10],
         "top_n_portfolio": 5,
     }
@@ -78,72 +78,62 @@ BASE_ALGO_VERSION = "v1.2.0"
 ALGO_VERSION = f"{BASE_ALGO_VERSION}-{get_config_fingerprint()}"
 
 # =========================================================
-# ASX 板块分组配置 (包含龙头个股与热门行业赛道)
+# China A-Share Sectors & Symbols Configuration
 # =========================================================
 SECTORS = {
     "金融银行 Banking": [
-        "CBA.AX", "NAB.AX", "WBC.AX", "ANZ.AX", "MQG.AX",
-        "BEN.AX", "BOQ.AX", "SUN.AX"
+        "600036", "601398", "601288", "601328", "601988",
+        "000001", "600000", "002142", "601318"
     ],
-    "矿业资源 Mining": [
-        "BHP.AX", "RIO.AX", "FMG.AX", "S32.AX", "MIN.AX",
-        "SFR.AX", "29M.AX"
+    "证券券商 Brokerage": [
+        "300059", "600030", "601688", "000776", "601211",
+        "600999"
     ],
-    "黄金 Gold": [
-        "NST.AX", "EVN.AX", "NEM.AX", "GMD.AX",
-        "RRL.AX"
+    "有色金属 Mining": [
+        "601899", "603993", "600362", "601600", "000878",
+        "600111"
     ],
-    "新能源/锂矿 Lithium": [
-        "PLS.AX", "LTR.AX", "IGO.AX", "LYC.AX", "WC8.AX",
-        "CXO.AX"
+    "新能源汽车 EV/Lithium": [
+        "300750", "002594", "300014", "002466", "002460",
+        "002074", "000338"
     ],
-    "铀矿 Uranium": [
-        "BOE.AX", "PDN.AX", "LOT.AX", "BMN.AX",
-        "PEN.AX", "DYL.AX"
+    "光伏能源 Solar/Energy": [
+        "601012", "600438", "300274", "600900", "601088",
+        "600011", "601857", "600028", "600938"
     ],
-    "科技/软件 Technology": [
-        "XRO.AX", "WTC.AX", "TLX.AX", "AD8.AX", "APX.AX",
-        "TNE.AX", "DDR.AX"
+    "半导体芯片 Semiconductors": [
+        "688981", "002371", "603501", "603986", "002049",
+        "688012", "000725"
     ],
-    "AI基建 AI Infra": [
-        "NXT.AX", "MP1.AX", "ALC.AX",
-        "BRN.AX"
+    "AI/软件 AI & Tech": [
+        "002230", "688111", "300308", "300502", "000977",
+        "601138"
     ],
     "医疗健康 Healthcare": [
-        "CSL.AX", "RMD.AX", "COH.AX", "SHL.AX",
-        "FPH.AX", "ANN.AX", "SIG.AX", "MSB.AX", "PNV.AX"
+        "600276", "300760", "300015", "603259", "600436",
+        "000999"
     ],
-    "消费/零售 Consumer": [
-        "WES.AX", "WOW.AX", "COL.AX", "JBH.AX",
-        "MTS.AX", "TWE.AX", "SUL.AX"
+    "白酒消费 Consumer": [
+        "600519", "000858", "000568", "600809", "002304",
+        "603288"
     ],
-    "地产/基建 Real Estate": [
-        "GMG.AX", "SCG.AX", "SGP.AX", "GPT.AX",
-        "CHC.AX", "DXS.AX", "VCX.AX"
-    ],
-    "能源 Energy": [
-        "WDS.AX", "STO.AX", "BPT.AX", "WHC.AX",
-        "YAL.AX", "NHC.AX", "ORG.AX"
-    ],
-    "旅游博彩 Travel": [
-        "FLT.AX", "ALL.AX", "TAH.AX", "WEB.AX",
-        "QAN.AX"
-    ],
+    "军工国防 Defense": [
+        "600760", "000768", "600893", "002625", "600150",
+        "002179"
+    ]
 }
 
 SECTOR_META = {
-    "金融银行 Banking":     {"type": "industry", "benchmark": "^AXFJ"},
-    "矿业资源 Mining":      {"type": "industry", "benchmark": "^AXMJ"},
-    "黄金 Gold":            {"type": "industry", "benchmark": "^AXGD"},
-    "新能源/锂矿 Lithium":  {"type": "industry", "benchmark": "^AXMJ"},
-    "铀矿 Uranium":         {"type": "industry", "benchmark": "^AORD"},
-    "科技/软件 Technology":  {"type": "industry", "benchmark": "^AXTX"},
-    "AI基建 AI Infra":      {"type": "theme", "benchmark": "^AXTX"},
-    "医疗健康 Healthcare":   {"type": "industry", "benchmark": "^AXHJ"},
-    "消费/零售 Consumer":    {"type": "industry", "benchmark": "^AXSJ"},
-    "地产/基建 Real Estate": {"type": "industry", "benchmark": "^AXPJ"},
-    "能源 Energy":          {"type": "industry", "benchmark": "^AXEJ"},
-    "旅游博彩 Travel":      {"type": "industry", "benchmark": "^AORD"},
+    "金融银行 Banking":     {"type": "industry", "benchmark": "sh000947"},
+    "证券券商 Brokerage":   {"type": "industry", "benchmark": "sz399975"},
+    "有色金属 Mining":      {"type": "industry", "benchmark": "sh000934"},
+    "新能源汽车 EV/Lithium":  {"type": "industry", "benchmark": "sz399976"},
+    "光伏能源 Solar/Energy": {"type": "industry", "benchmark": "sh000928"},
+    "半导体芯片 Semiconductors":  {"type": "industry", "benchmark": "sh000935"},
+    "AI/软件 AI & Tech":     {"type": "theme", "benchmark": "sh000935"},
+    "医疗健康 Healthcare":   {"type": "industry", "benchmark": "sh000933"},
+    "白酒消费 Consumer":    {"type": "industry", "benchmark": "sh000932"},
+    "军工国防 Defense":     {"type": "industry", "benchmark": "sz399959"},
 }
 
 ALL_SYMBOLS = list({s for stocks in SECTORS.values() for s in stocks})

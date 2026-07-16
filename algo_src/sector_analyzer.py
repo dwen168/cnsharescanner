@@ -2,7 +2,7 @@ from strategy_config import STRATEGY_CONFIG, SECTORS, SECTOR_META
 
 def calc_sector_stats(sector_name, symbols, all_results, macro_data=None, waneye_sector_sent=None, trading_state="active", risk_penalty=0, opportunity_boost=0, defensive_boost=0, matched_risks=None, matched_opportunities=None, matched_defensive=None):
     """计算板块整体指标"""
-    stocks_in_sector = [r for r in all_results if (r["symbol"] + ".AX") in symbols]
+    stocks_in_sector = [r for r in all_results if r["symbol"] in symbols]
 
     if not stocks_in_sector:
         return None
@@ -21,7 +21,7 @@ def calc_sector_stats(sector_name, symbols, all_results, macro_data=None, waneye
         avg_chg   = sum(s["chg_pct"] for s in stocks_in_sector) / len(stocks_in_sector)
         avg_vol_r = sum(s["vol_ratio"] for s in stocks_in_sector) / len(stocks_in_sector)
         avg_rs    = sum(s["rs_ratio_5d"] for s in stocks_in_sector) / len(stocks_in_sector)
-
+ 
     # 1.3 动态数据新鲜度调权融合算法
     sector_sent = 0.0
     if waneye_sector_sent and sector_name in waneye_sector_sent:
@@ -42,14 +42,14 @@ def calc_sector_stats(sector_name, symbols, all_results, macro_data=None, waneye
         avg_sent = w_stock * stock_sent + w_sector * sector_sent
     else:
         avg_sent = sector_sent
-
+ 
     momentum_count = sum(1 for s in stocks_in_sector if s["zone"] == "momentum")
     accum_count    = sum(1 for s in stocks_in_sector if s["zone"] == "accumulation")
     
     total_stocks = len(stocks_in_sector)
     momentum_ratio = momentum_count / total_stocks if total_stocks > 0 else 0.0
     accum_ratio    = accum_count / total_stocks if total_stocks > 0 else 0.0
-
+ 
     cfg = STRATEGY_CONFIG["stock_analyzer"]
     # ---- 宏观敏感乘数调节 (Macro Multiplier) ----
     macro_bonus = 0.0
@@ -57,20 +57,16 @@ def calc_sector_stats(sector_name, symbols, all_results, macro_data=None, waneye
         y_trend = macro_data.get("yield_trend", 0.0)
         aud_trend = macro_data.get("aud_trend", 0.0)
         
-        if "Technology" in sector_name or "Real Estate" in sector_name or "AI Infra" in sector_name:
+        if "Tech" in sector_name or "Semiconductors" in sector_name:
             macro_bonus += y_trend * cfg["macro_bonus_tech_grow_multiplier"]
-        elif "Banking" in sector_name:
+        elif "Banking" in sector_name or "Brokerage" in sector_name:
             macro_bonus += y_trend * cfg["macro_bonus_banking_multiplier"]
-        elif "Mining" in sector_name or "Lithium" in sector_name or "Energy" in sector_name or "Uranium" in sector_name:
+        elif "Mining" in sector_name or "Lithium" in sector_name or "Energy" in sector_name:
             macro_bonus += aud_trend * cfg["macro_bonus_resource_multiplier"]
-        elif "Gold" in sector_name:
-            macro_bonus += y_trend * cfg.get("macro_bonus_gold_multiplier", -10.0)  # 黄金是避险资产，利率上升利空
-        elif "Travel" in sector_name:
-            macro_bonus += aud_trend * cfg["macro_bonus_travel_multiplier"]  # 旅游受澳元走强轻微利好
         elif "Healthcare" in sector_name:
-            macro_bonus += y_trend * cfg["macro_bonus_healthcare_multiplier"]   # 医疗受利率上升压制估值
+            macro_bonus += y_trend * cfg["macro_bonus_healthcare_multiplier"]
         elif "Consumer" in sector_name:
-            macro_bonus += y_trend * cfg["macro_bonus_consumer_multiplier"]   # 消费受利率上升压制需求
+            macro_bonus += y_trend * cfg["macro_bonus_consumer_multiplier"]  # 消费受利率上升压制需求
 
     # 新闻舆情分调节
     sent_bonus = avg_sent * cfg["sent_bonus_multiplier"]

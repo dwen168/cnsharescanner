@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useDeferredValue } from 'react';
-import { getT, translateInsight } from '../utils/translations';
+import { getT, translateInsight, STOCK_NAME_MAP } from '../utils/translations';
 import { analyzeStockJS, calculateSentimentScore } from '../utils/stockAnalyzer';
 import { analyzeWyckoff, analyzeWyckoffMacd } from '../utils/wyckoffAnalyzer';
 import { analyzeRiskControl } from '../utils/riskControlAnalyzer';
 
 export default function LiveAnalyzer({ globalData, lang, theme }) {
   const t = getT(lang);
-  const [symbol, setSymbol] = useState('TLS.AX');
+  const [symbol, setSymbol] = useState('600519.SS');
   const [sectorName, setSectorName] = useState('Auto');
   const [manualSentiment, setManualSentiment] = useState(0.0);
   const [customHeadline, setCustomHeadline] = useState('');
-  const [analysisMethod, setAnalysisMethod] = useState('classic'); // 'classic' | 'wyckoff'
+  const [analysisMethod, setAnalysisMethod] = useState('wyckoff_macd'); // Only keep wyckoff_macd method
   const [sensitivity, setSensitivity] = useState(0.3); // 0.1 to 1.0 (default 0.3 is conservative)
   const [chartZoomRange, setChartZoomRange] = useState('30d'); // '30d' | '90d' | '180d' | 'all'
   const [activeOverlays, setActiveOverlays] = useState({
@@ -52,19 +52,18 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
 
   // Popular tickers for quick-click
   const quickTickers = [
-    { code: 'BHP.AX', name: 'BHP Group' },
-    { code: 'TLS.AX', name: 'Telstra' },
     { code: '600519.SS', name: '贵州茅台' },
     { code: '002594.SZ', name: '比亚迪' },
-    { code: '0700.HK', name: '腾讯控股' },
-    { code: 'AAPL', name: 'Apple Inc.' },
-    { code: 'TSLA', name: 'Tesla Inc.' }
+    { code: '300750.SZ', name: '宁德时代' },
+    { code: '600036.SS', name: '招商银行' },
+    { code: '002230.SZ', name: '科大讯飞' },
+    { code: '000001.SZ', name: '平安银行' }
   ];
 
   // Watchlist State loaded from localStorage
   const [watchlist, setWatchlist] = useState(() => {
     const saved = localStorage.getItem('asx_watchlist');
-    return saved ? JSON.parse(saved) : ['BHP.AX', 'TLS.AX', 'AAPL', 'TSLA'];
+    return saved ? JSON.parse(saved) : ['600519.SS', '002594.SZ', '300750.SZ', '600036.SS'];
   });
 
   // Persist watchlist to localStorage
@@ -1050,7 +1049,7 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem' }}>
                 <span style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? '价格:' : 'Price:'}</span>
-                <strong style={{ color: 'var(--cyan)' }}>${item.close.toFixed(2)}</strong>
+                <strong style={{ color: 'var(--cyan)' }}>¥{item.close.toFixed(2)}</strong>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem' }}>
                 <span style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? '成交量:' : 'Vol:'}</span>
@@ -1058,12 +1057,12 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem' }}>
                 <span style={{ color: 'var(--text-3)' }}>MA20:</span>
-                <span style={{ color: 'var(--red)' }}>${item.ma20?.toFixed(2)}</span>
+                <span style={{ color: 'var(--red)' }}>¥{item.ma20?.toFixed(2)}</span>
               </div>
               {activeOverlays.atr_stop && item.atr_trailing_stop && (
                 <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem' }}>
                   <span style={{ color: 'var(--text-3)' }}>ATR Stop:</span>
-                  <strong style={{ color: 'var(--orange, #f39c12)' }}>${item.atr_trailing_stop}</strong>
+                  <strong style={{ color: 'var(--orange, #f39c12)' }}>¥{item.atr_trailing_stop}</strong>
                 </div>
               )}
               
@@ -1194,9 +1193,25 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
             )}
           </span>
         </div>
-
-        {/* Input Form Panel */}
-        <div className="analyzer-form-card" style={{
+        {/* Main Grid: Left Panel (Inputs) vs Right Panel (Results) */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '360px 1fr',
+          gap: '1.5rem',
+          alignItems: 'start',
+          marginTop: '1.2rem'
+        }} className="analyzer-grid">
+          
+          {/* LEFT PANEL: Inputs Card */}
+          <div className="analyzer-left-panel" style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem',
+            position: 'sticky',
+            top: '5.5rem'
+          }}>
+            {/* Input Form Panel */}
+            <div className="analyzer-form-card" style={{
           background: 'var(--bg-card)',
           border: '1px solid var(--border)',
           borderRadius: 'var(--radius, 8px)',
@@ -1319,110 +1334,37 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
             </div>
           </div>
 
-          {/* Analysis Methodology Switcher */}
+          {/* Analysis Methodology - Wyckoff MACD (No Switcher, Sensitivity Only) */}
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1rem',
-            alignItems: 'end',
             borderTop: '1px dashed var(--border)',
             paddingTop: '0.8rem',
             marginTop: '0.2rem'
           }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-              <label style={{ fontSize: '0.78rem', color: 'var(--text-2)', fontWeight: 500 }}>
-                {t('analysisMethodLabel')}
-              </label>
-              <div style={{
-                display: 'flex',
-                background: 'var(--bg-hover)',
-                border: '1px solid var(--border)',
-                borderRadius: '8px',
-                padding: '3px',
-                width: 'fit-content'
-              }}>
-                <button
-                  onClick={() => setAnalysisMethod('classic')}
-                  style={{
-                    background: analysisMethod === 'classic' ? 'var(--cyan)' : 'transparent',
-                    color: analysisMethod === 'classic' ? '#fff' : 'var(--text-2)',
-                    border: 'none',
-                    borderRadius: '6px',
-                    padding: '0.45rem 1rem',
-                    fontSize: '0.85rem',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  {t('classicMethod')}
-                </button>
-                <button
-                  onClick={() => setAnalysisMethod('wyckoff')}
-                  style={{
-                    background: analysisMethod === 'wyckoff' ? 'var(--cyan)' : 'transparent',
-                    color: analysisMethod === 'wyckoff' ? '#fff' : 'var(--text-2)',
-                    border: 'none',
-                    borderRadius: '6px',
-                    padding: '0.45rem 1rem',
-                    fontSize: '0.85rem',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  {t('wyckoffMethod')}
-                </button>
-                <button
-                  onClick={() => setAnalysisMethod('wyckoff_macd')}
-                  style={{
-                    background: analysisMethod === 'wyckoff_macd' ? 'var(--cyan)' : 'transparent',
-                    color: analysisMethod === 'wyckoff_macd' ? '#fff' : 'var(--text-2)',
-                    border: 'none',
-                    borderRadius: '6px',
-                    padding: '0.45rem 1rem',
-                    fontSize: '0.85rem',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  {t('wyckoffMacdMethod')}
-                </button>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem' }}>
+                <span style={{ color: 'var(--text-2)', fontWeight: 500 }}>
+                  {t('wyckoffSensitivity')}: <strong style={{ color: 'var(--cyan)' }}>{Math.round(sensitivity * 100)}%</strong>
+                </span>
+                <span style={{ color: 'var(--text-3)', fontSize: '0.72rem' }}>
+                  {sensitivity <= 0.35 ? (lang === 'zh' ? '保守策略 (默认)' : 'Conservative (Default)') :
+                   sensitivity <= 0.7 ? (lang === 'zh' ? '中性策略' : 'Moderate') :
+                   (lang === 'zh' ? '激进策略' : 'Aggressive')}
+                </span>
               </div>
+              <input
+                type="range"
+                min="0.1"
+                max="1.0"
+                step="0.05"
+                value={sensitivity}
+                onChange={(e) => setSensitivity(parseFloat(e.target.value))}
+                style={{
+                  width: '100%',
+                  accentColor: 'var(--cyan)',
+                  cursor: 'pointer'
+                }}
+              />
             </div>
-
-            {(analysisMethod === 'wyckoff' || analysisMethod === 'wyckoff_macd') ? (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem' }}>
-                  <span style={{ color: 'var(--text-2)' }}>
-                    {t('wyckoffSensitivity')}: <strong style={{ color: 'var(--cyan)' }}>{Math.round(sensitivity * 100)}%</strong>
-                  </span>
-                  <span style={{ color: 'var(--text-3)', fontSize: '0.72rem' }}>
-                    {sensitivity <= 0.35 ? (lang === 'zh' ? '保守策略 (默认)' : 'Conservative (Default)') :
-                     sensitivity <= 0.7 ? (lang === 'zh' ? '中性策略' : 'Moderate') :
-                     (lang === 'zh' ? '激进策略' : 'Aggressive')}
-                  </span>
-                </div>
-                <input
-                  type="range"
-                  min="0.1"
-                  max="1.0"
-                  step="0.05"
-                  value={sensitivity}
-                  onChange={(e) => setSensitivity(parseFloat(e.target.value))}
-                  style={{
-                    width: '100%',
-                    accentColor: 'var(--cyan)',
-                    cursor: 'pointer'
-                  }}
-                />
-              </div>
-            ) : (
-              <div style={{ display: 'flex', alignItems: 'center', height: '100%', fontSize: '0.75rem', color: 'var(--text-3)', fontStyle: 'italic', paddingBottom: '0.4rem' }}>
-                {lang === 'zh' ? '经典量化扫描无需配置灵敏度' : 'Classic scan does not require sensitivity configuration'}
-              </div>
-            )}
           </div>
 
           {/* News Headline Simulation */}
@@ -1677,7 +1619,7 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                       fontWeight: 600
                     }}
                   >
-                    {code}
+                    {STOCK_NAME_MAP[code.split('.')[0]] ? `${code} (${STOCK_NAME_MAP[code.split('.')[0]]})` : code}
                   </span>
                   <span
                     onClick={(e) => {
@@ -1724,7 +1666,15 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
             {loading ? (lang === 'zh' ? '正在执行量化扫描...' : 'Running Diagnostics...') : (lang === 'zh' ? '🚀 接入实时数据并诊断' : '🚀 Run Quant Diagnostics')}
           </button>
         </div>
+      </div>
 
+      {/* RIGHT PANEL: Outputs */}
+      <div className="analyzer-right-panel" style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem',
+        minWidth: 0
+      }}>
         {/* Loading Spinner */}
         {loading && (
           <div style={{
@@ -1923,7 +1873,7 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                     }}>
                       <div>
                         <div style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? '持仓成本' : 'Cost Basis'}</div>
-                        <strong style={{ color: 'var(--text-1)', fontSize: '0.9rem' }}>${parseFloat(costBasis).toFixed(2)}</strong>
+                        <strong style={{ color: 'var(--text-1)', fontSize: '0.9rem' }}>¥{parseFloat(costBasis).toFixed(2)}</strong>
                       </div>
                       <div>
                         <div style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? '当前盈亏' : 'Return'}</div>
@@ -1936,7 +1886,7 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                       </div>
                       <div>
                         <div style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? '入场后最高点' : 'Peak Price'}</div>
-                        <strong style={{ color: 'var(--text-1)', fontSize: '0.9rem' }}>${result.riskControl.peakPrice.toFixed(2)}</strong>
+                        <strong style={{ color: 'var(--text-1)', fontSize: '0.9rem' }}>¥{result.riskControl.peakPrice.toFixed(2)}</strong>
                       </div>
                       <div>
                         <div style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? '自最高点回撤' : 'Drawdown'}</div>
@@ -1953,19 +1903,19 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                     <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '0.4rem', borderTop: '1px solid var(--border)', paddingTop: '0.6rem' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <span style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? '硬止损线 (10%):' : 'Hard Stop-Loss (10%):'}</span>
-                        <span style={{ color: 'var(--red, #e74c3c)', fontWeight: 600 }}>${result.riskControl.stopLossPrice.toFixed(2)}</span>
+                        <span style={{ color: 'var(--red, #e74c3c)', fontWeight: 600 }}>¥{result.riskControl.stopLossPrice.toFixed(2)}</span>
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <span style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? `移动止盈触发价 (回撤 ${maxDrawdownPct}%):` : `Trailing Stop Trigger (${maxDrawdownPct}%):`}</span>
-                        <span style={{ color: 'var(--yellow, #f39c12)', fontWeight: 600 }}>${result.riskControl.trailingStopPrice.toFixed(2)}</span>
+                        <span style={{ color: 'var(--yellow, #f39c12)', fontWeight: 600 }}>¥{result.riskControl.trailingStopPrice.toFixed(2)}</span>
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <span style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? `保本激活目标价 (+${breakevenTriggerPct}%):` : `Breakeven Target (+${breakevenTriggerPct}%):`}</span>
-                        <span style={{ color: 'var(--text-2)', fontWeight: 600 }}>${result.riskControl.breakevenTriggerPrice.toFixed(2)}</span>
+                        <span style={{ color: 'var(--text-2)', fontWeight: 600 }}>¥{result.riskControl.breakevenTriggerPrice.toFixed(2)}</span>
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <span style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? '保本平仓保护线 (成本*1.05):' : 'Breakeven Exit Line (Cost*1.05):'}</span>
-                        <span style={{ color: 'var(--cyan)', fontWeight: 600 }}>${result.riskControl.breakevenPrice.toFixed(2)}</span>
+                        <span style={{ color: 'var(--cyan)', fontWeight: 600 }}>¥{result.riskControl.breakevenPrice.toFixed(2)}</span>
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <span style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? '保本激活状态:' : 'Breakeven Status:'}</span>
@@ -2294,12 +2244,24 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                   )}
                 </div>
 
-                {/* Card 4: Timeline of Wyckoff Events */}
+                {/* Row 2: Detected Wyckoff Events (Card 4) & SVG Candlestick Chart (Card 5) */}
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: '400px 1fr',
+                  gap: '1rem',
+                  marginTop: '1rem',
+                  alignItems: 'stretch'
+                }} className="events-chart-grid">
+                  {/* Card 4: Timeline of Wyckoff Events */}
                 <div style={{
                   background: 'var(--bg-card)',
                   border: '1px solid var(--border)',
                   borderRadius: '8px',
-                  padding: '1rem'
+                  padding: '1rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
+                  boxSizing: 'border-box'
                 }}>
                   <h4 style={{ margin: '0 0 0.2rem 0', fontSize: '0.85rem', color: 'var(--text-2)', borderBottom: '1px solid var(--border)', paddingBottom: '0.4rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span>📋 {t('wyckoffEvents')}</span>
@@ -2315,14 +2277,20 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                   
                   {result.detected_events && result.detected_events.length > 0 ? (
                     <div style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '0.8rem',
-                      position: 'relative',
-                      paddingLeft: '1.2rem',
+                      flex: 1,
+                      height: 0,
+                      overflowY: 'auto',
+                      paddingRight: '0.5rem',
                       marginTop: '0.6rem'
                     }}>
-                      {/* Vertical line connector */}
+                      <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.8rem',
+                        position: 'relative',
+                        paddingLeft: '1.2rem'
+                      }}>
+                        {/* Vertical line connector */}
                       <div style={{
                         position: 'absolute',
                         left: '4px',
@@ -2407,6 +2375,7 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                         );
                       });
                     })()}
+                    </div>
                   </div>
                   ) : (
                     <div style={{ color: 'var(--text-3)', fontSize: '0.78rem', textAlign: 'center', padding: '1rem', fontStyle: 'italic' }}>
@@ -2420,7 +2389,9 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                   background: 'var(--bg-card)',
                   border: '1px solid var(--border)',
                   borderRadius: '8px',
-                  padding: '1.2rem 1.2rem 0.8rem 1.2rem'
+                  padding: '1.2rem 1.2rem 0.8rem 1.2rem',
+                  height: '100%',
+                  boxSizing: 'border-box'
                 }}>
                   <h4 style={{ margin: '0 0 0.8rem 0', fontSize: '0.85rem', color: 'var(--text-2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
                     <span>📊 {lang === 'zh' ? '个股走势与 Wyckoff 关键事件标注' : 'Stock Close & Wyckoff Event Annotations'}</span>
@@ -2657,6 +2628,7 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
 
                   {renderWyckoffChart(result)}
                 </div>
+              </div>
 
                 {/* Explanation Card */}
                 <div style={{
@@ -2829,7 +2801,7 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.8rem' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <span style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? '最新收盘价' : 'Latest Close'}</span>
-                        <strong style={{ color: 'var(--text-1)' }}>${result.price}</strong>
+                        <strong style={{ color: 'var(--text-1)' }}>¥{result.price}</strong>
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <span style={{ color: 'var(--text-3)' }}>{lang === 'zh' ? '日涨跌幅' : 'Daily Change'}</span>
@@ -3219,6 +3191,8 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
             )}
           </div>
         )}
+        </div> {/* Close right panel */}
+      </div> {/* Close grid container */}
       </section>
     </div>
   );

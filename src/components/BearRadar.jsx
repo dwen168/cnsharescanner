@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { getT, SIGNAL_MAP } from '../utils/translations';
+import { getT, SIGNAL_MAP, STOCK_NAME_MAP } from '../utils/translations';
 
 export default function BearRadar({ bearRadar, radar, lang }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -262,7 +262,12 @@ function BearRow({ stock, lang, t, isConflict, zoneColor }) {
   const translatedSignal = SIGNAL_MAP[lang]?.[stock.bear_signal] || stock.bear_signal || '—';
 
   const ticker = stock.symbol.split('.')[0];
-  const tvUrl  = `https://www.tradingview.com/symbols/ASX-${ticker}/`;
+  const stockName = STOCK_NAME_MAP[ticker] || '';
+  const displaySymbol = stockName ? `${stock.symbol} (${stockName})` : stock.symbol;
+
+  const tvUrl = ticker.startsWith('6') || ticker.startsWith('9')
+    ? `https://www.tradingview.com/symbols/SSE-${ticker}/`
+    : `https://www.tradingview.com/symbols/SZSE-${ticker}/`;
 
   // 舆情徽章
   let resonanceBadge = null;
@@ -290,7 +295,7 @@ function BearRow({ stock, lang, t, isConflict, zoneColor }) {
           title={lang === 'zh' ? '在 TradingView 中查看交互式 K 线图' : 'View interactive chart on TradingView'}
         >
           <div className="radar-symbol" style={{ borderBottom: `1px dashed ${zoneColor}`, cursor: 'pointer', color: zoneColor }}>
-            {stock.symbol}
+            {displaySymbol}
           </div>
           <span style={{ fontSize: '0.62rem', color: zoneColor, marginLeft: '2px', opacity: 0.8 }}>↗</span>
         </a>
