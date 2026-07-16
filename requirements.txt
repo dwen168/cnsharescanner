@@ -1,0 +1,6 @@
+yfinance
+pandas
+numpy
+beautifulsoup4
+psycopg2-binary
+python-dotenv
