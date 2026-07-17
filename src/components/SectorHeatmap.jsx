@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { getT, SIGNAL_MAP, formatSectorName, translateDynamic } from '../utils/translations';
+import { getT, SIGNAL_MAP, formatSectorName, translateDynamic, STOCK_NAME_MAP } from '../utils/translations';
 
 export default function SectorHeatmap({ sectors, lang }) {
   const [selectedSector, setSelectedSector] = useState(null);
@@ -416,7 +416,7 @@ function SectorDetailPanel({ sector, lang, onClose, maxHeight }) {
                 return (
                   <div key={idx} style={{ 
                     display: 'grid', 
-                    gridTemplateColumns: '70px 60px 70px 1fr', 
+                    gridTemplateColumns: '80px 60px 70px 1fr', 
                     gap: '0.5rem', 
                     alignItems: 'center', 
                     fontSize: '0.7rem', 
@@ -424,7 +424,12 @@ function SectorDetailPanel({ sector, lang, onClose, maxHeight }) {
                     background: 'var(--bg-row-subtle)', 
                     borderBottom: '1px solid var(--border-row-subtle)' 
                   }}>
-                    <span className="font-mono" style={{ fontWeight: 600, color: 'var(--cyan)' }}>{stock.symbol}</span>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <span className="font-mono" style={{ fontWeight: 600, color: 'var(--cyan)' }}>{stock.symbol}</span>
+                      <span style={{ fontSize: '0.58rem', color: 'var(--text-3)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        {STOCK_NAME_MAP[stock.symbol] || ''}
+                      </span>
+                    </div>
                     <span style={{ color: 'var(--text-2)', textAlign: 'right' }}>¥{stock.price}</span>
                     <span className={`font-mono ${stock.chg_pct >= 0 ? 'pos' : 'neg'}`} style={{ fontWeight: 600, textAlign: 'right' }}>
                       {stock.chg_pct >= 0 ? '+' : ''}{stock.chg_pct}%

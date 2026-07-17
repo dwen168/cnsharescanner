@@ -152,7 +152,7 @@ def calculate_trends(dates, sector_histories, benchmark_history):
         base_val = benchmark_history[0]
         bench_data = [round((val / base_val) * 100.0, 2) for val in benchmark_history]
         trends["series"].append({
-            "name": "ASX All Ordinaries",
+            "name": "沪深300 (大盘基准)",
             "data": bench_data,
             "is_benchmark": True
         })

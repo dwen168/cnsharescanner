@@ -1,6 +1,5 @@
 import re
 import urllib.request
-from bs4 import BeautifulSoup
 
 # =========================================================
 # 金融情感极性词库 (中文版)
@@ -111,9 +110,11 @@ def match_text_to_sectors(text):
 
 def fetch_waneye_data():
     """
-    抓取 waneye.com 中文版全球宏观舆情与头条新闻
+    抓取 waneye.com 中文版全球宏观舆情与头条新闻 (通过 API 替代抓网页)
     """
-    url = "https://www.waneye.com/cn/"
+    import subprocess
+    import json
+
     data = {
         "score": 50,
         "sentiment": "中性",
@@ -124,123 +125,72 @@ def fetch_waneye_data():
         "defensive": []
     }
     
-    print("  Fetching macro intelligence from Waneye.com/cn/...")
+    print("  Fetching macro intelligence from Waneye API...")
     try:
-        headers = {'User-Agent': 'Mozilla/5.0'}
-        req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req, timeout=12) as response:
-            html = response.read().decode('utf-8')
+        # 1. 获取分析指标 (analysis.json)
+        res_analysis = subprocess.run(
+            ['curl', '-s', '-L', '-A', 'Mozilla/5.0', 'https://www.waneye.com/api/v1/cn/analysis.json'],
+            capture_output=True, text=True, timeout=12
+        )
+        if res_analysis.returncode == 0 and res_analysis.stdout:
+            analysis_data = json.loads(res_analysis.stdout)
+            analysis = analysis_data.get("analysis", {})
             
-        soup = BeautifulSoup(html, "html.parser")
-
-        # 1. 抓取市场综合得分 Market Score
-        score_widget = soup.find(class_="briefing-score-widget")
-        if score_widget:
-            score_text = score_widget.find(class_="text-6xl")
-            if score_text:
-                try:
-                    data["score"] = int(score_text.get_text(strip=True))
-                except ValueError:
-                    pass
-            # 找到包含情绪类别的 pill
-            pill = score_widget.find(class_=lambda x: x and "bg-" in x)
-            if pill:
-                data["sentiment"] = pill.get_text(strip=True)
-            if not data["sentiment"]:
-                if data["score"] >= 65:
-                    data["sentiment"] = "偏多"
-                elif data["score"] >= 45:
-                    data["sentiment"] = "中性"
-                else:
-                    data["sentiment"] = "偏空"
+            # 综合得分与情绪
+            exec_summary = analysis.get("executive_summary", {})
+            data["score"] = exec_summary.get("market_sentiment_score", 50)
+            
+            raw_sent = exec_summary.get("overall_sentiment", "neutral").lower()
+            if "positive" in raw_sent:
+                data["sentiment"] = "偏多"
+            elif "negative" in raw_sent:
+                data["sentiment"] = "偏空"
+            else:
+                data["sentiment"] = "中性"
                 
-        # 2. 抓取 Executive Summary 亮点
-        exec_summary = soup.find(id="exec-summary")
-        if exec_summary:
-            for li in exec_summary.find_all("li"):
-                data["highlights"].append(li.get_text(strip=True))
-                
-        # 3. 抓取 Headlines Panel 的新闻
-        panel = soup.find(attrs={"x-ref": "headlinesPanel"})
-        if panel:
-            for a in panel.find_all("a"):
-                text = a.get_text(" ", strip=True)
-                href = a.get("href", "")
-                
-                # 清理开头的数字
-                text_clean = re.sub(r'^\d+\s*', '', text)
-                data["headlines"].append({
-                    "title": text_clean.strip(),
-                    "url": href
-                })
-
-        # 4. 抓取 Risk Assessment 风险影响与规避
-        risk_section = soup.find(id="risk-assessment")
-        if risk_section:
-            for row in risk_section.find_all(class_=lambda x: x and "risk-row" in x):
-                badge = row.find(class_="risk-badge")
-                impact = badge.get_text(strip=True) if badge else ""
-                
-                like = row.find(class_="risk-likelihood")
-                likelihood = like.get_text(strip=True) if like else ""
-                
-                title_elem = row.find(["h3", "h4"])
-                title = title_elem.get_text(strip=True) if title_elem else "未知风险"
-                
-                mitigation = ""
-                text_content = row.get_text(" ", strip=True)
-                # 支持中文 "对策" 或 "Mitigation:"
-                if "对策" in text_content or "mitigation:" in text_content.lower():
-                    parts = re.split(r'对策[：:]|Mitigation:', text_content, flags=re.IGNORECASE)
-                    mitigation = parts[-1].split("来源")[0].split("Sources:")[0].strip()
-                    
+            # 亮点总结
+            data["highlights"] = exec_summary.get("key_highlights", [])
+            
+            # 风险评估
+            for risk in analysis.get("risk_assessment", []):
                 data["risks"].append({
-                    "title": title,
-                    "impact": impact,
-                    "likelihood": likelihood,
-                    "mitigation": mitigation
+                    "title": risk.get("risk_factor", "未知风险"),
+                    "impact": risk.get("impact", "Medium"),
+                    "likelihood": risk.get("likelihood", "Medium"),
+                    "mitigation": risk.get("mitigation", "")
                 })
-
-        # 5. 抓取 Strategic Recommendations (投资机会与防御策略)
-        rec_section = soup.find(id="recommendations")
-        if rec_section:
-            # Opportunities
-            for card in rec_section.find_all(class_=lambda x: x and "rec-opportunity" in x):
-                title = card.find(["h3", "h4"])
-                title_text = title.get_text(strip=True) if title else ""
-                timeframe_elem = card.find(class_="timeframe-badge")
-                timeframe = timeframe_elem.get_text(strip=True) if timeframe_elem else ""
                 
-                desc_text = card.get_text(" ", strip=True)
-                desc_text = desc_text.replace(title_text, "").replace(timeframe, "").strip()
-                desc_text = " ".join(desc_text.split()).split("来源")[0].split("Sources:")[0].strip()
-                
+            # 投资建议
+            strat = analysis.get("strategic_recommendations", {})
+            for opp in strat.get("opportunities", []):
                 data["opportunities"].append({
-                    "title": title_text,
-                    "timeframe": timeframe,
-                    "description": desc_text
+                    "title": opp.get("recommendation", ""),
+                    "timeframe": opp.get("timeframe", ""),
+                    "description": opp.get("rationale", "")
+                })
+            for def_move in strat.get("defensive_moves", []):
+                data["defensive"].append({
+                    "title": def_move.get("recommendation", ""),
+                    "timeframe": def_move.get("timeframe", ""),
+                    "description": def_move.get("rationale", "")
                 })
                 
-            # Defensive
-            for card in rec_section.find_all(class_=lambda x: x and "rec-defensive" in x):
-                title = card.find(["h3", "h4"])
-                title_text = title.get_text(strip=True) if title else ""
-                timeframe_elem = card.find(class_="timeframe-badge")
-                timeframe = timeframe_elem.get_text(strip=True) if timeframe_elem else ""
-                
-                desc_text = card.get_text(" ", strip=True)
-                desc_text = desc_text.replace(title_text, "").replace(timeframe, "").strip()
-                desc_text = " ".join(desc_text.split()).split("来源")[0].split("Sources:")[0].strip()
-                
-                data["defensive"].append({
-                    "title": title_text,
-                    "timeframe": timeframe,
-                    "description": desc_text
+        # 2. 获取实时头条新闻 (headlines.json)
+        res_headlines = subprocess.run(
+            ['curl', '-s', '-L', '-A', 'Mozilla/5.0', 'https://www.waneye.com/api/v1/cn/headlines.json'],
+            capture_output=True, text=True, timeout=12
+        )
+        if res_headlines.returncode == 0 and res_headlines.stdout:
+            hl_data = json.loads(res_headlines.stdout)
+            for hl in hl_data.get("headlines", []):
+                data["headlines"].append({
+                    "title": hl.get("headline", ""),
+                    "url": hl.get("url", "")
                 })
 
-        print(f"  ✓ Waneye fetched successfully (Score: {data['score']}, Headlines: {len(data['headlines'])}, Risks: {len(data['risks'])})")
+        print(f"  ✓ Waneye fetched successfully via API (Score: {data['score']}, Headlines: {len(data['headlines'])}, Risks: {len(data['risks'])})")
     except Exception as e:
-        print(f"  ⚠️ Fetching waneye.com/cn/ failed: {e}")
+        print(f"  ⚠️ Fetching waneye API failed: {e}")
     return data
 
 def calculate_sentiment_score(title_text):

@@ -107,6 +107,48 @@ export default function SectorTrendChart({ trends, lang }) {
       </div>
 
       <div className="trend-container">
+        {/* Toggle Controls */}
+        <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.8rem', flexWrap: 'wrap', padding: '0 0.5rem' }}>
+          <button
+            onClick={() => {
+              const next = {};
+              series.forEach(s => next[s.name] = true);
+              setActiveSeries(next);
+            }}
+            style={{
+              background: 'var(--bg-hover)',
+              border: '1px solid var(--border)',
+              borderRadius: '6px',
+              padding: '4px 10px',
+              fontSize: '0.72rem',
+              color: 'var(--text-1)',
+              cursor: 'pointer',
+              transition: 'all 0.2s'
+            }}
+          >
+            {lang === 'zh' ? '全选' : 'Select All'}
+          </button>
+          <button
+            onClick={() => {
+              const next = {};
+              series.forEach(s => next[s.name] = false);
+              setActiveSeries(next);
+            }}
+            style={{
+              background: 'var(--bg-hover)',
+              border: '1px solid var(--border)',
+              borderRadius: '6px',
+              padding: '4px 10px',
+              fontSize: '0.72rem',
+              color: 'var(--text-2)',
+              cursor: 'pointer',
+              transition: 'all 0.2s'
+            }}
+          >
+            {lang === 'zh' ? '全清' : 'Deselect All'}
+          </button>
+        </div>
+
         {/* Legends Toggles */}
         <div className="trend-legends">
           {series.map(s => {

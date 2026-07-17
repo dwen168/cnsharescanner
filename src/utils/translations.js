@@ -1,6 +1,6 @@
 export const TRANSLATIONS = {
   zh: {
-    title: "ASX 短线专家终端",
+    title: "A股短线专家终端",
     sub: "板块热度 · 突破雷达 · AI异动点评",
     loading: "正在加载市场分析数据…",
     errorTitle: "未找到数据，请先运行 Python 分析引擎：",
@@ -88,7 +88,7 @@ export const TRANSLATIONS = {
     viewBacktest: "回测看板",
     viewLiveAnalyzer: "实时探针",
     liveAnalyzerTitle: "实时量化多维度诊断探针 (Live Analyzer)",
-    liveAnalyzerDesc: "输入任意股票代码（例如 TLS.AX，BHP.AX 或 AAPL），结合大盘表现、板块热度与技术指标进行秒级量化扫描。",
+    liveAnalyzerDesc: "输入任意股票代码（例如 600519.SS，002594.SZ 或 300750.SZ），结合大盘表现、板块热度与技术指标进行秒级量化扫描。",
     noBacktestData: "暂无回测数据，请先配置并运行本地回测引擎。",
     themeLight: "☀️ 明亮",
     themeDark: "🌙 暗黑",
@@ -166,7 +166,7 @@ export const TRANSLATIONS = {
     attrTimingByZone: "择时溢价（按信号区间）"
   },
   en: {
-    title: "ASX Trader Expert Terminal",
+    title: "CN Share Trader Expert Terminal",
     sub: "Sector Heat · Radar · AI Insights",
     loading: "Loading market analysis data...",
     errorTitle: "No data found. Please run Python analysis engine first:",
@@ -254,7 +254,7 @@ export const TRANSLATIONS = {
     viewBacktest: "Backtest Panel",
     viewLiveAnalyzer: "Live Analyzer",
     liveAnalyzerTitle: "Real-time Quant Diagnostic Probe (Live Analyzer)",
-    liveAnalyzerDesc: "Enter any stock code (e.g. TLS.AX, BHP.AX, or AAPL) to run live multi-dimensional analysis with index and sector constraints in seconds.",
+    liveAnalyzerDesc: "Enter any A-share stock code (e.g. 600519.SS, 002594.SZ, or 300750.SZ) to run live multi-dimensional analysis with index and sector constraints in seconds。",
     noBacktestData: "No backtest data found. Please run the backtesting engine first.",
     themeLight: "☀️ Light",
     themeDark: "🌙 Dark",

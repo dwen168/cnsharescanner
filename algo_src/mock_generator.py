@@ -9,9 +9,9 @@ def generate_mock_data(warnings_list, trading_state="active"):
     print("  ⚠️ 触发保底模拟数据生成器 (Mock Mode)...")
     
     macro_data = {
-        "yield_trend": -0.18, 
-        "aud_trend": 1.45,    
-        "summary": "澳洲10年期国债收益率微降，同时澳元表现强势，利好大宗商品及估值端科技成长板块。"
+        "yield_trend": -0.05, 
+        "aud_trend": 0.01,    
+        "summary": "十年期国债收益率窄幅震荡，人民币汇率保持稳定，宏观资金面整体充裕，对A股市场估值中性偏利好。"
     }
 
     # Mock Headlines from Waneye
@@ -387,7 +387,7 @@ def generate_mock_data(warnings_list, trading_state="active"):
         daily_ret = random.uniform(-0.008, 0.01)
         market_vals.append(round(market_vals[-1] * (1.0 + daily_ret), 2))
     trends["series"].append({
-        "name": "ASX All Ordinaries",
+        "name": "沪深300 (大盘基准)",
         "data": market_vals,
         "is_benchmark": True
     })

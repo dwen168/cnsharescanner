@@ -6,6 +6,27 @@ import { analyzeRiskControl } from '../utils/riskControlAnalyzer';
 
 export default function LiveAnalyzer({ globalData, lang, theme }) {
   const t = getT(lang);
+  
+  const getSectorComment = (symbolCode, language) => {
+    if (!globalData || !globalData.sectors || !symbolCode) return '';
+    const cleanCode = symbolCode.split('.')[0].trim();
+    const sector = globalData.sectors.find(sec => 
+      sec.stocks && sec.stocks.some(s => s.symbol === cleanCode)
+    );
+    if (!sector) return '';
+
+    const heatScore = sector.heat_score !== undefined ? sector.heat_score : '--';
+    const signal = sector.signal || (language === 'zh' ? '未知' : 'Unknown');
+    const avgChg = sector.avg_chg !== undefined ? sector.avg_chg : '--';
+    const avgVolRatio = sector.avg_vol_ratio !== undefined ? sector.avg_vol_ratio : '--';
+
+    if (language === 'zh') {
+      return `\n\n【板块诊断】该股属于「${sector.name}」板块。当前板块整体热度评分为 ${heatScore}，主力资金信号呈「${signal}」，板块日均涨跌幅为 ${avgChg}%，日均量比为 ${avgVolRatio}。在宏观舆情中，该板块受关注度较${heatScore >= 60 ? '高' : '温和'}。`;
+    } else {
+      return `\n\n[Sector Diagnosis] This stock belongs to the "${sector.name}" sector. The overall sector heat score is ${heatScore}, with main capital flow signaling "${signal}". Average change is ${avgChg}%, and average volume ratio is ${avgVolRatio}.`;
+    }
+  };
+
   const [symbol, setSymbol] = useState('600519.SS');
   const [sectorName, setSectorName] = useState('Auto');
   const [manualSentiment, setManualSentiment] = useState(0.0);
@@ -1251,7 +1272,7 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                 type="text"
                 value={symbol}
                 onChange={(e) => setSymbol(e.target.value)}
-                placeholder="e.g. TLS.AX or AAPL"
+                placeholder="e.g. 600519.SS or 002594.SZ"
                 style={{
                   background: 'var(--bg-hover)',
                   border: '1px solid var(--border)',
@@ -1757,7 +1778,7 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                 }}>
                   <div>
                     <span style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-1)', marginRight: '0.5rem' }}>
-                      {result.symbol}
+                      {result.symbol} {STOCK_NAME_MAP[result.symbol.split('.')[0]] ? `(${STOCK_NAME_MAP[result.symbol.split('.')[0]]})` : ''}
                     </span>
                     <span style={{ fontSize: '0.78rem', color: 'var(--text-3)' }}>
                       Wyckoff Analysis
@@ -2009,8 +2030,10 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                   <h4 style={{ margin: '0 0 0.6rem 0', display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--purple, #a855f7)', fontSize: '0.92rem' }}>
                     <span>🔮</span> {lang === 'zh' ? 'AI Wyckoff 智能诊断点评' : 'AI Wyckoff Technical Analysis'}
                   </h4>
-                  <p style={{ margin: 0, fontSize: '0.84rem', lineHeight: '1.6', color: 'var(--text-1)' }}>
-                    {lang === 'zh' ? result.wyckoff_insight_zh : result.wyckoff_insight_en}
+                  <p style={{ margin: 0, fontSize: '0.84rem', lineHeight: '1.6', color: 'var(--text-1)', whiteSpace: 'pre-wrap' }}>
+                    {lang === 'zh' 
+                      ? result.wyckoff_insight_zh + getSectorComment(result.symbol, 'zh') 
+                      : result.wyckoff_insight_en + getSectorComment(result.symbol, 'en')}
                   </p>
                 </div>
 
@@ -2707,7 +2730,7 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                 }}>
                   <div>
                     <span style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-1)', marginRight: '0.5rem' }}>
-                      {result.symbol}
+                      {result.symbol} {STOCK_NAME_MAP[result.symbol.split('.')[0]] ? `(${STOCK_NAME_MAP[result.symbol.split('.')[0]]})` : ''}
                     </span>
                     <span style={{ fontSize: '0.78rem', color: 'var(--text-3)' }}>
                       {result.sector && `[${result.sector}]`}

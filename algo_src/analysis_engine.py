@@ -8,9 +8,9 @@ load_dotenv()
 # =========================================================
 # 清除沙盒环境中可能阻断外网的局部代理环境变量，确保直连拉取真实数据
 # =========================================================
-for key in ["http_proxy", "https_proxy", "HTTP_PROXY", "HTTPS_PROXY"]:
-    if key in os.environ:
-        os.environ.pop(key)
+# for key in ["http_proxy", "https_proxy", "HTTP_PROXY", "HTTPS_PROXY"]:
+#     if key in os.environ:
+#         os.environ.pop(key)
 
 # =========================================================
 # 手动控制阀门：如果设为 True，强制禁止交易信号下发
