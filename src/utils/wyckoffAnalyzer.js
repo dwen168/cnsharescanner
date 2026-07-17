@@ -597,13 +597,32 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
 
       // Event G: SOS
       // Fix #5: Add cooldown dedup + phase-appropriateness check
-      // SOS should only fire in accumulation-like conditions, not during clear distribution
+      // SOS should only fire in accumulation-like conditions, not during clear distribution.
+      // Fix #SOS-1: Relax isBearishContext when the breakout itself is strong enough to be
+      //   self-confirming (close already above MA20 OR very high volume).
+      // Fix #SOS-2: Adaptive resistance lookback — after a sharp drop (recent 5-bar range > 7%),
+      //   shrink the lookback from 20 to 10 bars so that SOS can fire against the post-drop
+      //   resistance rather than requiring the stock to recover all the way back to pre-drop highs.
+      //   This captures the MSB pattern: big drop on June 26 → strong rally afterwards.
       if (i > 25 && i - lastSOSIndex >= SOS_SOW_COOLDOWN) {
-        const prevHighs = dfHighs.slice(i - 20, i);
+        // Adaptive lookback: detect sharp recent drops
+        const recentHigh5 = Math.max(...dfHighs.slice(Math.max(0, i - 5), i));
+        const recentLow5 = Math.min(...dfLows.slice(Math.max(0, i - 5), i));
+        const recentDropPct = recentHigh5 > 0 ? (recentHigh5 - recentLow5) / recentHigh5 : 0;
+        const sosLookback = recentDropPct > 0.07 ? 10 : 20; // shrink to 10 if sharp drop in last 5 days
+        const prevHighs = dfHighs.slice(Math.max(0, i - sosLookback), i);
         const localResistance = Math.max(...prevHighs);
-        // Phase-appropriateness: SOS should NOT fire when MAs show clear bearish alignment
-        const isBearishContext = ma20[i] !== null && ma60[i] !== null && ma20[i] < ma60[i] && close < ma20[i];
+        // Bearish context: MAs in clear bearish alignment AND price hasn't recovered above MA20
+        // Exception: override if close is already back above MA20 (early recovery),
+        // or if the volume is climactic (force of buying overrides MA alignment)
+        const closeAboveMA20 = ma20[i] !== null && close > ma20[i];
+        const isClimaticRally = volRatio > climaxVolThresh; // 2x+ volume = institutional buying
+        const isBearishContext = ma20[i] !== null && ma60[i] !== null &&
+          ma20[i] < ma60[i] && close < ma20[i] &&
+          !closeAboveMA20 && !isClimaticRally;
         if (close > localResistance && volRatio > breakoutVolThresh && close > open && !isBearishContext) {
+          // Slightly lower confidence when using the shorter (post-drop) lookback
+          const sosConf = sosLookback === 10 ? 0.72 : 0.80;
           events.push({
             index: i,
             event: 'SOS',
@@ -611,21 +630,110 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
             label_en: 'Sign of Strength (SOS)',
             date: dateStr,
             price: close,
-            confidence: 0.8
+            confidence: sosConf
           });
           lastSOSIndex = i;
         }
       }
 
-      // Event H: SOW
+      // Event H: SOW (Sign of Weakness)
       // Fix #5: Add cooldown dedup + phase-appropriateness check
-      // SOW should only fire in distribution-like conditions, not during clear accumulation
+      // Fix #SOW: Use structural support reference instead of rolling 20-day min.
+      // The old logic (close < min of last 20 lows) is nearly impossible to trigger in a
+      // steady/grinding downtrend because the rolling min keeps updating every day.
+      // We now use two complementary triggers:
+      //   Trigger A: Impulsive breakdown — close breaks below a structural support level with elevated volume
+      //   Trigger B: Persistent weakness — price closes below MA60 on an above-average volume down day
+      //              while MAs are in bearish alignment, capturing grinding/slow downtrends
       if (i > 25 && i - lastSOWIndex >= SOS_SOW_COOLDOWN) {
-        const prevLows = dfLows.slice(i - 20, i);
-        const localSupport = Math.min(...prevLows);
         // Phase-appropriateness: SOW should NOT fire when MAs show clear bullish alignment
-        const isBullishContext = ma20[i] !== null && ma60[i] !== null && ma20[i] > ma60[i] && close > ma20[i];
-        if (close < localSupport && volRatio > breakoutVolThresh && close < open && !isBullishContext) {
+        // (MA20 > MA60 AND price above MA20 — both conditions must hold)
+        const isBullishContext = ma20[i] !== null && ma60[i] !== null &&
+          ma20[i] > ma60[i] && close > ma20[i];
+
+        // --- Trigger A: Impulsive structural breakdown ---
+        // Use TR support if available, otherwise fall back to pivot lows in the last 40 bars
+        let structuralSupport = null;
+        if (trSupport !== null) {
+          structuralSupport = trSupport;
+        } else {
+          // Find the lowest pivot low in the last 40 bars as a structural reference
+          let pivotMin = Infinity;
+          for (let p = 0; p < allPivots.pivotLows.length; p++) {
+            const pl = allPivots.pivotLows[p];
+            if (pl.index >= i - 40 && pl.index < i && pl.price < pivotMin) {
+              pivotMin = pl.price;
+            }
+          }
+          // Fall back to 30-day low if no pivot found
+          structuralSupport = pivotMin !== Infinity ? pivotMin : Math.min(...dfLows.slice(Math.max(0, i - 30), i));
+        }
+
+        const isImpulsiveBreakdown = close < structuralSupport &&
+          volRatio > breakoutVolThresh &&
+          close < open &&
+          !isBullishContext;
+
+        // --- Trigger B: Persistent / grinding weakness ---
+        // Fires when: MAs are in bearish alignment (MA20 < MA60), price closes below MA60,
+        // it's a down day, and volume is at least slightly above average.
+        // This captures slow, steady downtrends that don't produce impulsive breakdown bars.
+        //
+        // IMPORTANT GUARDS to prevent false positives on bottom-consolidating stocks:
+        // 1. Price must NOT be in the depressed yearly range (< 45%). A stock at the bottom
+        //    naturally has MA20 < MA60 and price < MA60 during accumulation — these are
+        //    identical to markdown conditions. Price position is the key differentiator.
+        // 2. No recent SC or Spring events (which indicate an accumulation context, not markdown).
+        const isBearishMAAlignment = ma20[i] !== null && ma60[i] !== null && ma20[i] < ma60[i];
+        const isDepressedPricePos = climaxPricePos < 0.45; // bottom 45% of yearly range
+        const hasRecentAccumEvent = events.some(e =>
+          (e.event === 'SC' || e.event === 'Spring' || e.event === 'Shakeout') && i - e.index <= 60
+        );
+        // Sustained downtrend confirmation: require at least 5 of the last 7 closes to be
+        // below MA60. This prevents a single shakeout/dip day (MSB 2026-6-26 pattern) from
+        // triggering a false SOW before a major rally. A true grinding downtrend will always
+        // have price persistently below MA60, not just for one or two bars.
+        let closesBelowMA60 = 0;
+        for (let k = i - 1; k >= Math.max(0, i - 7); k--) {
+          if (ma60[k] !== null && dfCloses[k] < ma60[k]) closesBelowMA60++;
+        }
+        const isInSustainedDowntrend = closesBelowMA60 >= 5;
+        const isPersistentWeakness = isBearishMAAlignment &&
+          close < (ma60[i] || close) &&
+          close < open &&
+          volRatio > standardVolThresh * 0.85 &&  // lower bar for grinding declines
+          !isBullishContext &&
+          !isDepressedPricePos &&         // must NOT be in the bottom 45% of yearly range
+          !hasRecentAccumEvent &&          // must NOT be in an active accumulation structure
+          isInSustainedDowntrend;          // price must have been below MA60 for 5+ of last 7 bars
+
+        // --- Trigger C: TR Range Quiet Breakdown (横盘区间首次破位) ---
+        // Captures the WBT.AX scenario: stock in consolidation breaks below TR support for
+        // the first time, potentially on moderate or LOW volume.
+        // In Wyckoff, a quiet breakdown is MORE bearish — it signals zero buyer interest.
+        // Key guard: price must have been ABOVE support recently (≥3 of last 5 bars),
+        // confirming this is a FIRST break, not continuation of an existing downtrend.
+        let wasAboveSupportRecently = false;
+        if (structuralSupport !== null) {
+          let aboveCount = 0;
+          for (let k = 1; k <= 5; k++) {
+            const ki = i - k;
+            if (ki >= 0 && dfCloses[ki] > structuralSupport) aboveCount++;
+          }
+          wasAboveSupportRecently = aboveCount >= 3;
+        }
+        const isTRBreakdown = structuralSupport !== null &&
+          close < structuralSupport &&
+          close < open &&
+          wasAboveSupportRecently &&     // first-time break (was above support recently)
+          !isInSustainedDowntrend &&     // not already in an established downtrend (Trigger B covers that)
+          !isDepressedPricePos &&        // must NOT be in the bottom 45% — at the bottom, dips below
+                                         // support are more likely Springs/ST tests, not true breakdowns
+          !hasRecentAccumEvent &&        // must NOT be in an active accumulation context
+          !isBullishContext;
+
+        if (isImpulsiveBreakdown || isPersistentWeakness || isTRBreakdown) {
+          const sowConf = isImpulsiveBreakdown ? 0.85 : isTRBreakdown ? 0.78 : 0.70;
           events.push({
             index: i,
             event: 'SOW',
@@ -633,13 +741,75 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
             label_en: 'Sign of Weakness (SOW)',
             date: dateStr,
             price: close,
-            confidence: 0.8
+            confidence: sowConf
           });
           lastSOWIndex = i;
         }
       }
 
-      // Event I: UTAD Failure Breakout (JAC / UTAD Invalidation / 空头踩踏)
+      // Event H2: Shakeout (洗盘/假突破反转)
+      // Detects the classic Wyckoff Shakeout: price briefly dips below an established
+      // TR support level during CONSOLIDATION, then immediately snaps back above it.
+      //
+      // THREE strict requirements to match the true Wyckoff definition:
+      // 1. PRIOR CONSOLIDATION: The stock must have been trading in a narrow range
+      //    (max-min of last 15 bars < 3x ATR) BEFORE the dip. A Shakeout cannot occur
+      //    during an active downtrend — it can only occur at the end of an accumulation range.
+      // 2. BRIEF DIP: Look back only 3 bars (not 5). A true Shakeout dip resolves in 1-3 days.
+      //    A 5-day "dip" that recovers is more likely a bounce from a continued downtrend.
+      // 3. STRUCTURAL SUPPORT REFERENCE: Use trSupport (established TR boundary) as the
+      //    dip reference. If no TR is established, fall back to the 20-day low. Using MA60
+      //    alone is too vague and can trigger on normal MA pullbacks.
+      if (i > 30) {
+        const noRecentShakeout = !events.some(e => e.event === 'Shakeout' && i - e.index <= 10);
+        const noRecentConfirmedSOW = !events.some(e => e.event === 'SOW' && i - e.index <= 3);
+        if (noRecentShakeout && noRecentConfirmedSOW) {
+          // Requirement 1: Prior consolidation — last 15 bars must be in a narrow range
+          const priorHighs = dfHighs.slice(Math.max(0, i - 15), i);
+          const priorLows = dfLows.slice(Math.max(0, i - 15), i);
+          const priorRange = Math.max(...priorHighs) - Math.min(...priorLows);
+          const isConsolidating = priorRange < 3.0 * curAtr; // tight range = TR exists
+
+          // Requirement 3: Structural support reference (prefer trSupport over MA60)
+          const shakeoutRef = trSupport !== null
+            ? trSupport
+            : Math.min(...dfLows.slice(Math.max(0, i - 20), i)); // 20-day low as fallback
+
+          // Requirement 2: Look back only 3 bars for a brief structural dip
+          let dipFound = false;
+          let dipLow = close;
+          for (let k = 1; k <= 3; k++) {
+            const ki = i - k;
+            if (ki < 0) break;
+            if (dfLows[ki] < shakeoutRef) {
+              dipFound = true;
+              if (dfLows[ki] < dipLow) dipLow = dfLows[ki];
+            }
+          }
+          // Recovery: price has snapped back above the reference level on an up day + decent volume
+          const recoveredAboveRef = close > shakeoutRef;
+          const isStrongRecovery = close > open && volRatio > standardVolThresh;
+          // Recovery must be meaningful: close at least 1.5% above the dip low
+          const recoveryPct = dipLow > 0 ? (close - dipLow) / dipLow : 0;
+          const isMeaningfulRecovery = recoveryPct > 0.015;
+          if (isConsolidating && dipFound && recoveredAboveRef && isStrongRecovery && isMeaningfulRecovery) {
+            events.push({
+              index: i,
+              event: 'Shakeout',
+              label_zh: '洗盘反转 (Shakeout)',
+              label_en: 'Shakeout Recovery (False Breakdown)',
+              date: dateStr,
+              price: close,
+              confidence: Math.min(0.90, 0.72 + recoveryPct * 5)
+            });
+            // A confirmed shakeout establishes the dip low as a structural support level
+            supportLevels.push({ price: dipLow, strength: 3, index: i });
+            if (!trSupport || dipLow < trSupport) trSupport = dipLow;
+          }
+        }
+      }
+
+
       if (lastUTAD && !lastUTADInvalidated && i - lastUTAD.index <= 20) {
         if (close > lastUTAD.price) {
           events.push({
@@ -884,7 +1054,7 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
     const recentEvents = events.filter(e => e.index >= N - 40);
     const hasRecentSOS = recentEvents.some(e => e.event === 'SOS');
     const hasRecentSOW = recentEvents.some(e => e.event === 'SOW');
-    const hasRecentSpring = recentEvents.some(e => e.event === 'Spring');
+    const hasRecentSpring = recentEvents.some(e => e.event === 'Spring' || e.event === 'Shakeout');
     const hasRecentUTAD = recentEvents.some(e => e.event === 'UTAD');
     const hasRecentSC = recentEvents.some(e => e.event === 'SC');
     const hasRecentBC = recentEvents.some(e => e.event === 'BC');
@@ -927,12 +1097,25 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
     const isDowntrend = currentMA60 !== null && currentMA120 !== null &&
       currentMA60 < currentMA120 && currentPrice < currentMA60 && ma120Slope < 0.002;
 
+    // Real-time breakdown detection: MAs always lag, so when a stock breaks below its
+    // finalSupport on the very day of breakdown, the MA-based isDowntrend won't fire yet.
+    // If there's a fresh SOW (within 3 bars) AND today's close is below finalSupport by
+    // at least 0.5 ATR, classify as markdown immediately regardless of MA alignment.
+    const latestAtrForPhase = atr[N - 1] || (currentPrice * 0.02);
+    const hasFreshSOW = events.some(e => e.event === 'SOW' && e.index >= N - 3);
+    const isRealtimeBreakdown = hasFreshSOW &&
+      finalSupport !== null &&
+      currentPrice < finalSupport - 0.5 * latestAtrForPhase &&
+      currentPricePosition >= 0.40;  // must NOT be in the bottom 40% of yearly range:
+                                      // at the bottom, a dip below support is more likely
+                                      // accumulation/testing (Spring/ST), not a true markdown
+
     if ((isUptrend || hasConfirmedBreakout) && !hasFailedSOWRecovery) {
       phase = 'markup';
       confidence = hasConfirmedBreakout ? 0.8 : 0.7;
       if (hasRecentSOS) confidence += 0.15;
       if (evrStatus === 'bullish_consolidation_no_supply') confidence += 0.15;
-    } else if (isDowntrend || hasFailedSOWRecovery) {
+    } else if (isDowntrend || hasFailedSOWRecovery || isRealtimeBreakdown) {
       phase = 'markdown';
       confidence = 0.75;
       if (hasRecentSOW) confidence += 0.15;
