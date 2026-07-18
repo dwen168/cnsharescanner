@@ -793,8 +793,8 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
             const y = getY(d.close);
             
             return d.events.map((evt, eIdx) => {
-              const isBuy = ['Spring', 'SOS', 'BU', 'Flag', 'UTAD_Failure'].includes(evt);
-              const isSell = ['UTAD', 'SOW'].includes(evt);
+              const isBuy = ['Spring', 'Spring_Test', 'LPS', 'SOS', 'BU', 'Flag', 'UTAD_Failure', 'PS'].includes(evt);
+              const isSell = ['UTAD', 'SOW', 'PSY', 'LPSY'].includes(evt);
               const isStructural = ['SC', 'BC', 'AR', 'AR_Reaction', 'ST', 'ST_Dist'].includes(evt);
 
               if (isBuy && !showBuySignals) return null;
@@ -1805,6 +1805,21 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                     }}>
                       {lang === 'zh' ? result.phase_label_zh : result.phase_label_en}
                     </span>
+                    {result.wyckoff_subphase && (
+                      <span style={{
+                        background: 'rgba(100, 181, 246, 0.12)',
+                        color: 'var(--cyan, #64b5f6)',
+                        border: '1px solid rgba(100, 181, 246, 0.35)',
+                        padding: '3px 9px',
+                        borderRadius: '4px',
+                        fontSize: '0.75rem',
+                        fontWeight: 700,
+                        marginLeft: '6px',
+                        letterSpacing: '0.03em'
+                      }}>
+                        {lang === 'zh' ? result.wyckoff_subphase_label_zh : result.wyckoff_subphase_label_en}
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -2328,7 +2343,7 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                         const startIndex = Math.max(0, result.chart_history.length - zoomCount);
 
                         return result.detected_events.map((e, idx) => {
-                          const isBullEvent = ['SC', 'AR', 'ST', 'Spring', 'SOS', 'BU', 'UTAD_Failure', 'Flag'].includes(e.event);
+                          const isBullEvent = ['SC', 'AR', 'ST', 'Spring', 'Spring_Test', 'LPS', 'SOS', 'BU', 'UTAD_Failure', 'Flag', 'PS'].includes(e.event);
                           const isOffChart = e.index < startIndex;
                           return (
                             <div key={idx} style={{
@@ -2382,6 +2397,11 @@ export default function LiveAnalyzer({ globalData, lang, theme }) {
                                   {e.event === 'BU' && (lang === 'zh' ? '（无量回踩：突破阻力转支撑确认，买入信号）' : ' (No-volume backup, confirms breakout support flip, buy signal)')}
                                   {e.event === 'UTAD_Failure' && (lang === 'zh' ? '（空头踩踏突破：假突破高点被收复，触发空头踩踏）' : ' (UTAD failure breakout, triggers short squeeze, strong buy)')}
                                   {e.event === 'Flag' && (lang === 'zh' ? '（黄金旗形突破：主升浪中继悬停整理突破，买入信号）' : ' (Bull flag breakout, trend continuation buy signal)')}
+                                  {e.event === 'PS' && (lang === 'zh' ? '（初步支撑：聪明钱开始承接抛盘，下跌末期信号）' : ' (Preliminary Support: smart money absorbing supply, early bottom signal)')}
+                                  {e.event === 'PSY' && (lang === 'zh' ? '（初步阻力：聪明钱开始派发，上涨末期信号）' : ' (Preliminary Supply: smart money distributing, early top signal)')}
+                                  {e.event === 'Spring_Test' && (lang === 'zh' ? '（弹簧测试：极低量回踩弹簧低点，无供应确认，买入信号）' : ' (Spring Test: low-volume retest of Spring low, no supply confirmation, buy signal)')}
+                                  {e.event === 'LPS' && (lang === 'zh' ? '（支撑最后点：弹簧后更高低点，量能萎缩，吸筹完成信号）' : ' (Last Point of Support: higher low after Spring on low volume, accumulation complete)')}
+                                  {e.event === 'LPSY' && (lang === 'zh' ? '（供应最后点：SOW后弱势反弹，量能萎缩，派发完成信号）' : ' (Last Point of Supply: weak rally after SOW on low volume, distribution complete)')}
                                 </span>
                               </span>
                             </div>

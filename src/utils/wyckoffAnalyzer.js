@@ -314,6 +314,23 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
     let lastBUIndex = -Infinity;
     let lastFlagIndex = -Infinity;
 
+    // PS / PSY cooldown tracking
+    let lastPSIndex = -Infinity;
+    let lastPSYIndex = -Infinity;
+    const PS_PSY_COOLDOWN = 10; // minimum bars between PS/PSY signals
+
+    // Spring_Test: tracks index of the most recent Spring event
+    let lastSpringEventIndex = -Infinity;
+
+    // LPSY: tracks the most recent SOW that can anchor an LPSY
+    let lastSOWForLPSY = null; // { index, price }
+    const LPSY_COOLDOWN = 10; // minimum bars between LPSY signals
+    let lastLPSYIndex = -Infinity;
+
+    // LPS cooldown tracking
+    const LPS_COOLDOWN = 10;
+    let lastLPSIndex = -Infinity;
+
     // Expiry distance for SC/BC anchors (Fix #12)
     const CLIMAX_EXPIRY_BARS = 60;
 
@@ -349,16 +366,96 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
       // Price position in yearly range for structural validation
       const climaxPricePos = (close - yearLow) / yearRange;
 
+      // Event PS: Preliminary Support
+      // The first attempt by buyers to slow the downtrend, BEFORE the Selling Climax.
+      // Requirements:
+      //   - Stock is in a downtrend (MA20 < MA60) — prior trend filter
+      //   - Price in the lower 50% of the yearly range
+      //   - No active SC anchor yet (or last SC was > CLIMAX_EXPIRY_BARS ago)
+      //   - Above-average but sub-climax volume (1.5x–2x average)
+      //   - Wider-than-average spread (> 1.0 * ATR)
+      //   - Price closes in upper half of the day's range (buyers stepping in)
+      //   - Cooldown of PS_PSY_COOLDOWN bars
+      if (
+        i - lastPSIndex >= PS_PSY_COOLDOWN &&
+        !lastSC &&  // no active SC anchor
+        climaxPricePos < 0.50 &&   // lower half of the yearly range
+        ma20[i] !== null && ma60[i] !== null && ma20[i] < ma60[i] && // downtrend
+        volRatio > 1.5 * sensFactor && volRatio < climaxVolThresh * 1.1 && // elevated but not climax
+        dailySpread > 1.0 * curAtr && // wider spread than normal
+        lowerTailRatio > 0.35 && // close recovers at least 35% off the low (buyers absorbing)
+        close < ma20[i] // still below MA20 (not a full reversal)
+      ) {
+        events.push({
+          index: i,
+          event: 'PS',
+          label_zh: '初步支撑 (PS)',
+          label_en: 'Preliminary Support (PS)',
+          date: dateStr,
+          price: low,
+          confidence: Math.min(0.80, 0.50 + (volRatio / climaxVolThresh) * 0.15 + lowerTailRatio * 0.10)
+        });
+        lastPSIndex = i;
+        supportLevels.push({ price: low, strength: 1.5, index: i });
+      }
+
       // Event A: Selling Climax (SC)
       // SC must occur in the lower half of the yearly range (pricePos < 0.50)
       // A "selling climax" at the top of a range is nonsensical per Wyckoff theory
-      if (
+      //
+      // TWO PATHS:
+      // Path 1 (Classic): Big down day + huge volume + wide spread + lower-tail recovery (panic + capitulation)
+      // Path 2 (No-tail SC): Big down day + even larger volume + very wide spread, NO tail recovery needed.
+      //   This captures blue-chip stocks like 600519 (Moutai) that drop on institutional liquidation
+      //   without a recovery wick. The Secondary Test (ST) then provides the low-volume confirmation.
+      const isClassicSC = (
         isDownDay &&
         volRatio > climaxVolThresh &&
         dailySpread > 1.5 * sensFactor * curAtr &&
         lowerTailRatio > 0.4 && // close must recover at least 40% off the low
         close < ma20[i] &&
-        climaxPricePos < 0.50   // must be in the lower half of the range
+        climaxPricePos < 0.50
+      );
+      const isNoTailSC = (
+        isDownDay &&
+        volRatio > climaxVolThresh * 1.3 && // require even more volume when no tail
+        dailySpread > 2.0 * sensFactor * curAtr && // require even wider spread when no tail
+        lowerTailRatio <= 0.4 && // specifically the no-tail case
+        close < ma20[i] &&
+        climaxPricePos < 0.45  // stricter: must be in the lower 45% of the range
+      );
+      if (isClassicSC || isNoTailSC) {
+        events.push({
+          index: i,
+          event: 'SC',
+          label_zh: '卖出高潮 (SC)',
+          label_en: 'Selling Climax (SC)',
+          date: dateStr,
+          price: low,
+          confidence: isClassicSC
+            ? Math.min(0.95, 0.5 + (volRatio / 5) * 0.3 + lowerTailRatio * 0.15)
+            : Math.min(0.82, 0.55 + (volRatio / climaxVolThresh) * 0.15) // lower confidence for no-tail SC
+        });
+        lastSC = { index: i, price: low, date: dateStr };
+        supportLevels.push({ price: low, strength: 3, index: i });
+        trSupport = low; // Establish TR bottom
+      }
+
+      // SC Fallback: Post-SOW bottom recognition
+      // When a SOW has been detected and price subsequently makes a NEW 1-year low
+      // with a meaningful intraday recovery (close > open), treat this as a de-facto SC
+      // and establish trSupport. This unlocks AR/ST/Spring/SOS detection for stocks like
+      // Moutai that grind down without a sharp capitulation bar.
+      const recentSOWForSC = events.slice().reverse().find(e =>
+        e.event === 'SOW' && i - e.index <= 120 && i - e.index >= 3
+      );
+      if (
+        !lastSC &&            // no SC yet
+        recentSOWForSC &&     // recent SOW confirms markdown context
+        climaxPricePos < 0.30 && // price is at a truly depressed level (bottom 30%)
+        close > open &&       // recovery: up day at the bottom
+        volRatio > standardVolThresh && // at least some buying volume
+        low <= Math.min(...dfLows.slice(Math.max(0, i - 20), i)) // new 20-day low
       ) {
         events.push({
           index: i,
@@ -367,11 +464,44 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
           label_en: 'Selling Climax (SC)',
           date: dateStr,
           price: low,
-          confidence: Math.min(0.95, 0.5 + (volRatio / 5) * 0.3 + lowerTailRatio * 0.15)
+          confidence: 0.65 // lower confidence: inferred SC, not textbook
         });
         lastSC = { index: i, price: low, date: dateStr };
-        supportLevels.push({ price: low, strength: 3, index: i });
-        trSupport = low; // Establish TR bottom
+        supportLevels.push({ price: low, strength: 2.5, index: i });
+        trSupport = low;
+      }
+
+      // Event PSY: Preliminary Supply
+      // The first attempt by sellers to slow the uptrend, BEFORE the Buying Climax.
+      // Requirements:
+      //   - Stock is in an uptrend (MA20 > MA60) — prior trend filter
+      //   - Price in the upper 50% of the yearly range
+      //   - No active BC anchor yet (or last BC was > CLIMAX_EXPIRY_BARS ago)
+      //   - Above-average but sub-climax volume (1.5x–2x average)
+      //   - Wider-than-average spread (> 1.0 * ATR)
+      //   - Price closes in lower portion of the day's range (sellers pressing)
+      //   - Cooldown of PS_PSY_COOLDOWN bars
+      if (
+        i - lastPSYIndex >= PS_PSY_COOLDOWN &&
+        !lastBC &&  // no active BC anchor
+        climaxPricePos > 0.50 &&   // upper half of the yearly range
+        ma20[i] !== null && ma60[i] !== null && ma20[i] > ma60[i] && // uptrend
+        volRatio > 1.5 * sensFactor && volRatio < climaxVolThresh * 1.1 && // elevated but not climax
+        dailySpread > 1.0 * curAtr && // wider spread than normal
+        upperTailRatio > 0.35 && // close rejected at least 35% from the high (sellers present)
+        close > ma20[i] // still above MA20 (not a full reversal)
+      ) {
+        events.push({
+          index: i,
+          event: 'PSY',
+          label_zh: '初步阻力 (PSY)',
+          label_en: 'Preliminary Supply (PSY)',
+          date: dateStr,
+          price: high,
+          confidence: Math.min(0.80, 0.50 + (volRatio / climaxVolThresh) * 0.15 + upperTailRatio * 0.10)
+        });
+        lastPSYIndex = i;
+        resistanceLevels.push({ price: high, strength: 1.5, index: i });
       }
 
       // Event B: Buying Climax (BC)
@@ -550,6 +680,7 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
                       confidence: Math.min(0.95, 0.75 + (1 - penetrationDepth / maxPenetration) * 0.15)
                     });
                     supportLevels.push({ price: lowestLow, strength: 4, index: i });
+                    lastSpringEventIndex = i; // track for Spring_Test detection
                   }
                 }
               }
@@ -617,12 +748,17 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
         // or if the volume is climactic (force of buying overrides MA alignment)
         const closeAboveMA20 = ma20[i] !== null && close > ma20[i];
         const isClimaticRally = volRatio > climaxVolThresh; // 2x+ volume = institutional buying
+        // Exception for depressed-range reversal: if price is in the bottom 35% of yearly range
+        // AND there is a recent SC or SOW anchor in the last 120 bars, allow SOS even in bearish MA context.
+        // This captures re-accumulation after a markdown phase (e.g. Moutai post-bottom reversal).
+        const isDepressedReversal = climaxPricePos < 0.35 &&
+          events.some(e => (e.event === 'SC' || e.event === 'SOW') && i - e.index <= 120);
         const isBearishContext = ma20[i] !== null && ma60[i] !== null &&
           ma20[i] < ma60[i] && close < ma20[i] &&
-          !closeAboveMA20 && !isClimaticRally;
+          !closeAboveMA20 && !isClimaticRally && !isDepressedReversal;
         if (close > localResistance && volRatio > breakoutVolThresh && close > open && !isBearishContext) {
           // Slightly lower confidence when using the shorter (post-drop) lookback
-          const sosConf = sosLookback === 10 ? 0.72 : 0.80;
+          const sosConf = sosLookback === 10 ? 0.72 : (isDepressedReversal ? 0.68 : 0.80);
           events.push({
             index: i,
             event: 'SOS',
@@ -633,6 +769,48 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
             confidence: sosConf
           });
           lastSOSIndex = i;
+        }
+      }
+
+      // Event LPS: Last Point of Support
+      // Phase D/E accumulation event: a higher low after Spring, before/during SOS breakout.
+      // Confirms supply has dried up; price makes a higher low on shrinking volume, then
+      // recovers — the stock is primed for markup.
+      // Requirements:
+      //   - A Spring or Shakeout in the last 60 bars as context
+      //   - This bar's low is HIGHER than the Spring low (or trSupport), forming a higher low
+      //   - Volume is below the 20-day average (supply dried up on the pullback)
+      //   - Close > open or close recovers intraday (buyers present)
+      //   - Cooldown: no LPS within LPS_COOLDOWN bars
+      //   - Must NOT be in the top 65% of yearly range (LPS is an accumulation event)
+      if (i > 30 && i - lastLPSIndex >= LPS_COOLDOWN) {
+        const recentSpring = events.slice().reverse().find(e =>
+          (e.event === 'Spring' || e.event === 'Shakeout') && i - e.index <= 60 && i - e.index >= 3
+        );
+        if (recentSpring && trSupport !== null) {
+          const springLow = recentSpring.price; // spring's marked price (lowestLow)
+          const higherLow = low > springLow;   // current bar's low is above Spring low
+          const isLowVolume = volRatio < 0.85;  // volume drying up = no supply
+          const isBuyerPresent = close >= open || lowerTailRatio > 0.40; // up close or recovery from low
+          const isNotInTopRange = climaxPricePos < 0.65; // accumulation range only
+          const noRecentLPS = !events.some(e => e.event === 'LPS' && i - e.index <= LPS_COOLDOWN);
+          // Price must be pulling back (not making a new multi-day high) — we want a lower close than yesterday
+          // but closing above yesterday would also work if it's a very low volume day
+          const isPullback = close < Math.max(...dfHighs.slice(Math.max(0, i - 5), i));
+
+          if (higherLow && isLowVolume && isBuyerPresent && isNotInTopRange && noRecentLPS && isPullback) {
+            events.push({
+              index: i,
+              event: 'LPS',
+              label_zh: '支撑最后点 (LPS)',
+              label_en: 'Last Point of Support (LPS)',
+              date: dateStr,
+              price: low,
+              confidence: Math.min(0.85, 0.68 + (isLowVolume ? 0.10 : 0) + (isBuyerPresent ? 0.07 : 0))
+            });
+            lastLPSIndex = i;
+            supportLevels.push({ price: low, strength: 2.5, index: i });
+          }
         }
       }
 
@@ -744,6 +922,8 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
             confidence: sowConf
           });
           lastSOWIndex = i;
+          // Track this SOW as an anchor for LPSY detection
+          lastSOWForLPSY = { index: i, price: close };
         }
       }
 
@@ -805,6 +985,52 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
             // A confirmed shakeout establishes the dip low as a structural support level
             supportLevels.push({ price: dipLow, strength: 3, index: i });
             if (!trSupport || dipLow < trSupport) trSupport = dipLow;
+            lastSpringEventIndex = i; // Shakeout acts like a Spring — enable Spring_Test
+          }
+        }
+      }
+
+      // Event Spring_Test: Low-volume test after Spring / Shakeout
+      // Classic Wyckoff: Spring is almost always followed 3–10 bars later by a quiet test
+      // that dips back toward the Spring low on VERY light volume, then recovers.
+      // This is distinct from the general ST (which anchors to SC, not Spring).
+      // Requirements:
+      //   - A Spring or Shakeout within the last 3–15 bars (lastSpringEventIndex)
+      //   - Price dips to within 1.5 * ATR of the Spring low on this bar or within 2 look-back bars
+      //   - Volume is VERY low: < 0.70 of the 20-day average (classic "no supply")
+      //   - Price recovers intraday: close in upper 40% of the day's range
+      //   - No prior Spring_Test within 5 bars
+      if (i > 30 && lastSpringEventIndex > 0) {
+        const barsSinceSpring = i - lastSpringEventIndex;
+        if (barsSinceSpring >= 3 && barsSinceSpring <= 15) {
+          const springEvent = events.slice().reverse().find(e =>
+            (e.event === 'Spring' || e.event === 'Shakeout') && e.index === lastSpringEventIndex
+          );
+          if (springEvent) {
+            const springLow = springEvent.price;
+            const isNearSpringLow = low <= springLow + 1.5 * curAtr;
+            const isVeryLowVolume = volRatio < 0.70; // "no supply" test
+            const recoversIntraday = dailySpread > 0
+              ? (close - low) / dailySpread >= 0.40  // closes in upper 40% of day range
+              : false;
+            const noRecentSpringTest = !events.some(e => e.event === 'Spring_Test' && i - e.index <= 5);
+            const priceStillAboveSpringLow = close > springLow - 0.5 * curAtr; // hasn't broken down below Spring
+
+            if (isNearSpringLow && isVeryLowVolume && recoversIntraday && noRecentSpringTest && priceStillAboveSpringLow) {
+              events.push({
+                index: i,
+                event: 'Spring_Test',
+                label_zh: '弹簧测试 (Test)',
+                label_en: 'Spring Test (No Supply)',
+                date: dateStr,
+                price: low,
+                confidence: Math.min(0.88, 0.72 + (0.70 - volRatio) * 0.5 + recoversIntraday * 0.06)
+              });
+              // Successful Spring_Test refines TR support upward to the test low
+              if (trSupport !== null && low > trSupport) {
+                trSupport = low;
+              }
+            }
           }
         }
       }
@@ -861,6 +1087,63 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
         }
       }
 
+      // Event LPSY: Last Point of Supply
+      // Distribution mirror of LPS/BU. After a SOW breakdown, price attempts a weak rally
+      // back toward the broken TR support (now resistance) and FAILS, on declining volume.
+      //
+      // IMPORTANT DESIGN NOTE:
+      // Classic Wyckoff LPSY occurs at the end of a distribution range (high price area).
+      // However, in MARKDOWN phase (already broken down), weak bounces within the downtrend
+      // also behave as LPSY — supply overwhelms demand on every rally attempt.
+      // We detect both: (a) classic LPSY in elevated price range, (b) markdown-phase rally failures.
+      //
+      // Fixes vs prior version:
+      //   - SOW window extended from 30 → 60 bars (stocks may bottom 2+ months after SOW)
+      //   - lpsyRef fallback to SOW price itself when trSupport is null (no prior SC needed)
+      //   - isElevatedContext removed: markdown rallies at year-low CAN be LPSY
+      //   - barsSinceSOW extended to 60 to capture later rally attempts
+      if (i > 30 && i - lastLPSYIndex >= LPSY_COOLDOWN && lastSOWForLPSY !== null) {
+        const barsSinceSOW = i - lastSOWForLPSY.index;
+        if (barsSinceSOW >= 3 && barsSinceSOW <= 60) { // extended from 30 to 60 bars
+          // The reference level: prefer broken TR support (now resistance), then TR resistance,
+          // then fall back to the SOW close price itself (the price at which supply hit)
+          const lpsyRef = trSupport !== null
+            ? trSupport
+            : (trResistance !== null
+              ? trResistance
+              : lastSOWForLPSY.price); // fallback: SOW close = supply reference level
+          // Rally has occurred: at least one of the last 8 closes was above the SOW price
+          const rallyOccurred = dfCloses.slice(Math.max(0, i - 8), i).some(c => c > lastSOWForLPSY.price);
+          // Price is pressing the reference level from below (rejection zone)
+          // Wider tolerance (2.0 ATR) for markdown-phase rallies that don't reach the old TR
+          const isNearBrokenSupport = close >= lpsyRef - 2.0 * curAtr && close <= lpsyRef + 0.5 * curAtr;
+          // Rejection: upper tail or down close
+          const isRejected = upperTailRatio > 0.30 || close < open;
+          // Low volume on the rally = no real demand (relaxed slightly: 0.90 from 0.80)
+          const isLowVolOnRally = volRatio < 0.90;
+          // Must NOT close above the reference (broken support = resistance now)
+          const doesNotBreakAbove = close < lpsyRef + 0.5 * curAtr;
+          // Context guard: must NOT be in clear bullish context (MA20 > MA60 and close > MA20)
+          const isClearlyBullish = ma20[i] !== null && ma60[i] !== null &&
+            ma20[i] > ma60[i] && close > ma20[i];
+
+          if (rallyOccurred && isNearBrokenSupport && isRejected && isLowVolOnRally && doesNotBreakAbove && !isClearlyBullish) {
+            events.push({
+              index: i,
+              event: 'LPSY',
+              label_zh: '供应最后点 (LPSY)',
+              label_en: 'Last Point of Supply (LPSY)',
+              date: dateStr,
+              price: high,
+              confidence: Math.min(0.85, 0.63 + (isRejected ? 0.08 : 0) + (isLowVolOnRally ? 0.09 : 0) + (climaxPricePos < 0.40 ? 0.05 : 0))
+            });
+            lastLPSYIndex = i;
+            resistanceLevels.push({ price: high, strength: 2.5, index: i });
+          }
+        }
+      }
+
+
       // Event K: Golden Flag Breakout (Flag / 黄金旗形突破)
       if (i > 30 && i - lastFlagIndex >= 8) {
         // We look for a tight consolidation window of size k (where k is between 3 and 8 bars)
@@ -912,6 +1195,117 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
         }
       }
     }
+
+    // 3b. Wyckoff Sub-Phase Labeling (A/B/C/D/E)
+    // Rule-based state machine that walks the sorted events array and assigns the
+    // canonical Wyckoff sub-phase for the CURRENT state of the trading range.
+    // Accumulation: SC/PS -> A, oscillation -> B, Spring/Shakeout -> C, Test/LPS/SOS -> D, breakout above TR -> E
+    // Distribution: BC/PSY -> A, oscillation -> B, UTAD -> C, SOW/LPSY -> D, breakdown below TR -> E
+    // Sub-phase is null for clear Markup/Markdown (outside of a TR).
+    let wyckoffSubphase = null;
+    let wyckoffSubphaseLabel_zh = null;
+    let wyckoffSubphaseLabel_en = null;
+
+    (function computeSubphase() {
+      // Walk events in chronological order to drive the state machine.
+      // We only care about events since the last climax (SC or BC) to avoid
+      // contamination from old trading ranges.
+      const sortedEvents = [...events].sort((a, b) => a.index - b.index);
+
+      // Find the most recent climax anchor (SC or BC) -- start of the current TR
+      let trStartIdx = -1;
+      let trType = null; // 'accumulation' or 'distribution'
+      for (let e = sortedEvents.length - 1; e >= 0; e--) {
+        const ev = sortedEvents[e];
+        if (ev.event === 'SC' || ev.event === 'PS') {
+          trStartIdx = ev.index;
+          trType = 'accumulation';
+          break;
+        }
+        if (ev.event === 'BC' || ev.event === 'PSY') {
+          trStartIdx = ev.index;
+          trType = 'distribution';
+          break;
+        }
+      }
+
+      // No climax found or climax is too old (> 200 bars) -- no sub-phase
+      if (trStartIdx < 0 || N - 1 - trStartIdx > 200) return;
+
+      const trEvents = sortedEvents.filter(e => e.index >= trStartIdx);
+
+      if (trType === 'accumulation') {
+        let phase = 'A'; // start at A (we have at least SC/PS)
+
+        const hasAR = trEvents.some(e => e.event === 'AR');
+        const hasST = trEvents.some(e => e.event === 'ST');
+        const hasSpring = trEvents.some(e => e.event === 'Spring' || e.event === 'Shakeout');
+        const hasSpringTest = trEvents.some(e => e.event === 'Spring_Test');
+        const hasLPS = trEvents.some(e => e.event === 'LPS');
+        const hasSOS = trEvents.some(e => e.event === 'SOS');
+        const hasBU = trEvents.some(e => e.event === 'BU');
+
+        // Phase A complete (SC + AR established): transition to B
+        if (hasAR || hasST) phase = 'B';
+        // Phase C: Spring or Shakeout (the key test of support)
+        if (hasSpring) phase = 'C';
+        // Phase D: Successful test (Spring_Test, LPS) or early SOS
+        if (hasSpringTest || hasLPS || hasSOS) phase = 'D';
+        // Phase E: Price has left the TR above resistance (BU = post-breakout confirmation)
+        if (hasBU && hasSOS) phase = 'E';
+
+        wyckoffSubphase = phase;
+        const phaseNamesZh = {
+          A: 'A\u9636\u6bb5\uff08\u6b62\u8dcc\uff09',
+          B: 'B\u9636\u6bb5\uff08\u84c4\u52bf\uff09',
+          C: 'C\u9636\u6bb5\uff08\u6d4b\u8bd5\uff09',
+          D: 'D\u9636\u6bb5\uff08\u8d8b\u52bf\u6d6e\u73b0\uff09',
+          E: 'E\u9636\u6bb5\uff08\u7a81\u7834\u79bb\u5f00\uff09'
+        };
+        const phaseNamesEn = {
+          A: 'Phase A (Stopping)',
+          B: 'Phase B (Building Cause)',
+          C: 'Phase C (Test)',
+          D: 'Phase D (Trend Emerging)',
+          E: 'Phase E (Markup Begins)'
+        };
+        wyckoffSubphaseLabel_zh = '\u5438\u7b39 ' + phaseNamesZh[phase];
+        wyckoffSubphaseLabel_en = 'Accumulation ' + phaseNamesEn[phase];
+
+      } else { // distribution
+        let phase = 'A';
+
+        const hasAR_Reaction = trEvents.some(e => e.event === 'AR_Reaction');
+        const hasST_Dist = trEvents.some(e => e.event === 'ST_Dist');
+        const hasUTAD = trEvents.some(e => e.event === 'UTAD');
+        const hasSOW = trEvents.some(e => e.event === 'SOW');
+        const hasLPSY = trEvents.some(e => e.event === 'LPSY');
+
+        if (hasAR_Reaction || hasST_Dist) phase = 'B';
+        if (hasUTAD) phase = 'C';
+        if (hasSOW || hasLPSY) phase = 'D';
+        // Phase E: LPSY after SOW = markdown confirmed
+        if (hasLPSY && hasSOW) phase = 'E';
+
+        wyckoffSubphase = phase;
+        const phaseNamesZh = {
+          A: 'A\u9636\u6bb5\uff08\u6b62\u6da8\uff09',
+          B: 'B\u9636\u6bb5\uff08\u84c4\u52bf\u6d3e\u53d1\uff09',
+          C: 'C\u9636\u6bb5\uff08\u5047\u7a81\u7834\uff09',
+          D: 'D\u9636\u6bb5\uff08\u5f31\u52bf\u6d6e\u73b0\uff09',
+          E: 'E\u9636\u6bb5\uff08\u8dcc\u7834\u79bb\u5f00\uff09'
+        };
+        const phaseNamesEn = {
+          A: 'Phase A (Stopping)',
+          B: 'Phase B (Building Cause)',
+          C: 'Phase C (Upthrust)',
+          D: 'Phase D (Weakness)',
+          E: 'Phase E (Markdown Begins)'
+        };
+        wyckoffSubphaseLabel_zh = '\u6d3e\u53d1 ' + phaseNamesZh[phase];
+        wyckoffSubphaseLabel_en = 'Distribution ' + phaseNamesEn[phase];
+      }
+    })();
 
     // 4. Calculate final Support & Resistance lines (Step 4 & 6)
     let finalSupport = null;
@@ -1406,7 +1800,7 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
       phase_confidence: confidence,
       phase_label_zh: phaseLabels[phase].zh,
       phase_label_en: phaseLabels[phase].en,
-      detected_events: events.slice(-10), // return last 10 events for timeline
+      detected_events: events.slice(-20), // return last 20 events for timeline
       bb_squeeze: {
         is_squeeze: latestSqueeze,
         is_breakout: isSqueezeBreakout,
@@ -1417,6 +1811,9 @@ export function analyzeWyckoff(symbol, stockChart, indexChart = null, sensitivit
         middle: ma20[N - 1] !== null ? parseFloat(ma20[N - 1].toFixed(2)) : null
       },
       all_detected_events: events,
+      wyckoff_subphase: wyckoffSubphase,
+      wyckoff_subphase_label_zh: wyckoffSubphaseLabel_zh,
+      wyckoff_subphase_label_en: wyckoffSubphaseLabel_en,
       effort_vs_result: {
         status: evrStatus,
         label_zh: evrLabelZh,
