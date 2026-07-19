@@ -1,4 +1,30 @@
+import { EVENT_META } from '../core/eventMeta';
+
+/**
+ * Detects Automatic Rally (AR) after a Selling Climax (SC) and
+ * Automatic Reaction (AR_Reaction) after a Buying Climax (BC).
+ *
+ * ## Look-ahead bias design
+ * AR is detected by scanning a window of bars after the SC and finding the
+ * highest point. This requires looking at future bars relative to the SC bar,
+ * which is a form of look-ahead. To handle this correctly, two index fields
+ * are emitted on each event:
+ *
+ *   `index`          – The historical bar where the AR high/low occurred.
+ *                      Use this for CHART ANNOTATIONS so the marker appears
+ *                      at the actual price extreme.
+ *
+ *   `confirmedIndex` – The bar when the detection window closed and the AR
+ *                      event became fully knowable (no future data needed).
+ *                      Use this for BACKTESTING entry/exit logic to avoid
+ *                      introducing look-ahead bias into strategy evaluation.
+ *
+ * In LIVE / real-time usage (isEndOfData = true), `index` and `confirmedIndex`
+ * converge to the same bar because the window closes at the current bar, so
+ * the AR is only emitted when the latest bar IS the window end.
+ */
 export function detectAutomatic(ctx, i) {
+
   // Event C: Automatic Rally (AR)
   if (ctx.lastSC && !ctx.events.find(e => e.event === 'AR' && e.index > ctx.lastSC.index)) {
     const arWindowEnd = Math.min(ctx.lastSC.index + 8, ctx.N - 1);
@@ -15,10 +41,13 @@ export function detectAutomatic(ctx, i) {
 
       if (arHigh > ctx.lastSC.price) {
         ctx.events.push({
+          // `index` = the historical bar where the AR price high occurred (for chart annotation).
+          // `confirmedIndex` = the bar when the window closed and this event became knowable
+          //   (use this for backtesting entry timing to avoid look-ahead bias).
           index: arIdx,
+          confirmedIndex: i,
           event: 'AR',
-          label_zh: '自动反弹 (AR)',
-          label_en: 'Automatic Rally (AR)',
+          ...EVENT_META.AR,
           date: arDateStr,
           price: arHigh,
           confidence: 0.75
@@ -48,10 +77,13 @@ export function detectAutomatic(ctx, i) {
 
       if (arLow < ctx.lastBC.price) {
         ctx.events.push({
+          // `index` = the historical bar where the AR price low occurred (for chart annotation).
+          // `confirmedIndex` = the bar when the window closed and this event became knowable
+          //   (use this for backtesting entry timing to avoid look-ahead bias).
           index: arIdx,
+          confirmedIndex: i,
           event: 'AR_Reaction',
-          label_zh: '自动回落 (AR)',
-          label_en: 'Automatic Reaction (AR)',
+          ...EVENT_META.AR_Reaction,
           date: arDateStr,
           price: arLow,
           confidence: 0.75

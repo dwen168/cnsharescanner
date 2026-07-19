@@ -1,4 +1,11 @@
-export function computeSubphase(events, N) {
+/**
+ * @param {Array} events      - All detected Wyckoff events
+ * @param {number} N          - Total number of bars in the dataset
+ * @param {Array}  dfCloses   - Array of closing prices (length N), for sustained-breakout check
+ * @param {number|null} trResistance - Current TR resistance level (null if unknown)
+ * @param {number|null} trSupport    - Current TR support level (null if unknown)
+ */
+export function computeSubphase(events, N, dfCloses = null, trResistance = null, trSupport = null) {
   let wyckoffSubphase = null;
   let wyckoffSubphaseLabel_zh = null;
   let wyckoffSubphaseLabel_en = null;
@@ -36,27 +43,52 @@ export function computeSubphase(events, N) {
   if (trType === 'accumulation') {
     let phase = 'A'; // start at A (we have at least SC/PS)
 
-    const hasAR = trEvents.some(e => e.event === 'AR');
-    const hasST = trEvents.some(e => e.event === 'ST');
-    const hasSpring = trEvents.some(e => e.event === 'Spring' || e.event === 'Shakeout');
-    const hasSpringTest = trEvents.some(e => e.event === 'Spring_Test');
-    const hasLPS = trEvents.some(e => e.event === 'LPS');
-    const hasSOS = trEvents.some(e => e.event === 'SOS');
-    const hasBU = trEvents.some(e => e.event === 'BU');
+    const hasAR           = trEvents.some(e => e.event === 'AR');
+    const hasST           = trEvents.some(e => e.event === 'ST');
+    const hasSpring       = trEvents.some(e => e.event === 'Spring' || e.event === 'Shakeout');
+    const hasSpringTest   = trEvents.some(e => e.event === 'Spring_Test');
+    const hasPreLPSTest   = trEvents.some(e => e.event === 'Pre_LPS_Test');
+    const hasLPS          = trEvents.some(e => e.event === 'LPS');
+    const hasSOS          = trEvents.some(e => e.event === 'SOS');
+    const hasBU           = trEvents.some(e => e.event === 'BU');
 
     // Phase A complete (SC + AR established): transition to B
     if (hasAR || hasST) phase = 'B';
     // Phase C: Spring or Shakeout (the key test of support)
     if (hasSpring) phase = 'C';
-    // Phase D: Successful test (Spring_Test, LPS) or early SOS
+    // Phase D: Trend emerging.
+    //   - Spring_Test alone can push to D (the Spring held on no-supply test)
+    //   - LPS alone pushes to D — a true LPS already requires a prior SOS in this TR
+    //     (see accumulation.js), so this is always a Phase D scenario
+    //   - SOS alone pushes to D (breakout bar itself)
+    //   - Pre_LPS_Test does NOT push to D — it only confirms Phase C is still intact;
+    //     the market has not yet demonstrated it can exit the TR above resistance
     if (hasSpringTest || hasLPS || hasSOS) phase = 'D';
-    // Phase E: Price has left the TR above resistance (BU = post-breakout confirmation)
-    // Phase E: Price has left the TR above resistance (BU = post-breakout confirmation)
+
+    // Phase E: Price has left the TR above resistance.
+    // Classic path: BU (backup to resistance) confirmed after SOS.
+    // Alternative path: SOS occurred and price has since stayed above resistance
+    //   for 3+ consecutive bars — stock never gave a BU pullback, just kept rallying.
+    let isPhaseE = false;
     if (hasBU && hasSOS) {
       const lastSOS = trEvents.filter(e => e.event === 'SOS').pop();
-      const lastBU = trEvents.filter(e => e.event === 'BU').pop();
-      if (lastSOS && lastBU && lastBU.index > lastSOS.index) phase = 'E';
+      const lastBU  = trEvents.filter(e => e.event === 'BU').pop();
+      if (lastSOS && lastBU && lastBU.index > lastSOS.index) isPhaseE = true;
     }
+    if (!isPhaseE && hasSOS && trResistance !== null && dfCloses !== null) {
+      // Alternative: SOS followed by price sustaining above TR resistance (no BU pullback)
+      const lastSOS = trEvents.filter(e => e.event === 'SOS').pop();
+      if (lastSOS) {
+        const startCheckIdx = lastSOS.index + 1;
+        const barsAbove = [];
+        for (let k = startCheckIdx; k < N; k++) {
+          if (dfCloses[k] !== undefined && dfCloses[k] > trResistance) barsAbove.push(k);
+        }
+        // Require 3+ bars above resistance after SOS (not necessarily consecutive)
+        if (barsAbove.length >= 3) isPhaseE = true;
+      }
+    }
+    if (isPhaseE) phase = 'E';
 
     wyckoffSubphase = phase;
     const phaseNamesZh = {
@@ -88,12 +120,28 @@ export function computeSubphase(events, N) {
     if (hasAR_Reaction || hasST_Dist) phase = 'B';
     if (hasUTAD) phase = 'C';
     if (hasSOW || hasLPSY) phase = 'D';
-    // Phase E: LPSY after SOW = markdown confirmed
+
+    // Phase E (distribution): LPSY after SOW = markdown confirmed.
+    // Alternative: SOW + price sustained below TR support for 3+ bars (no LPSY rally back).
+    let isPhaseE = false;
     if (hasLPSY && hasSOW) {
-      const lastSOW = trEvents.filter(e => e.event === 'SOW').pop();
+      const lastSOW  = trEvents.filter(e => e.event === 'SOW').pop();
       const lastLPSY = trEvents.filter(e => e.event === 'LPSY').pop();
-      if (lastSOW && lastLPSY && lastLPSY.index > lastSOW.index) phase = 'E';
+      if (lastSOW && lastLPSY && lastLPSY.index > lastSOW.index) isPhaseE = true;
     }
+    if (!isPhaseE && hasSOW && trSupport !== null && dfCloses !== null) {
+      // Alternative: SOW followed by price sustained below TR support (no LPSY bounce)
+      const lastSOW = trEvents.filter(e => e.event === 'SOW').pop();
+      if (lastSOW) {
+        const startCheckIdx = lastSOW.index + 1;
+        let barsBelowCount = 0;
+        for (let k = startCheckIdx; k < N; k++) {
+          if (dfCloses[k] !== undefined && dfCloses[k] < trSupport) barsBelowCount++;
+        }
+        if (barsBelowCount >= 3) isPhaseE = true;
+      }
+    }
+    if (isPhaseE) phase = 'E';
 
     wyckoffSubphase = phase;
     const phaseNamesZh = {
@@ -120,3 +168,4 @@ export function computeSubphase(events, N) {
     wyckoffSubphaseLabel_en
   };
 }
+

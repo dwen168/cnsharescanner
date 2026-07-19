@@ -29,7 +29,13 @@ export class WyckoffContext {
     this.dfVolumes = df.map(x => x.Volume);
 
     // Running multipliers
+    // sensFactor is intentionally *inversely* proportional to `sensitivity`.
+    // Higher sensitivity (e.g. 0.5) → lower sensFactor (e.g. 1.0) → lower thresholds → more signals detected.
+    // Lower sensitivity (e.g. 0.1) → higher sensFactor (e.g. 1.4) → stricter thresholds → fewer signals.
+    // The parameter is named `sensitivity` for user-facing clarity ("how sensitive should detection be"),
+    // but internally acts as a permissiveness factor. Do NOT rename without updating all callers.
     this.sensFactor = 1.5 - sensitivity;
+
 
     // Detected events and support/resistance levels
     this.events = [];

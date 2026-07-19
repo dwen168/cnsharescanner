@@ -1,3 +1,5 @@
+import { EVENT_META } from '../core/eventMeta';
+
 export function detectStrength(ctx, i, dateStr, dayInfo) {
   const {
     close, open, low, curAtr,
@@ -31,8 +33,7 @@ export function detectStrength(ctx, i, dateStr, dayInfo) {
       ctx.events.push({
         index: i,
         event: 'SOS',
-        label_zh: '强势信号 (SOS)',
-        label_en: 'Sign of Strength (SOS)',
+        ...EVENT_META.SOS,
         date: dateStr,
         price: close,
         confidence: sosConf
@@ -45,6 +46,21 @@ export function detectStrength(ctx, i, dateStr, dayInfo) {
 
   // Event K: Golden Flag Breakout (Flag / 黄金旗形突破)
   if (i > 30 && i - ctx.lastFlagIndex >= 8) {
+    // Performance optimisation: pre-compute the most recent index of each
+    // breakout-qualifier event type so the inner k-loop can do O(1) lookups
+    // instead of calling ctx.events.some() (O(E)) on every k iteration.
+    // Without this, the triple loop (i × k × E) is effectively O(N × K × E).
+    const BREAKOUT_EVENTS = new Set(['SOS', 'UTAD_Failure', 'JAC']);
+    // latestBreakoutIndex: the index of the most recent qualifying event, or -Infinity
+    let latestBreakoutIndex = -Infinity;
+    for (let ei = ctx.events.length - 1; ei >= 0; ei--) {
+      const ev = ctx.events[ei];
+      if (BREAKOUT_EVENTS.has(ev.event)) {
+        latestBreakoutIndex = ev.index;
+        break; // events are pushed in chronological order, so first match from end = latest
+      }
+    }
+
     // We look for a tight consolidation window of size k (where k is between 3 and 8 bars)
     for (let k = 3; k <= 8; k++) {
       if (i - k - 10 < 0) continue;
@@ -67,8 +83,10 @@ export function detectStrength(ctx, i, dateStr, dayInfo) {
         const flagpoleBase = ctx.dfLows.slice(i - k - 10, i - k).reduce((min, l) => Math.min(min, l), Infinity);
         const flagpoleRise = (consolidationHigh - flagpoleBase) / flagpoleBase;
 
-        // Flagpole must represent a rise of at least 8%, or we had a recent SOS/JAC event in the last 15 days
-        const hasRecentBreakout = ctx.events.some(e => ['SOS', 'UTAD_Failure', 'JAC'].includes(e.event) && (i - e.index <= 15 && i - e.index >= k));
+        // Flagpole must represent a rise of at least 8%, or we had a recent SOS/JAC event in the last 15 days.
+        // O(1) check using pre-computed latestBreakoutIndex (replaces ctx.events.some() inside the loop).
+        const barsSinceBreakout = i - latestBreakoutIndex;
+        const hasRecentBreakout = barsSinceBreakout <= 15 && barsSinceBreakout >= k;
         const hasFlagpole = flagpoleRise > 0.08 || hasRecentBreakout;
 
         if (hasFlagpole) {
@@ -80,8 +98,7 @@ export function detectStrength(ctx, i, dateStr, dayInfo) {
             ctx.events.push({
               index: i,
               event: 'Flag',
-              label_zh: '黄金旗形突破 (Flag)',
-              label_en: 'Bull Flag Breakout (Flag)',
+              ...EVENT_META.Flag,
               date: dateStr,
               price: close,
               confidence: 0.82
@@ -94,3 +111,4 @@ export function detectStrength(ctx, i, dateStr, dayInfo) {
     }
   }
 }
+

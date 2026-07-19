@@ -1,4 +1,5 @@
 import { getFallbackPivotResistance } from '../core/indicators';
+import { EVENT_META } from '../core/eventMeta';
 
 export function detectDistribution(ctx, i, dateStr, dayInfo) {
   const {
@@ -19,11 +20,16 @@ export function detectDistribution(ctx, i, dateStr, dayInfo) {
       // UTAD: price briefly breaks above TR resistance but closes back below it
       const brokeResistance = high > activeResistance;
       const penetrationDepth = activeResistance > 0 ? (high - activeResistance) / activeResistance : 0;
-      const maxPenetration = 0.03 * (1.5 - ctx.sensFactor); // max 3% above resistance (scaled by sensitivity)
+      // Bug 2 fix: ctx.sensFactor = 1.5 - sensitivity, so 0.03*(1.5-sensFactor) ≡ 0.03*sensitivity.
+      // Use ctx.sensitivity directly to avoid an implicit algebraic round-trip.
+      const maxPenetration = 0.03 * ctx.sensitivity;
       const rejectedQuickly = close < activeResistance && penetrationDepth < maxPenetration;
       const isTrueUTAD = brokeResistance && rejectedQuickly && close < open
         && volRatio > 1.8 // Require high volume to confirm institutional distribution
-        && (high - open) > 1.5 * (open - close); // Upper shadow must be at least 1.5x the body size
+        // Upper-wick ratio: the wick above the body must be > 40% of the full bar range.
+        // Using wick/range instead of wick/body avoids division-by-zero on doji/spinning-tops
+        // where open ≈ close (body ≈ 0) which made the old condition always false.
+        && (high - low) > 0 && (high - Math.max(open, close)) / (high - low) > 0.40;
 
       if (isTrueUTAD) {
         // In a strong uptrend, minor rejections are normal and not UTAD.
@@ -32,8 +38,7 @@ export function detectDistribution(ctx, i, dateStr, dayInfo) {
           ctx.events.push({
             index: i,
             event: 'UTAD',
-            label_zh: '上轨假突破 (UTAD)',
-            label_en: 'Upthrust (UT/UTAD)',
+            ...EVENT_META.UTAD,
             date: dateStr,
             price: high,
             confidence: Math.min(0.95, 0.75 + (1 - penetrationDepth / maxPenetration) * 0.15)
@@ -52,8 +57,7 @@ export function detectDistribution(ctx, i, dateStr, dayInfo) {
       ctx.events.push({
         index: i,
         event: 'UTAD_Failure',
-        label_zh: '空头踩踏突破 (JAC/UTAD-F)',
-        label_en: 'UTAD Failure Breakout (JAC)',
+        ...EVENT_META.UTAD_Failure,
         date: dateStr,
         price: close,
         confidence: 0.85
@@ -69,8 +73,13 @@ export function detectDistribution(ctx, i, dateStr, dayInfo) {
       : getFallbackPivotResistance(i, ctx.allPivots.pivotHighs, Math.max(...ctx.dfHighs.slice(i - 30, i)));
 
     if (activeResistance > 0) {
-      // Check if price broke out above resistance in the last 15 days
-      const brokeOutRecently = ctx.dfCloses.slice(i - 15, i).some(c => c > activeResistance);
+      // ATR-adaptive lookback: how long ago could a breakout have occurred and still be valid?
+      // Fast-moving stocks (high ATR) consolidate quickly; slow ones need a wider window.
+      // Clamp to [10, 25] bars.
+      const buLookback = Math.round(
+        Math.max(10, Math.min(25, curAtr > 0 && close > 0 ? (close * 0.04 / curAtr) * 15 : 15))
+      );
+      const brokeOutRecently = ctx.dfCloses.slice(Math.max(0, i - buLookback), i).some(c => c > activeResistance);
 
       if (brokeOutRecently) {
         // Is price currently pulling back close to resistance? (within 1.5 * ATR)
@@ -86,8 +95,7 @@ export function detectDistribution(ctx, i, dateStr, dayInfo) {
           ctx.events.push({
             index: i,
             event: 'BU',
-            label_zh: '无量回踩确认 (BU)',
-            label_en: 'Backup to Resistance (BU)',
+            ...EVENT_META.BU,
             date: dateStr,
             price: close,
             confidence: 0.80

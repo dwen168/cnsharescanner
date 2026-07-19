@@ -1,3 +1,5 @@
+import { EVENT_META } from '../core/eventMeta';
+
 export function detectTests(ctx, i, dateStr, dayInfo) {
   const {
     close, low, high, curAtr,
@@ -6,15 +8,17 @@ export function detectTests(ctx, i, dateStr, dayInfo) {
 
   // Event D: Secondary Test (ST)
   if (ctx.lastSC && i > ctx.lastSC.index + 5 && i <= ctx.lastSC.index + 30) {
-    const isNearScLow = close <= ctx.lastSC.price + 1.5 * curAtr && low >= ctx.lastSC.price - 0.5 * curAtr;
+    // Use the lower of close/low as the test price: a long lower-tail candle that
+    // dips to SC territory is a valid ST even when close recovers above it.
+    const testPrice = Math.min(close, low);
+    const isNearScLow = testPrice <= ctx.lastSC.price + 1.5 * curAtr && low >= ctx.lastSC.price - 0.5 * curAtr;
     const isLowVol = volRatio < 1.0 * (2 - ctx.sensFactor);
     const noPriorST = !ctx.events.some(e => e.event === 'ST' && e.index > ctx.lastSC.index && e.index < i);
     if (isNearScLow && isLowVol && noPriorST) {
       ctx.events.push({
         index: i,
         event: 'ST',
-        label_zh: '二次测试 (ST)',
-        label_en: 'Secondary Test (ST)',
+        ...EVENT_META.ST,
         date: dateStr,
         price: low,
         confidence: 0.7
@@ -27,15 +31,17 @@ export function detectTests(ctx, i, dateStr, dayInfo) {
   }
 
   if (ctx.lastBC && i > ctx.lastBC.index + 5 && i <= ctx.lastBC.index + 30) {
-    const isNearBcHigh = close >= ctx.lastBC.price - 1.5 * curAtr && high <= ctx.lastBC.price + 0.5 * curAtr;
+    // Use the higher of close/high as the test price: a long upper-tail candle that
+    // probes BC territory is a valid ST_Dist even when close retreats below it.
+    const testPrice = Math.max(close, high);
+    const isNearBcHigh = testPrice >= ctx.lastBC.price - 1.5 * curAtr && high <= ctx.lastBC.price + 0.5 * curAtr;
     const isLowVol = volRatio < 1.0 * (2 - ctx.sensFactor);
     const noPriorST = !ctx.events.some(e => e.event === 'ST_Dist' && e.index > ctx.lastBC.index && e.index < i);
     if (isNearBcHigh && isLowVol && noPriorST) {
       ctx.events.push({
         index: i,
         event: 'ST_Dist',
-        label_zh: '二次测试 (ST)',
-        label_en: 'Secondary Test (ST)',
+        ...EVENT_META.ST_Dist,
         date: dateStr,
         price: high,
         confidence: 0.7
@@ -46,6 +52,7 @@ export function detectTests(ctx, i, dateStr, dayInfo) {
       }
     }
   }
+
 
   // Event Spring_Test: Low-volume test after Spring / Shakeout
   if (i > 30 && ctx.lastSpringEventIndex > 0) {
@@ -68,8 +75,7 @@ export function detectTests(ctx, i, dateStr, dayInfo) {
           ctx.events.push({
             index: i,
             event: 'Spring_Test',
-            label_zh: '弹簧测试 (Test)',
-            label_en: 'Spring Test (No Supply)',
+            ...EVENT_META.Spring_Test,
             date: dateStr,
             price: low,
             confidence: Math.min(0.88, 0.72 + (0.70 - volRatio) * 0.5 + recoversIntraday * 0.06)

@@ -1,3 +1,14 @@
+/**
+ * Computes a recency weight for a given age (in bars).
+ * - Age <= 40: full weight (1.0)
+ * - Age > 40: linearly decays to a floor of 0.3
+ *
+ * Used consistently for both Wyckoff event S/R scoring and pivot cluster scoring.
+ */
+export function computeRecencyWeight(age) {
+  return age <= 40 ? 1.0 : Math.max(0.3, 1.0 - (age - 40) / 200);
+}
+
 // Helper to calculate rolling average
 export function getRollingMean(arr, period) {
   const result = new Array(arr.length).fill(null);
@@ -139,7 +150,7 @@ export function clusterLevels(levels, atr, currentIdx) {
     const count = cluster.length;
     const maxIdx = Math.max(...cluster.map(item => item.index));
     const age = currentIdx - maxIdx;
-    const recencyWeight = age <= 40 ? 1.0 : Math.max(0.3, 1.0 - (age - 40) / 200);
+    const recencyWeight = computeRecencyWeight(age);
 
     let baseStrength = 0.8;
     if (count === 2) baseStrength = 1.5;

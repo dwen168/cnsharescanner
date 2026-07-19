@@ -1,3 +1,5 @@
+import { EVENT_META } from '../core/eventMeta';
+
 export function detectClimax(ctx, i, dateStr, dayInfo) {
   const {
     close, open, high, low,
@@ -31,8 +33,7 @@ export function detectClimax(ctx, i, dateStr, dayInfo) {
     ctx.events.push({
       index: i,
       event: 'PS',
-      label_zh: '初步支撑 (PS)',
-      label_en: 'Preliminary Support (PS)',
+      ...EVENT_META.PS,
       date: dateStr,
       price: low,
       confidence: Math.min(0.80, 0.50 + (volRatio / climaxVolThresh) * 0.15 + lowerTailRatio * 0.10)
@@ -63,8 +64,7 @@ export function detectClimax(ctx, i, dateStr, dayInfo) {
     ctx.events.push({
       index: i,
       event: 'SC',
-      label_zh: '卖出高潮 (SC)',
-      label_en: 'Selling Climax (SC)',
+      ...EVENT_META.SC,
       date: dateStr,
       price: low,
       confidence: isClassicSC
@@ -91,8 +91,7 @@ export function detectClimax(ctx, i, dateStr, dayInfo) {
     ctx.events.push({
       index: i,
       event: 'SC',
-      label_zh: '卖出高潮 (SC)',
-      label_en: 'Selling Climax (SC)',
+      ...EVENT_META.SC,
       date: dateStr,
       price: low,
       confidence: 0.65
@@ -103,6 +102,9 @@ export function detectClimax(ctx, i, dateStr, dayInfo) {
   }
 
   // Event PSY: Preliminary Supply
+  // NOTE: intentionally an independent `if` (not `else if`) so BC can fire
+  // independently on the same bar if both conditions are met. Mirrors the
+  // symmetry with the PS / SC pair above.
   if (
     i - ctx.lastPSYIndex >= ctx.PS_PSY_COOLDOWN &&
     !ctx.lastBC &&
@@ -116,8 +118,7 @@ export function detectClimax(ctx, i, dateStr, dayInfo) {
     ctx.events.push({
       index: i,
       event: 'PSY',
-      label_zh: '初步阻力 (PSY)',
-      label_en: 'Preliminary Supply (PSY)',
+      ...EVENT_META.PSY,
       date: dateStr,
       price: high,
       confidence: Math.min(0.80, 0.50 + (volRatio / climaxVolThresh) * 0.15 + upperTailRatio * 0.10)
@@ -127,7 +128,10 @@ export function detectClimax(ctx, i, dateStr, dayInfo) {
   }
 
   // Event B: Buying Climax (BC)
-  else if (
+  // NOTE: intentionally an independent `if` (not `else if` after PSY) so BC
+  // is never silently suppressed when volRatio sits in the overlap zone
+  // [climaxVolThresh, climaxVolThresh * 1.1] where PSY can also fire.
+  if (
     isUpDay &&
     volRatio > climaxVolThresh &&
     dailySpread > 1.5 * ctx.sensFactor * curAtr &&
@@ -138,8 +142,7 @@ export function detectClimax(ctx, i, dateStr, dayInfo) {
     ctx.events.push({
       index: i,
       event: 'BC',
-      label_zh: '买入高潮 (BC)',
-      label_en: 'Buying Climax (BC)',
+      ...EVENT_META.BC,
       date: dateStr,
       price: high,
       confidence: Math.min(0.95, 0.5 + (volRatio / 5) * 0.3 + upperTailRatio * 0.15)

@@ -1,3 +1,6 @@
+import { EVENT_META } from '../core/eventMeta';
+import { isBrokenSupportReversal } from '../core/brokenSupportReversal';
+
 export function detectWeakness(ctx, i, dateStr, dayInfo) {
   const {
     close, open, low, high, curAtr,
@@ -45,6 +48,14 @@ export function detectWeakness(ctx, i, dateStr, dayInfo) {
     }
     const isInSustainedDowntrend = closesBelowMA60 >= 5;
 
+    // MA60 slope: require a genuinely declining MA60, not just a flat sideways cross
+    // (a flat MA60 crossing in a sideways range should not trigger persistent weakness)
+    const ma60Ref = ctx.ma60[Math.max(0, i - 10)];
+    const ma60Slope = (ma60Ref !== null && ctx.ma60[i] !== null && ma60Ref > 0)
+      ? (ctx.ma60[i] - ma60Ref) / ma60Ref
+      : 0;
+    const isMA60Declining = ma60Slope <= -0.002;
+
     const isPersistentWeakness = isBearishMAAlignment &&
       close < (ctx.ma60[i] || close) &&
       close < open &&
@@ -52,7 +63,8 @@ export function detectWeakness(ctx, i, dateStr, dayInfo) {
       !isBullishContext &&
       !isDepressedPricePos &&
       !hasRecentAccumEvent &&
-      isInSustainedDowntrend;
+      isInSustainedDowntrend &&
+      isMA60Declining;   // ← new guard: MA60 must actually be falling
 
     // --- Trigger C: TR Range Quiet Breakdown ---
     let wasAboveSupportRecently = false;
@@ -78,8 +90,7 @@ export function detectWeakness(ctx, i, dateStr, dayInfo) {
       ctx.events.push({
         index: i,
         event: 'SOW',
-        label_zh: '弱势信号 (SOW)',
-        label_en: 'Sign of Weakness (SOW)',
+        ...EVENT_META.SOW,
         date: dateStr,
         price: close,
         confidence: sowConf
@@ -103,7 +114,7 @@ export function detectWeakness(ctx, i, dateStr, dayInfo) {
         ? ctx.trSupport
         : Math.min(...ctx.dfLows.slice(Math.max(0, i - 20), i));
 
-      const isTrueShakeout = low < shakeoutRef && close > shakeoutRef && close > open;
+      const isTrueShakeout = isBrokenSupportReversal(low, close, open, shakeoutRef);
       const isStrongRecovery = volRatio > standardVolThresh;
       const recoveryPct = low > 0 ? (close - low) / low : 0;
       const isMeaningfulRecovery = recoveryPct > 0.015;
@@ -111,8 +122,7 @@ export function detectWeakness(ctx, i, dateStr, dayInfo) {
         ctx.events.push({
           index: i,
           event: 'Shakeout',
-          label_zh: '洗盘反转 (Shakeout)',
-          label_en: 'Shakeout Recovery (False Breakdown)',
+          ...EVENT_META.Shakeout,
           date: dateStr,
           price: close,
           confidence: Math.min(0.90, 0.72 + recoveryPct * 5)
@@ -146,8 +156,7 @@ export function detectWeakness(ctx, i, dateStr, dayInfo) {
         ctx.events.push({
           index: i,
           event: 'LPSY',
-          label_zh: '供应最后点 (LPSY)',
-          label_en: 'Last Point of Supply (LPSY)',
+          ...EVENT_META.LPSY,
           date: dateStr,
           price: high,
           confidence: Math.min(0.85, 0.63 + (isRejected ? 0.08 : 0) + (isLowVolOnRally ? 0.09 : 0) + (climaxPricePos < 0.40 ? 0.05 : 0))
