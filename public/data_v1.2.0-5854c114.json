@@ -57,718 +57,733 @@
       "top_n_portfolio": 5
     }
   },
-  "generated_at": "2026-08-25T07:39:18.581809+00:00",
+  "generated_at": "2026-08-26T02:25:12.114878+00:00",
   "data_lineage": "degraded",
   "trading_state": "medium_risk",
   "risk_level": "medium_risk",
   "warnings": [
     "大盘数据不足，部分大盘相对指标将被略过",
-    "检测到中度市场风险 (Waneye 得分 55, 威胁指数 9.2)，系统冻结新增仓，并下发减仓避险提示",
+    "检测到中度市场风险 (Waneye 得分 66, 威胁指数 9.1)，系统冻结新增仓，并下发减仓避险提示",
     "个股拉取出现部分缺失，失败数: 68/68，系统在降级数据源下运行",
     "个股数据拉取极少，但保留真实宏观/情绪数据运行"
   ],
   "halt_signals": false,
   "waneye": {
-    "score": 55,
-    "sentiment": "中性",
+    "score": 66,
+    "sentiment": "偏多",
     "highlights": [
-      "A股分化：沪指涨0.19%收3889点，创业板跌1%收3397点，两市成交仅1.8万亿，逾4200股上涨",
-      "碳酸锂主力合约跌超6%，集运欧线跌超4%，商品期货跌多涨少",
-      "国管公积金新政首套房最高贷340万，成都推楼市十条新政降首付+贴息20%",
-      "央行开展MLF及隔夜逆回购精准呵护流动性",
-      "脑机接口迎政策催化，2030年标准体系基本形成，逾30家上市公司布局",
-      "AI办公大战升温，字节推出豆包办公，互联网大厂集体转向AI办公",
-      "宇树科技上市大跌，付鹏点评一级市场风险投资属性",
-      "比特币三天涨24%重返8万美元，美债回购政策助推加密市场复苏",
-      "创新药板块持续活跃，港股生物科技ETF涨超2%",
-      "人民日报连发四篇钟才文点评经济，强调高质量发展行稳致远",
-      "南向资金净卖出50亿港元，港股恒指及恒生科技双双转涨",
-      "高盛年末黄金目标价4900美元/盎司"
+      "美股三大指数集体收涨，英伟达终结七连跌，光通信、芯片板块走强，科技情绪回暖",
+      "人民日报'钟才文'连发四文点评经济，强调扩内需促消费，政策信号积极",
+      "民企重返土拍市场，上海'沪八条'首个周末现日光盘，地产边际改善",
+      "脑机接口迎政策催化，人形机器人百米竞速刷新纪录，具身智能成产业热点",
+      "PCB龙头净利增逾七成，AI算力驱动产业链量价齐升，光通信中报齐增但股价承压",
+      "医药板块连涨两月遭183亿资金止盈，反弹迎分歧；恒瑞、信达、药明获外资增持",
+      "券商中期分红预案密集落地，公募上半年盈利回暖，金融板块基本面改善",
+      "霍尔木兹海峡临时航线谅解达成，布油跌逾1%至87美元，地缘风险边际缓和",
+      "小鹏机器人业务拟融资9亿美元，投后估值63亿美元，具身智能资本化加速",
+      "美联储柯林斯警告若无通胀回落证据需尽快加息，美债40万亿逼近清算日，外部不确定性上升"
     ],
     "headlines": [
-      {
-        "title": "收评|国内期货主力合约跌多涨少，碳酸锂跌超6%",
-        "url": "https://finance.sina.com.cn/money/future/fmnews/2026-08-25/doc-inippewu5571005.shtml"
-      },
-      {
-        "title": "美国封锁致汽油短缺 伊朗民众排队加油",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-25/doc-inippewq9721327.shtml"
-      },
-      {
-        "title": "财经早知道｜国管公积金新政 首套房最高可贷款340万元",
-        "url": "https://finance.caixin.com/2026-08-25/102477565.html"
-      },
-      {
-        "title": "能源局：截至7月底全国累计发电装机容量同比增长11%",
-        "url": "https://www.stcn.com/article/detail/4115515.html"
-      },
-      {
-        "title": "拆解鱼跃医疗中报业绩：数智赋能下，多个增长新引擎已崭露头角3小时前",
-        "url": "https://www.yicai.com/news/103332368.html"
-      },
-      {
-        "title": "日经225指数收盘上涨0.5%，报65,856.43点。\n\n日本东证指数收盘上涨0.5%%，报4,093.67点。",
-        "url": "https://wallstreetcn.com/livenews/3154391"
-      },
-      {
-        "title": "德国汽车零部件商加速转型 转向医疗机器人和国防领域",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-25/doc-inippewq9730955.shtml"
-      },
-      {
-        "title": "精准呵护流动性 央行开展MLF和隔夜逆回购操作",
-        "url": "https://www.stcn.com/article/detail/4110944.html"
-      },
-      {
-        "title": "Meta内部文件显示消费者AI代理Hatch拟数周内上线、新模型Watermelon目标10月发布",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-25/doc-inippewu5562822.shtml"
-      },
-      {
-        "title": "海希通讯（920405）索赔案启动，新智认知（603869）索赔案已有胜诉还可起诉",
-        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-08-25/doc-inippews1695324.shtml"
-      },
-      {
-        "title": "C端烧钱数十亿后，互联网大厂为何集体转向AI办公？AI办公场景仍需依靠质量稳定与企业付费意愿的成熟。3小时前",
-        "url": "https://www.yicai.com/news/103332414.html"
-      },
-      {
-        "title": "成都再推楼市新政：公积金降首付+贷款利息补贴新政旨在进一步夯实楼市稳中向好的基础2小时前",
-        "url": "https://www.yicai.com/news/103332504.html"
-      },
-      {
-        "title": "2025网易经济学家年会夏季论坛",
-        "url": "https://money.163.com/special/2025naecsummer/"
-      },
-      {
-        "title": "AI办公应用大战正酣 字节整合相关团队推出“豆包办公”",
-        "url": "https://www.caixin.com/2026-08-25/102477698.html"
-      },
-      {
-        "title": "法国数据软件公司ChapsVision瞄准欧洲市场 挑战美国巨头Palantir",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-25/doc-inippewu5555706.shtml"
-      },
-      {
-        "title": "佳缘科技（301117）投资者索赔将提交法院立案",
-        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-08-25/doc-inippewq9740355.shtml"
-      },
-      {
-        "title": "美对伊朗武装力量高级官员发布悬赏",
-        "url": "https://finance.eastmoney.com/a/202608253852740921.html"
-      },
-      {
-        "title": "南向资金净卖出额达50亿港元",
-        "url": "https://finance.eastmoney.com/a/202608253852747792.html"
-      },
-      {
-        "title": "人气龙头3连板，数字货币概念大涨",
-        "url": "https://finance.ifeng.com/c/8vsKZwpKBFf"
-      },
-      {
-        "title": "股市内参：总比别人领先一步",
-        "url": "http://money.163.com/"
-      },
-      {
-        "title": "付鹏：宇树上市的那一天，就是典型的吸星大法，资金都被它“吸”走了08-25 14:310评",
-        "url": "https://finance.ifeng.com/c/8vsT49T74th"
-      },
-      {
-        "title": "小电驴，行驶限速拟提高至20km/h电动自行车在非机动车道内行驶时的最高时速限制从15公里调整为20公里。2小时前",
-        "url": "https://www.yicai.com/news/103332450.html"
-      },
-      {
-        "title": "上海：“十五五”新增打造三个万亿级产业集群",
-        "url": "https://www.stcn.com/article/detail/4110941.html"
-      },
-      {
-        "title": "青岛金王直线涨停！脑机接口再迎政策催化，逾30家上市公司抢先布局",
-        "url": "https://www.stcn.com/article/detail/4115630.html"
-      },
-      {
-        "title": "人事观察｜57岁女高官郑莉履新贵阳市委书记",
-        "url": "https://china.caixin.com/2026-08-25/102477593.html"
-      },
-      {
-        "title": "今日开盘：两市双双低开 沪指跌幅0.48%",
-        "url": "https://finance.caixin.com/2026-08-25/102477600.html"
-      },
-      {
-        "title": "任泽平：“崩老头”“崩阿姨”现象为何流行？",
-        "url": "https://finance.ifeng.com/c/8vsK3YoLefy"
-      },
-      {
-        "title": "康希通信：拟收购知融科技控股权",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510033896.html"
-      },
-      {
-        "title": "划定路线图 2030年脑机接口标准体系基本形成",
-        "url": "https://www.stcn.com/article/detail/4110933.html"
-      },
-      {
-        "title": "孙宏斌的“新故事”，融创中国官宣转型方向融创发布公告称，确立“资产管理+资产运营”为战略转型方向。3小时前",
-        "url": "https://www.yicai.com/news/103332344.html"
-      },
-      {
-        "title": "又一“双十”基金经理离任 “奔私”现象持续",
-        "url": "https://www.stcn.com/article/detail/4115150.html"
-      },
-      {
-        "title": "人形机器人运动会，投资人在看什么？从400米赛道到真实世界，机器人要拼可靠性。2小时前",
-        "url": "https://www.yicai.com/news/103332464.html"
-      },
-      {
-        "title": "算力租赁概念震荡反弹 佳力图等多股涨停",
-        "url": "https://finance.eastmoney.com/a/202608253852741669.html"
-      },
-      {
-        "title": "钟才文：推动高质量发展行稳致远",
-        "url": "https://finance.ifeng.com/c/8vs2gTSt9ZA"
-      },
-      {
-        "title": "报道：空客西班牙公司员工将于周二开始无限期罢工。",
-        "url": "https://wallstreetcn.com/livenews/3154390"
-      },
-      {
-        "title": "集体跳水！一宗大额交易，突然刷屏！黄金白银，陡增变数",
-        "url": "https://www.stcn.com/article/detail/4115628.html"
-      },
-      {
-        "title": "字体“批量维权”频发 双重授权陷阱下合规漏洞亟待补上",
-        "url": "https://www.stcn.com/article/detail/4110931.html"
-      },
-      {
-        "title": "中金：继续看好AI算力成长主线 建议关注两大机会",
-        "url": "https://www.stcn.com/article/detail/4115213.html"
-      },
-      {
-        "title": "海外收入占比近半、单季首破50%，科沃斯全球化进入收获期1小时前",
-        "url": "https://www.yicai.com/news/103332546.html"
-      },
-      {
-        "title": "高盛：未来10年中国先进制程芯片供需缺口缩至34%",
-        "url": "https://www.caixin.com/2026-08-25/102477605.html"
-      },
-      {
-        "title": "研究指中国医保报销获益向高收入人群倾斜 公平性待提升",
-        "url": "https://www.caixin.com/2026-08-25/102477567.html"
-      },
-      {
-        "title": "特朗普称福特是走狗，福特回敬一句粗口",
-        "url": "https://finance.ifeng.com/c/8vryjQSJYIo"
-      },
-      {
-        "title": "“第一批已经发货去法国”，中国人形机器人进入海外工厂“打工”机器人已被称为出海“新新三样”。46分钟前",
-        "url": "https://www.yicai.com/news/103332660.html"
-      },
-      {
-        "title": "路博迈基金谢恒：AI投资周期仍处上行通道",
-        "url": "https://www.cs.com.cn/sylm/jsbd/2026/08/20/detail_2026082010032756.html"
-      },
       {
         "title": "浙江美大停牌前连续涨停 控制权转让是否提前泄密",
         "url": "https://www.cs.com.cn/ssgs/01/2026/07/11/detail_2026071110023757.html"
       },
       {
-        "title": "药明合联上半年利润同比增长37.4%，港股通医药ETF鹏华涨超2%",
-        "url": "https://finance.eastmoney.com/a/202608253852752843.html"
+        "title": "险资科创叙事：一场考验眼光与耐心的投资长跑",
+        "url": "https://www.stcn.com/article/detail/4121187.html"
       },
       {
-        "title": "智能体支付如何防风险？最新自律公约要求KYA和用户清晰授权",
-        "url": "https://finance.caixin.com/2026-08-25/102477626.html"
+        "title": "经济日报金观平：系统布局扩内需促消费",
+        "url": "https://finance.eastmoney.com/a/202608263853530895.html"
       },
       {
-        "title": "“甲醛白菜”屡禁不止：十余年间被多次曝光，甲醛为何仍未纳入蔬菜常规检测？",
-        "url": "https://finance.ifeng.com/c/8vrvd0SRIB7"
+        "title": "真正难题不是降息08-26 06:580评",
+        "url": "https://finance.ifeng.com/c/8vtaXnapLC8"
       },
       {
-        "title": "一货船在孟加拉湾因不明原因沉没 船上18名中国籍船员失联",
-        "url": "https://international.caixin.com/2026-08-25/102477636.html"
+        "title": "下沉市场潜力释放活力迸发",
+        "url": "https://finance.eastmoney.com/a/202608263853530621.html"
       },
       {
-        "title": "2025网易新能量 乳制品行业评选",
-        "url": "http://money.163.com/special/2025new_power/"
+        "title": "日韩股市低开 韩国综合股价指数开盘下跌0.2%",
+        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-26/doc-inipqxfw1149032.shtml"
       },
       {
-        "title": "兑吧午后涨近9% 预计上半年总收入同比显著增长",
-        "url": "https://finance.sina.com.cn/stock/hkstock/marketalerts/2026-08-25/doc-inippews1670131.shtml"
+        "title": "美联储柯林斯：若无通胀持续回落证据，则需要尽快加息",
+        "url": "https://finance.ifeng.com/c/8vtViC9FntI"
       },
       {
-        "title": "晶升股份自主研发大尺寸CVD SiC涂层成套设备完成交付",
-        "url": "https://finance.eastmoney.com/a/202608253852748146.html"
+        "title": "剑桥最年轻黑人教授涉学术诚信争议离世后 指控者遭停职调查",
+        "url": "https://international.caixin.com/2026-08-25/102477750.html"
       },
       {
-        "title": "商品期货收盘，碳酸锂主力合约跌超6%，集运欧线跌超4%，PVC、苹果、LU燃油、生猪跌超2%。纯苯、短纤、瓶片、甲醇、沥青、苯乙烯涨超1%。",
-        "url": "https://wallstreetcn.com/livenews/3154409"
+        "title": "冲击2万亿，第一省会借“港”突围08-26 06:170评",
+        "url": "https://finance.ifeng.com/c/8vt4wZGUThj"
       },
       {
-        "title": "日本唯一一家高频交易公司Dharmacapital迁至新加坡",
-        "url": "https://wallstreetcn.com/livenews/3154388"
+        "title": "豪威集团获Formosa Opportunity Limited增持7.93万股 每股作价约73.35港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxhc6307414.shtml"
       },
       {
-        "title": "受伊朗局势推高各项成本，美国粮农遭遇数十年来最严峻危机",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-25/doc-inippews1662431.shtml"
+        "title": "美国考虑对加拿大的报复采取更多贸易措施，可能包括提高关税和其他贸易行动。",
+        "url": "https://wallstreetcn.com/livenews/3154908"
       },
       {
-        "title": "韩国Kospi指数反弹 投资者认为近期下跌过度",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-25/doc-inippewq9713756.shtml"
+        "title": "康龙化成获小摩增持约403.64万股 每股作价约34.04港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxfw1151739.shtml"
       },
       {
-        "title": "宇科技上市大跌，付鹏：本质还是一级市场风险投资08-25 14:390评",
-        "url": "https://finance.ifeng.com/c/8vsT9RKNWmz"
+        "title": "英伟达财报前夜，华尔街绝地反击",
+        "url": "https://finance.ifeng.com/c/8vtcXUwmOZl"
       },
       {
-        "title": "蔚能电池在武汉成立新能源技术公司，注册资本2.53亿",
-        "url": "https://wallstreetcn.com/livenews/3154404"
+        "title": "08-26 07:37我国最大直径水下盾构隧道建成通车我国最大直径水下盾构隧道建成通车8月25日，由济南城市建设集团投资建设、中铁十四局施工的济南黄岗路黄河隧道建成通车，标志着我国最大直径水下盾构隧道正式投入使用。",
+        "url": "https://www.cs.com.cn/xwzx/08/2026/08/26/detail_2026082610034101.html"
       },
       {
-        "title": "2026网易经济学家年会",
-        "url": "https://money.163.com/special/2026naecsummer/"
+        "title": "日经225指数低开0.3%，韩国首尔综指低开0.2%。",
+        "url": "https://wallstreetcn.com/livenews/3154919"
       },
       {
-        "title": "午后！美联储，突传利好！亚太股市，集体反攻",
-        "url": "https://www.stcn.com/article/detail/4115774.html"
+        "title": "天博智能、洛轴股份、北交所杰锋动力今日申购",
+        "url": "https://www.stcn.com/article/detail/4126101.html"
       },
       {
-        "title": "国内商品期货收盘 主力合约多数下跌",
-        "url": "https://finance.eastmoney.com/a/202608253852752630.html"
+        "title": "石药集团遭汇添富基金管理减持3912.4万股 每股作价约9.75港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxhc6304997.shtml"
       },
       {
-        "title": "劳工代表：大众汽车裁员人数或将飙升至14万人",
-        "url": "https://wallstreetcn.com/livenews/3154399"
+        "title": "Anthropic拟向投资者披露超30万亿美元潜在市场规模 IPO估值目标约2万亿美元",
+        "url": "https://finance.eastmoney.com/a/202608263853647265.html"
       },
       {
-        "title": "研究称财政压力增加将显著提高地方罚没收入强度",
-        "url": "https://economy.caixin.com/2026-08-25/102477714.html"
+        "title": "俄罗斯经济在困局中实现反弹",
+        "url": "https://finance.eastmoney.com/a/202608263853531633.html"
       },
       {
-        "title": "复牌涨停！连亏四年A股公司，拟收购煤化工资产",
-        "url": "https://www.stcn.com/article/detail/4115472.html"
+        "title": "日韩股市开盘，双双下跌",
+        "url": "https://finance.ifeng.com/c/8vtf1LGFRxQ"
       },
       {
-        "title": "青岛中程（300208）投资者索赔再向法院提交立案，此前已有胜诉",
-        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-08-25/doc-inippewu5576281.shtml"
+        "title": "药明康德获FMR LLC增持93.824万股 每股作价约209.70港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxfy5394603.shtml"
       },
       {
-        "title": "A股收盘：创业板指震荡跌1%，两市成交仅约1.8万亿",
-        "url": "https://wallstreetcn.com/livenews/3154408"
+        "title": "工业和信息化部：以人才安全筑牢产业安全屏障",
+        "url": "https://www.cs.com.cn/xwzx/01/2026/08/25/detail_2026082510033991.html"
       },
       {
-        "title": "解码上市银行半年报：息差企稳回升 中间业务明显分化",
-        "url": "https://www.stcn.com/article/detail/4110951.html"
-      },
-      {
-        "title": "春光集团：多维发力夯实成长动能 上半年营收净利双增",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510033897.html"
-      },
-      {
-        "title": "比特币期权市场现大额看涨押注 投资者豪赌突破82000美元",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-25/doc-inippewq9714897.shtml"
-      },
-      {
-        "title": "付鹏：深圳同类机器人组装已很普遍，宇树面临较大竞争压力08-25 14:250评",
-        "url": "https://finance.ifeng.com/c/8vsRr8hoOcU"
-      },
-      {
-        "title": "零跑上半年每卖一辆车只赚589元 下调全年盈利目标 确认布局机器人业务",
-        "url": "https://finance.eastmoney.com/a/202608253852750738.html"
+        "title": "业绩增长添底气，券商中期分红预案纷至沓来",
+        "url": "https://wallstreetcn.com/livenews/3154899"
       },
       {
         "title": "贝森特干预债市：效果不明、后果堪忧",
         "url": "https://opinion.caixin.com/2026-08-25/102477644.html"
       },
       {
-        "title": "道路交通安全法修订草案提请审议",
-        "url": "https://www.cs.com.cn/xwzx/01/2026/08/25/detail_2026082510033823.html"
+        "title": "同心同行——两岸青年交流季上海站活动在沪举行携手共创祖国统一、民族复兴的美好未来。昨天 21:56",
+        "url": "https://www.yicai.com/news/103333641.html"
       },
       {
-        "title": "收评：沪指涨0.19% 创业板指跌1% 种业概念、医药板块走强",
-        "url": "https://www.stcn.com/article/detail/4115790.html"
-      },
-      {
-        "title": "WTI原油日内跌幅达1%，报84.16美元/桶。",
-        "url": "https://wallstreetcn.com/livenews/3154389"
-      },
-      {
-        "title": "河南发行7年期一般债地方债，规模54.2500亿元，发行利率1.5700%，边际倍数2.17倍，倍数预期1.57；\n\n河南发行7年期一般债地方债，规模159.6",
-        "url": "https://wallstreetcn.com/livenews/3154397"
-      },
-      {
-        "title": "北斗规模应用宣传媒体圆桌会在京召开",
-        "url": "https://wallstreetcn.com/livenews/3154400"
-      },
-      {
-        "title": "路博迈基金谢恒：AI应用落地或将催生港股市场更多投资机会",
-        "url": "https://www.cs.com.cn/sylm/jsbd/2026/08/20/detail_2026082010032753.html"
-      },
-      {
-        "title": "债券ETF规模悄悄创了新高 净值也接连上涨 这是什么信号？",
-        "url": "https://finance.eastmoney.com/a/202608253852749892.html"
-      },
-      {
-        "title": "08-25 08:38渝万高铁正式接入重庆东站渝万高铁正式接入重庆东站8月24日，在重庆市南岸区重庆东站施工现场，随着中铁一局新型多功能长钢轨牵引车将500米长钢轨稳稳铺下，渝万高铁铺轨工程成功接入重庆东站，为全线按期通车奠定了坚实基础。",
-        "url": "https://www.cs.com.cn/xwzx/01/2026/08/25/detail_2026082510033781.html"
-      },
-      {
-        "title": "1-7月我国企业在共建“一带一路”国家非金融类直接投资1519.9亿元 同比下降5.5%",
-        "url": "https://finance.eastmoney.com/a/202608253852753543.html"
-      },
-      {
-        "title": "从碳账到自然账：银行风险管理的下一道考题",
-        "url": "https://opinion.caixin.com/2026-08-25/102477623.html"
-      },
-      {
-        "title": "A股震荡，人气龙头3连板！数字货币概念大涨！有色金属等板块走弱",
-        "url": "https://www.stcn.com/article/detail/4115648.html"
-      },
-      {
-        "title": "恒生指数、恒生科技指数双双转涨，恒生指数涨0.01％，恒生科技指数涨0.11％。",
-        "url": "https://wallstreetcn.com/livenews/3154395"
-      },
-      {
-        "title": "私募股权成长型基金上半年资金流入创历史新高，行业迎来复苏",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-25/doc-inippewu5560465.shtml"
-      },
-      {
-        "title": "具身智能迎来落地关键期，竞争转向“拼大脑”“拼体系化能力”优必选的突破方向是要在规模化交付之后提升机器人的部署效率、降低交付后的运维复杂度和成本。1小时前",
-        "url": "https://www.yicai.com/news/103332539.html"
-      },
-      {
-        "title": "创新药板块持续活跃，创新药ETF易方达（516080）盘中涨2.06%",
-        "url": "https://finance.eastmoney.com/a/202608253852747546.html"
-      },
-      {
-        "title": "中国食品午后涨超6% 上半年纯利同比增长7.83%至6.23亿元",
-        "url": "https://finance.sina.com.cn/stock/hkstock/marketalerts/2026-08-25/doc-inippewu5554030.shtml"
-      },
-      {
-        "title": "锚定普惠金融 上海证券融合主业赋能多场景",
-        "url": "https://www.stcn.com/article/detail/4110952.html"
-      },
-      {
-        "title": "A股算力租赁概念震荡反弹，佳力图、东易日盛、甘咨询涨停，创业黑马涨超10%，南凌科技、大名城、群兴玩具、美利云等跟涨。",
-        "url": "https://wallstreetcn.com/livenews/3154393"
-      },
-      {
-        "title": "凤凰鉴保官 | “好医保”评测04-29 22:060评",
-        "url": "https://biz.ifeng.com/c/special/8sj9KUhlrXs"
-      },
-      {
-        "title": "成都出台房地产市场十条新政 公积金贷款贴息20%",
-        "url": "https://www.cs.com.cn/xwzx/01/2026/08/25/detail_2026082510033883.html"
-      },
-      {
-        "title": "午评：创业板指半日跌1.43%，农业板块逆势大涨",
-        "url": "https://finance.ifeng.com/c/special/7w3fQMcHQAK"
-      },
-      {
-        "title": "‌“钟才文”连发四文 如何看待当前中国经济？",
-        "url": "https://economy.caixin.com/2026-08-25/102477727.html"
-      },
-      {
-        "title": "欧股集体小幅高开 欧洲斯托克50指数涨0.6%",
-        "url": "https://finance.eastmoney.com/a/202608253852753921.html"
-      },
-      {
-        "title": "重点时间节点，人民日报连发四篇“钟才文”，如何读懂？",
-        "url": "https://www.stcn.com/article/detail/4115616.html"
-      },
-      {
-        "title": "西藏旅游：2026年半年度营收9423万元 同比增长4.31%",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510033885.html"
-      },
-      {
-        "title": "内塔尼亚胡：伊朗想杀我儿子，差点得手",
-        "url": "https://wallstreetcn.com/livenews/3154410"
-      },
-      {
-        "title": "多家公司披露短剧业务进展 整体增收明显",
-        "url": "https://www.stcn.com/article/detail/4110937.html"
-      },
-      {
-        "title": "英伟达股价七连跌，财报前市场在担心什么？一些机构释放了对英伟达最新财季业绩增长的信心，但市场仍有其他顾虑。2小时前",
-        "url": "https://www.yicai.com/news/103332449.html"
-      },
-      {
-        "title": "汇量科技午后涨超8% 中期经调整净利润同比增长39.50%",
-        "url": "https://finance.sina.com.cn/stock/hkstock/marketalerts/2026-08-25/doc-inippewq9718270.shtml"
-      },
-      {
-        "title": "企业速看！劳务派遣差额征税大调整未持证、开错票均无法享受优惠2小时前",
-        "url": "https://www.yicai.com/news/103332472.html"
-      },
-      {
-        "title": "盘前点金｜研判主题机会 挖掘潜力个股每日盘前，为您抢先捕捉关键讯息（①最新券商观点；②高关注题材；③财经要闻重点；④潜力标的挖掘），助您从容开启交易日！01-07 10:02",
-        "url": "https://www.yicai.com/topic/102990833/"
-      },
-      {
-        "title": "法国8月消费者信心指数 86，预期 87，前值 86。",
-        "url": "https://wallstreetcn.com/livenews/3154396"
-      },
-      {
-        "title": "摩根大通放宽股票质押放贷策略，争抢AI催生的新增财富",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-25/doc-inippewu5558158.shtml"
-      },
-      {
-        "title": "新疆能源监管办约谈12家市场异常行为发电企业",
-        "url": "https://finance.eastmoney.com/a/202608253852746554.html"
-      },
-      {
-        "title": "政策动向叠加空单平仓 比特币三天涨24%",
-        "url": "https://finance.caixin.com/2026-08-24/102477551.html"
+        "title": "布伦特原油期货跌幅扩大至1%",
+        "url": "https://finance.eastmoney.com/a/202608263853729166.html"
       },
       {
         "title": "独家｜规避红海封锁 中国超大油轮停靠埃及绕行非洲",
         "url": "https://international.caixin.com/2026-08-06/102471650.html"
       },
       {
-        "title": "广汽冯兴亚时隔一年再访华为任正非",
-        "url": "https://finance.eastmoney.com/a/202608253852757029.html"
+        "title": "美股三大指数集体收涨，大型科技股涨跌不一",
+        "url": "https://finance.ifeng.com/c/special/7w3fQMcHQAK"
       },
       {
-        "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。2025-11-03 14:49",
-        "url": "https://www.yicai.com/topic/102892546/"
+        "title": "美股三大指数集体收涨 光通信、存储板块走强",
+        "url": "https://www.stcn.com/article/detail/4126071.html"
       },
       {
-        "title": "国资委：央企要加快实现6G商业闭环",
-        "url": "https://www.stcn.com/article/detail/4110932.html"
+        "title": "美股三大指数收涨，芯片股反弹、英伟达终结七连跌，油价回落英伟达终结七连跌。51分钟前",
+        "url": "https://www.yicai.com/news/103333793.html"
       },
       {
-        "title": "政策共振打开成长空间 金晶科技双品线卡位“十五五”绿色转型赛道",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510033887.html"
+        "title": "凤凰鉴保官 | “好医保”评测04-29 22:060评",
+        "url": "https://biz.ifeng.com/c/special/8sj9KUhlrXs"
       },
       {
-        "title": "宁波海运：2026上半年营收同比增65.99% 净利润同比增近3000万元",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510033884.html"
+        "title": "民企重返土拍江湖，区域房企与实业资本争相“抢地”曾经一度沉寂的民营房企，正重新“杀回”土拍市场。昨天 20:41",
+        "url": "https://www.yicai.com/news/103333486.html"
       },
       {
-        "title": "川能动力：上半年净利润增长130.73% 拟10派2.6元",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510033863.html"
+        "title": "亨利加集团获主席张烈云增持3.4万股 每股作价约5.12港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxfw1148051.shtml"
+      },
+      {
+        "title": "太平洋航运遭Pzena Investment Management, LLC减持655.2071万股 每股作价约4.19港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxfw1146559.shtml"
+      },
+      {
+        "title": "华尔街见闻早餐| 2026年8月26日",
+        "url": "https://wallstreetcn.com/livenews/3154907"
+      },
+      {
+        "title": "股市内参：总比别人领先一步",
+        "url": "http://money.163.com/"
+      },
+      {
+        "title": "Waymo将在德国慕尼黑启动自动驾驶测试 计划明年底前正式上线出行服务",
+        "url": "https://finance.eastmoney.com/a/202608263853714763.html"
+      },
+      {
+        "title": "脑机接口再迎政策催化 有望成为千亿赛道 逾30家上市公司抢占风口",
+        "url": "https://www.stcn.com/article/detail/4121198.html"
+      },
+      {
+        "title": "时报观察丨车企驶进具身智能赛道的考量",
+        "url": "https://www.stcn.com/article/detail/4121177.html"
+      },
+      {
+        "title": "日韩股市集体低开",
+        "url": "https://finance.eastmoney.com/a/202608263853728144.html"
+      },
+      {
+        "title": "东方甄选2026财年净利暴增86倍 上市直播电商盈利普遍改善",
+        "url": "https://www.caixin.com/2026-08-25/102477793.html"
+      },
+      {
+        "title": "梁建章：新加坡加大生育支持力度对中国的启示",
+        "url": "https://opinion.caixin.com/2026-08-26/102477860.html"
+      },
+      {
+        "title": "中际旭创遭小摩减持约6.8万股 每股作价约1093.92港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxfy5392670.shtml"
+      },
+      {
+        "title": "锚定科技金融 第一创业重构新质生产力服务范式",
+        "url": "https://www.stcn.com/article/detail/4121188.html"
+      },
+      {
+        "title": "月内共有463家A股公司接待机构调研",
+        "url": "https://wallstreetcn.com/livenews/3154904"
+      },
+      {
+        "title": "小鹏集团二季度实现营收197.4亿元 机器人业务迎来资本加持",
+        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510034086.html"
       },
       {
         "title": "人民日报连续刊发“钟才文”文章点评经济（全文）",
         "url": "https://china.caixin.com/2026-08-25/102477735.html"
       },
       {
-        "title": "北方人口增量第一城，要强省会到底了08-25 13:290评",
-        "url": "https://finance.ifeng.com/c/8vsOAnmFxM4"
+        "title": "银诺医药-B拟斥资5000万港元进行场内H股购回",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxfy5396640.shtml"
       },
       {
-        "title": "国家能源局：拟在“一带一路”能源合作伙伴关系框架下新成立“人工智能+能源”工作组",
-        "url": "https://wallstreetcn.com/livenews/3154401"
+        "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。2025-11-03 14:49",
+        "url": "https://www.yicai.com/topic/102892546/"
       },
       {
-        "title": "美国封锁产生实质影响，伊朗民众排队加油",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-25/doc-inippews1688069.shtml"
+        "title": "中欧北极快航常态化运营 韩国、印度相继布局 这条航道有何不同？",
+        "url": "https://finance.eastmoney.com/a/202608253853383474.html"
       },
       {
-        "title": "浙商银行：千亿融资赋能“415X” 护航“浙江智造”向新而行08-06 16:340评",
-        "url": "https://finance.ifeng.com/c/8vN255a7fgT"
-      },
-      {
-        "title": "贷款中介“付费加白”调查：借渠道说辞收取高额费用",
-        "url": "https://www.cs.com.cn/yh/04/2026/07/17/detail_2026071710024969.html"
-      },
-      {
-        "title": "1-7月我国全行业对外直接投资6845.1亿元 同比增长2.8%",
-        "url": "https://finance.eastmoney.com/a/202608253852753478.html"
-      },
-      {
-        "title": "比特币猛拉，“暴打”空头",
-        "url": "https://finance.ifeng.com/c/8vsNDAFNG4e"
-      },
-      {
-        "title": "港股生物科技走强，恒生生物科技ETF易方达（159105）盘中涨2.23%",
-        "url": "https://finance.eastmoney.com/a/202608253852747620.html"
+        "title": "特朗普欲将安大略湖改名“美国湖”，加方回应",
+        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-26/doc-inipqxfw1148638.shtml"
       },
       {
         "title": "小鹏机器人业务拟融资9亿美元 投后估值63亿美元",
         "url": "https://www.caixin.com/2026-08-25/102477721.html"
       },
       {
-        "title": "流量业务量增利减 三大运营商调整架构发力Token经济",
-        "url": "https://www.stcn.com/article/detail/4110936.html"
+        "title": "中国即将发行或正在发行的地方政府债",
+        "url": "https://wallstreetcn.com/livenews/3154917"
       },
       {
-        "title": "高盛：年末黄金价格将达到每盎司4900美元",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-25/doc-inippeww2326644.shtml"
+        "title": "2026文昌国际航空航天论坛成功举办",
+        "url": "https://www.stcn.com/article/detail/4121185.html"
       },
       {
-        "title": "专家：劳务派遣企业享受差额征税优惠需通过“三重把关”",
-        "url": "https://www.cs.com.cn/xwzx/01/2026/08/25/detail_2026082510033862.html"
+        "title": "贷款中介“付费加白”调查：借渠道说辞收取高额费用",
+        "url": "https://www.cs.com.cn/yh/04/2026/07/17/detail_2026071710024969.html"
       },
       {
-        "title": "零跑上半年录得净利润2.1亿元 调低全年盈利目标",
-        "url": "https://www.caixin.com/2026-08-25/102477658.html"
+        "title": "多部门研究完善“六张网”多元化投融资模式",
+        "url": "https://www.stcn.com/article/detail/4121182.html"
+      },
+      {
+        "title": "中报业绩齐增，光通信高景气为何难挽股价颓势这是最好的光通信时代吗？昨天 20:52",
+        "url": "https://www.yicai.com/news/103333273.html"
+      },
+      {
+        "title": "险资“潜伏”硬科技IPO 超30家机构借道PE密集卡位",
+        "url": "https://www.stcn.com/article/detail/4121186.html"
+      },
+      {
+        "title": "霍尔木兹暗战：油价四连跌真相，一场不敢公开的和平正在发酵",
+        "url": "https://finance.ifeng.com/c/8vtaXnb6wM3"
+      },
+      {
+        "title": "生猪价格“磨底”回升 8月以来涨超7.5%",
+        "url": "https://wallstreetcn.com/livenews/3154901"
+      },
+      {
+        "title": "投资加码带动业绩释放，电力设备储能产业链迎周期回暖",
+        "url": "https://wallstreetcn.com/livenews/3154900"
+      },
+      {
+        "title": "2030年我国将基本建成现代农产品产地市场体系",
+        "url": "https://www.cs.com.cn/xwzx/01/2026/08/25/detail_2026082510034042.html"
+      },
+      {
+        "title": "财经早知道｜“钟才文”连发四文 如何看待当前中国经济？",
+        "url": "https://finance.caixin.com/2026-08-26/102477858.html"
+      },
+      {
+        "title": "广合科技遭富国基金减持33.19万股 每股作价约125.07港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxhc6305539.shtml"
+      },
+      {
+        "title": "2025网易新能量 乳制品行业评选",
+        "url": "http://money.163.com/special/2025new_power/"
+      },
+      {
+        "title": "路博迈基金谢恒：AI应用落地或将催生港股市场更多投资机会",
+        "url": "https://www.cs.com.cn/sylm/jsbd/2026/08/20/detail_2026082010032753.html"
+      },
+      {
+        "title": "中国即将发行或正在发行的国债和政策性金融债",
+        "url": "https://wallstreetcn.com/livenews/3154918"
+      },
+      {
+        "title": "AI进化速递丨人形机器人百米竞速再次刷新纪录AI进化速递丨人形机器人百米竞速再次刷新纪录昨天 20:39",
+        "url": "https://www.yicai.com/news/103333485.html"
+      },
+      {
+        "title": "物企加快清退低效项目 越秀服务称八成主动撤场涉及亏损及回款风险",
+        "url": "https://www.caixin.com/2026-08-25/102477824.html"
+      },
+      {
+        "title": "赣锋锂业获小摩增持约62.1万股 每股作价约37.59港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxfy5401124.shtml"
       },
       {
         "title": "二度冲击港股IPO 奥动新能源迎战换电行业精细化变局",
         "url": "https://www.cs.com.cn/ssgs/01/2026/08/07/detail_2026080710029893.html"
       },
       {
-        "title": "香港恒生指数、恒生科技指数双双转涨",
-        "url": "https://finance.eastmoney.com/a/202608253852744315.html"
+        "title": "3连板热门股半年报继续亏损！商业航天大消息，首次整星出口东南亚（附绩优股）",
+        "url": "https://www.stcn.com/article/detail/4126144.html"
       },
       {
-        "title": "08-25 09:48刘杨思格新能源：上半年营收同比增长超260% 以AI驱动能源转型思格新能源：上半年营收同比增长超260% 以AI驱动能源转型2026年上半年，思格新能源研发开支同比增长62.9%。通过持续研发，思格新能源已建立涵盖电力电子、电池管理系统 (BMS)、智能充电与V2X、云计算与人工智能、虚拟电网，以及先进生产、测试与产品安全设计等领域的核心技术体系。",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510033820.html"
+        "title": "受益于投资收益，众安在线上半年净利同比增长1.3倍年化总投资收益率和净投资收益率分别为约7.8%及约4.0%，较去年同期分别增长4.5个百分点和1.9个百分点。昨天 21:03",
+        "url": "https://www.yicai.com/news/103333506.html"
       },
       {
-        "title": "A股三大指数涨跌不一 成交额不足1.9万亿 逾4200只股上涨",
-        "url": "https://finance.eastmoney.com/a/202608253852752533.html"
+        "title": "三年建100吉瓦光伏，印尼总统放豪言：未来无需进口石油08-26 06:080评",
+        "url": "https://finance.ifeng.com/c/8vtViC9Fntw"
       },
       {
-        "title": "比特币重返80000美元 美债回购政策助推加密市场复苏",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-08-25/doc-inippeww2322875.shtml"
+        "title": "利好突袭！美股全线拉升！霍尔木兹海峡，大消息",
+        "url": "https://www.stcn.com/article/detail/4126153.html"
       },
       {
-        "title": "一箭7星 长征六号丙遥一运载火箭发射成功",
-        "url": "https://www.cs.com.cn/xwzx/01/2026/08/25/detail_2026082510033876.html"
+        "title": "中央气象台8月26日6时继续发布台风橙色预警",
+        "url": "https://wallstreetcn.com/livenews/3154910"
       },
       {
-        "title": "绿联科技：上半年营收净利润双增长 全球化与品牌年轻化双提速",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510033864.html"
+        "title": "付鹏：宇树研发经费，比牧原养猪的研发经费还低",
+        "url": "https://finance.ifeng.com/c/special/8vsArSl4jqa"
       },
       {
-        "title": "西班牙7月PPI同比增长9.2%",
-        "url": "https://finance.eastmoney.com/a/202608253852754273.html"
+        "title": "同星科技：液冷换热模组产品处于客户送样、联合整机测试阶段",
+        "url": "https://finance.eastmoney.com/a/202608263853729516.html"
       },
       {
-        "title": "上证指数收报3889.45点，涨0.19%。\n\n深证成指收报13745.87点，跌0.35%。\n\n创业板指收报3397.52点，跌1.00%。\n\n沪深300收报",
-        "url": "https://wallstreetcn.com/livenews/3154407"
+        "title": "周期与科技双线交锋，百亿级私募演绎拉锯战",
+        "url": "https://wallstreetcn.com/livenews/3154898"
       },
       {
-        "title": "中欧班列“中通道”累计通行班列突破2.6万列",
-        "url": "https://finance.eastmoney.com/a/202608253852754463.html"
+        "title": "仅花5000元 解码苏超实现“长红”的背后逻辑",
+        "url": "https://www.stcn.com/article/detail/4121193.html"
       },
       {
-        "title": "欧股集体高开，欧洲斯托克50指数涨0.6%，英国富时100指数涨0.3%，法国CAC40指数涨0.5%，德国DAX指数涨0.4%。",
-        "url": "https://wallstreetcn.com/livenews/3154406"
+        "title": "新石器联合广汽领程开发的首款无人物流车X6下线",
+        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510034030.html"
       },
       {
-        "title": "李小龙曾获舞蹈比赛冠军，这部舞剧讲述他的一生该剧以李小龙的武术精神与人生为蓝本，结合舞蹈与武术两种艺术形式，讲述他从少年意气的街头岁月，到成长为好莱坞电影巨星的传奇历程。4小时前",
-        "url": "https://www.yicai.com/news/103332175.html"
+        "title": "提醒：日内请重点关注（以下均为北京时间）",
+        "url": "https://wallstreetcn.com/livenews/3154893"
       },
       {
-        "title": "海能达半年报：公专融合业务加速增长 扣非净利润同比增19.73%",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510033898.html"
+        "title": "订单充沛彰显产业韧性 向投资者传递积极信号",
+        "url": "https://www.stcn.com/article/detail/4121184.html"
       },
       {
-        "title": "凯莱英：上半年经调整净利润达7.53亿元 在手订单同比增超五成",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510033886.html"
+        "title": "从“秀Demo”到“拼体验” 情感交互机器人正从展台走向真实场景",
+        "url": "https://finance.eastmoney.com/a/202608253853382873.html"
       },
       {
-        "title": "马来西亚8月1-25日棕榈油出口量为1045204吨 较上月同期出口减少了20%",
-        "url": "https://finance.eastmoney.com/a/202608253852744568.html"
+        "title": "夜读精选｜研究称财政压力增加将显著提高地方罚没收入强度",
+        "url": "https://www.caixin.com/2026-08-25/102477805.html"
       },
       {
-        "title": "T早报｜拼多多二季度继续增收不增利；蔡崇信吴泳铭增持1.2亿港元阿里股票；小米发布三款自研芯片",
-        "url": "https://www.caixin.com/2026-08-25/102477581.html"
+        "title": "瑞普生物：上半年实现营业收入17.2亿元 万吨级生物制造基地即将投产",
+        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510034087.html"
       },
       {
-        "title": "文一科技（三佳科技，600520）投资者索赔倒计时2个月，前期已有胜诉",
-        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-08-25/doc-inippews1691846.shtml"
+        "title": "mRNA癌症疗法引市场关注 产业迎新增长空间",
+        "url": "https://finance.eastmoney.com/a/202608263853469893.html"
       },
       {
-        "title": "美国史上最大规模单次签证吊销行动，20万人恐受影响目前申请B1和B2签证的人员被要求确认“不会在美国申请庇护”，并证明有意返回本国。56分钟前",
-        "url": "https://www.yicai.com/news/103332636.html"
+        "title": "中国数智科技获谢兆凯增持344.4万股 每股作价约0.37港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxha2172813.shtml"
       },
       {
-        "title": "时报观察丨业绩说明会要从“有没有”升维“好不好”",
-        "url": "https://www.stcn.com/article/detail/4110942.html"
+        "title": "恒瑞医药获GIC Private Limited增持365.86万股 每股作价约50.57港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxfy5401809.shtml"
+      },
+      {
+        "title": "特朗普亮出88年未见条款，加拿大对等掀桌反制",
+        "url": "https://finance.ifeng.com/c/8vtf1LGFRkx"
+      },
+      {
+        "title": "路博迈基金谢恒：AI投资周期仍处上行通道",
+        "url": "https://www.cs.com.cn/sylm/jsbd/2026/08/20/detail_2026082010032756.html"
+      },
+      {
+        "title": "派斯林：积极开拓市场 上半年新签订单同比增逾92%",
+        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510034037.html"
+      },
+      {
+        "title": "年内超20城落地房贷贴息，会否全国推广？效果如何？昨天 21:51",
+        "url": "https://www.yicai.com/news/103333578.html"
+      },
+      {
+        "title": "电商和实体经济是队友而非对手",
+        "url": "https://finance.eastmoney.com/a/202608263853531582.html"
+      },
+      {
+        "title": "火线评论｜45岁的任羽中贪腐近20年，北大不应如此“兼容并包”",
+        "url": "https://opinion.caixin.com/2026-08-25/102477789.html"
+      },
+      {
+        "title": "厦门国贸：上半年供应链主业稳中提质 海外业务创历史同期新高",
+        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510034032.html"
+      },
+      {
+        "title": "上海重构产业地图逻辑，市区协同布局万亿级赛道产业地图绝非一二三产业在地理空间上的简单叠加与静态呈现昨天 21:25",
+        "url": "https://www.yicai.com/news/103333580.html"
+      },
+      {
+        "title": "福耀玻璃遭BlackRock, Inc.减持30.96万股 每股作价约57.02港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxhc6304786.shtml"
+      },
+      {
+        "title": "新华鲜报丨以文兴业 看文化产品和服务提质“成绩单”",
+        "url": "https://www.cs.com.cn/xwzx/01/2026/08/25/detail_2026082510034023.html"
+      },
+      {
+        "title": "伊朗称霍尔木兹海峡临时航线谅解达成 仅限商船通行",
+        "url": "https://wallstreetcn.com/livenews/3154912"
+      },
+      {
+        "title": "黄金理财产品净值回升 机构静待逢低配置",
+        "url": "https://finance.eastmoney.com/a/202608263853471770.html"
+      },
+      {
+        "title": "连涨两月却遭183亿资金止盈，医药反弹迎分歧时刻都在说医药回暖，钱为什么在跑？市场在分歧中博弈什么昨天 20:46",
+        "url": "https://www.yicai.com/news/103333492.html"
+      },
+      {
+        "title": "长鸿高科更新重组预案：收购广西长科完善产业链布局 切入高端特种树脂赛道",
+        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510034085.html"
+      },
+      {
+        "title": "信达生物获小摩增持约235.55万股 每股作价约102.24港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxhc6309452.shtml"
+      },
+      {
+        "title": "​三七互娱：上半年净利润同比增长26.14%  已回购的3亿元股份将注销",
+        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510034036.html"
+      },
+      {
+        "title": "百亿元项目五年进度不足3% 厚普股份氢能产业园杂草疯长",
+        "url": "https://www.stcn.com/article/detail/4121189.html"
+      },
+      {
+        "title": "库克交棒前苹果再上新：Mac mini涨价2500元，首搭2纳米芯片2纳米制程的芯片有望应用于秋季发布会发布的更多产品中。昨天 23:43",
+        "url": "https://www.yicai.com/news/103333720.html"
+      },
+      {
+        "title": "我国交通强国指数稳步增长位列世界第五",
+        "url": "https://www.cs.com.cn/xwzx/01/2026/08/25/detail_2026082510034017.html"
+      },
+      {
+        "title": "华勤技术：上半年营业收入937.2亿元 多业务曲线同步兑现成长动能",
+        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510034045.html"
+      },
+      {
+        "title": "小鹏汽车上半年营收同比下滑3.8% 寄望新品与海外上量",
+        "url": "https://www.caixin.com/2026-08-25/102477832.html"
+      },
+      {
+        "title": "监管持续加码，私募基金行业扶优限劣提速",
+        "url": "https://wallstreetcn.com/livenews/3154903"
+      },
+      {
+        "title": "中材国际：上半年实现营收212.62亿元 海外业务实现增长",
+        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510034038.html"
+      },
+      {
+        "title": "美媒：特朗普已将美沙核协议提交国会审议",
+        "url": "https://finance.eastmoney.com/a/202608263853727719.html"
+      },
+      {
+        "title": "日本拟研究区块链结算系统 实现股票和国债24小时交易结算",
+        "url": "https://wallstreetcn.com/livenews/3154913"
+      },
+      {
+        "title": "2025网易经济学家年会夏季论坛",
+        "url": "https://money.163.com/special/2025naecsummer/"
+      },
+      {
+        "title": "公募基金公司上半年盈利回暖 头部规模壁垒强、明星公司利润暴增",
+        "url": "https://finance.caixin.com/2026-08-25/102477802.html"
       },
       {
         "title": "人事观察｜湖北省委常委分工持续调整 59岁吴海涛任统战部长",
         "url": "https://china.caixin.com/2026-08-25/102477653.html"
       },
       {
-        "title": "算法即药物：AI开启人类攻克癌症新篇章",
-        "url": "https://opinion.caixin.com/2026-08-25/102477632.html"
+        "title": "欢聚集团第二季度净营收5.908亿美元，同比+16%，市场预估5.71亿美元。\n\n第二季度经调整每股ADS持续经营净收益1.24美元，市场预估1.17美元。\n\n",
+        "url": "https://wallstreetcn.com/livenews/3154905"
       },
       {
-        "title": "付鹏：宇树研发经费，比牧原养猪的研发经费还低08-25 14:270评",
-        "url": "https://finance.ifeng.com/c/8vsT9RKNWfO"
+        "title": "“沪八条”精准撬动上海郊区楼市：首个周末即现“日光盘”尽管上海中心城区高端住宅市场表现亮眼，但外环外才是上海新房市场最大的需求承载区。昨天 20:41",
+        "url": "https://www.yicai.com/news/103333487.html"
+      },
+      {
+        "title": "向天图强启新程 文昌按下商业航天发展“快进键”",
+        "url": "https://www.stcn.com/article/detail/4121180.html"
+      },
+      {
+        "title": "过期药别乱扔！美团买药携千家药店启动无害化回收，参与即送专属健康礼08-25 15:200评",
+        "url": "https://finance.ifeng.com/c/8vsW36bBkeY"
+      },
+      {
+        "title": "2026网易经济学家年会",
+        "url": "https://money.163.com/special/2026naecsummer/"
+      },
+      {
+        "title": "‌“钟才文”连发四文 如何看待当前中国经济？",
+        "url": "https://economy.caixin.com/2026-08-25/102477727.html"
+      },
+      {
+        "title": "从苹果让步 看欧盟《数字市场法》成效",
+        "url": "https://finance.eastmoney.com/a/202608263853470686.html"
+      },
+      {
+        "title": "旭日企业获董事长杨振鑫增持1.6万股 每股作价约1.31港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxfw1148278.shtml"
+      },
+      {
+        "title": "哈尔滨电气遭小摩减持约44.6万股 每股作价约16.91港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxfw1147743.shtml"
+      },
+      {
+        "title": "基金业绩冷热不均，红利“缩圈”考验主动管理能力",
+        "url": "https://wallstreetcn.com/livenews/3154897"
+      },
+      {
+        "title": "凤凰风暴眼 | 100万参与港股打新，到期取不出钱？",
+        "url": "https://finance.ifeng.com/c/8vsmWhpxJx4"
+      },
+      {
+        "title": "葛卫东旗下期货公司炒股大赚！净利同比增长7188.06%",
+        "url": "https://www.stcn.com/article/detail/4121045.html"
+      },
+      {
+        "title": "调查：过半经济学家预计明年一季度日本央行将上调利率到至少1.50%",
+        "url": "https://finance.eastmoney.com/a/202608263853727683.html"
+      },
+      {
+        "title": "苹果折叠屏手机面世在即 相关概念股提前异动",
+        "url": "https://www.stcn.com/article/detail/4121200.html"
+      },
+      {
+        "title": "《哪吒2》红利消退！光线传媒上半年净利同比暴跌98.5% 经营现金流转负",
+        "url": "https://finance.eastmoney.com/a/202608263853728928.html"
+      },
+      {
+        "title": "日本7月企业服务价格指数同比上涨3.6% 前值3.20%",
+        "url": "https://finance.eastmoney.com/a/202608263853698894.html"
+      },
+      {
+        "title": "特朗普政府拟启动大规模签证撤销行动 规模或超20万",
+        "url": "https://international.caixin.com/2026-08-25/102477843.html"
+      },
+      {
+        "title": "布油期货下跌逾1美元至每桶87.03美元。",
+        "url": "https://wallstreetcn.com/livenews/3154920"
+      },
+      {
+        "title": "上市公司并购重组活跃 并购基金加速落地 硬科技领衔提质增效",
+        "url": "https://www.stcn.com/article/detail/4121176.html"
+      },
+      {
+        "title": "日本7月企业服务价格指数同比 3.6%，预期 3.2%，前值 3.2%。",
+        "url": "https://wallstreetcn.com/livenews/3154914"
+      },
+      {
+        "title": "一财社论：完善标准体系，引领人形机器人产业行稳致远建设科学合理、系统完备的人形机器人标准体系，是产业快速健康发展的必然要求。昨天 21:03",
+        "url": "https://www.yicai.com/news/103333522.html"
+      },
+      {
+        "title": "永安期货：上半年净利润增长逾64% 境外业务强势发力",
+        "url": "https://www.cs.com.cn/ssgs/01/2026/08/25/detail_2026082510034035.html"
+      },
+      {
+        "title": "“投资中国”热度不减 外资深度融入中国产业生态",
+        "url": "https://www.stcn.com/article/detail/4121175.html"
+      },
+      {
+        "title": "卖爆了，国产“宠”物全球抢着下单08-26 06:100评",
+        "url": "https://finance.ifeng.com/c/8vtZ9afU43r"
+      },
+      {
+        "title": "一货船在孟加拉湾因不明原因沉没 船上18名中国籍船员失联(含视频)",
+        "url": "https://international.caixin.com/2026-08-25/102477636.html"
+      },
+      {
+        "title": "盘前点金｜研判主题机会 挖掘潜力个股每日盘前，为您抢先捕捉关键讯息（①最新券商观点；②高关注题材；③财经要闻重点；④潜力标的挖掘），助您从容开启交易日！01-07 10:02",
+        "url": "https://www.yicai.com/topic/102990833/"
+      },
+      {
+        "title": "报道：韩国总统将会见三星李在镕、现代郑义宣",
+        "url": "https://wallstreetcn.com/livenews/3154902"
+      },
+      {
+        "title": "民营大炼化龙头业绩大增 多因素推动行业景气回升",
+        "url": "https://www.stcn.com/article/detail/4121191.html"
+      },
+      {
+        "title": "笔克远东遭FMR LLC减持14万股 每股作价约2.28港元",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxha2161411.shtml"
+      },
+      {
+        "title": "PCB龙头上半年净利增逾七成，AI算力驱动产业链量价齐升沪电股份半年报显示，32层及以上高端PCB产品同比大幅增长约190.83%。昨天 21:09",
+        "url": "https://www.yicai.com/news/103333548.html"
+      },
+      {
+        "title": "雅迪爱玛上半年净利润大幅下滑 两轮电动车传统制造商销量承压",
+        "url": "https://www.caixin.com/2026-08-25/102477807.html"
+      },
+      {
+        "title": "研究称财政压力增加将显著提高地方罚没收入强度",
+        "url": "https://economy.caixin.com/2026-08-25/102477714.html"
+      },
+      {
+        "title": "华富建业金融附属拟认购1000万股中显智能齐家配售股份",
+        "url": "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-08-26/doc-inipqxfw1150977.shtml"
+      },
+      {
+        "title": "AI算力重塑航空货运生态 货源、枢纽与市场格局迎深刻变局",
+        "url": "https://finance.eastmoney.com/a/202608253853388063.html"
+      },
+      {
+        "title": "Digital Realty获50兆瓦额度 拟建在新加坡第四座数据中心",
+        "url": "https://finance.eastmoney.com/a/202608263853666122.html"
+      },
+      {
+        "title": "美联储高官警告：40万亿美债逼近“清算日”",
+        "url": "https://finance.ifeng.com/c/8vtbYP43wTB"
       }
     ],
     "risks": [
       {
-        "title": "地缘政治风险（美伊冲突升级）",
+        "title": "美联储加息预期与美债风险",
         "impact": "High",
         "likelihood": "Medium",
-        "mitigation": "关注原油及黄金对冲，规避集运及航运板块短期波动"
+        "mitigation": "关注美联储9月议息会议信号，配置黄金与短久期债券对冲"
       },
       {
-        "title": "碳酸锂价格大幅下跌拖累新能源链",
+        "title": "医药板块资金分歧与止盈压力",
         "impact": "Medium",
         "likelihood": "High",
-        "mitigation": "关注锂价企稳信号，短期规避上游锂矿标的，转向下游应用端"
+        "mitigation": "回避短期涨幅过大标的，聚焦有业绩支撑的创新药龙头"
       },
       {
-        "title": "A股成交萎缩至1.8万亿，市场活跃度不足",
-        "impact": "Medium",
-        "likelihood": "High",
-        "mitigation": "控制仓位，聚焦政策催化明确的结构性机会，避免追高"
-      },
-      {
-        "title": "英伟达七连跌及AI估值担忧外溢",
+        "title": "地缘政治与贸易摩擦",
         "impact": "Medium",
         "likelihood": "Medium",
-        "mitigation": "关注AI算力板块业绩兑现能力，规避纯概念标的"
+        "mitigation": "霍尔木兹缓和降低油价风险，但美加贸易摩擦升级需关注供应链扰动"
       },
       {
-        "title": "投资者索赔案件密集（海希通讯、新智认知、佳缘科技等）",
+        "title": "台风橙色预警影响",
         "impact": "Low",
         "likelihood": "High",
-        "mitigation": "关注相关个股流动性风险，规避涉诉公司"
+        "mitigation": "关注沿海地区基建与农业短期扰动，影响有限"
+      },
+      {
+        "title": "光通信业绩与股价背离",
+        "impact": "Medium",
+        "likelihood": "Medium",
+        "mitigation": "中际旭创遭小摩减持，关注板块估值消化节奏，等待回调布局"
       }
     ],
     "opportunities": [
       {
-        "title": "布局创新药及CXO板块",
+        "title": "布局AI算力与机器人产业链",
         "timeframe": "medium",
-        "description": "药明合联利润增37.4%，凯莱英订单增超五成，港股生物科技ETF走强，出海逻辑兑现"
+        "description": "PCB龙头净利增70%+，人形机器人竞速加速，小鹏机器人融资63亿美元估值，产业催化密集"
       },
       {
-        "title": "关注AI算力租赁及6G主题",
+        "title": "关注储能与光伏出海机会",
+        "timeframe": "medium",
+        "description": "储能产业链周期回暖，印尼100GW光伏计划，赣锋锂业获增持，锂价企稳"
+      },
+      {
+        "title": "医药龙头逢回调配置",
+        "timeframe": "medium",
+        "description": "恒瑞、信达、药明获外资增持，mRNA癌症疗法打开空间，短期止盈后估值回归合理"
+      },
+      {
+        "title": "券商与保险受益分红与盈利改善",
         "timeframe": "short",
-        "description": "算力租赁多股涨停，国资委推6G商业闭环，中金看好AI算力主线"
+        "description": "券商中期分红密集，公募盈利回暖，众安在线净利增1.3倍，金融板块估值修复"
       },
       {
-        "title": "脑机接口概念逢低布局",
+        "title": "地产链关注优质民企与上海郊区",
         "timeframe": "medium",
-        "description": "2030年标准体系路线图明确，逾30家上市公司布局，青岛金王涨停"
-      },
-      {
-        "title": "黄金及避险资产配置",
-        "timeframe": "long",
-        "description": "高盛年末目标4900美元，美伊局势升级，比特币暴涨反映避险与流动性宽松预期"
+        "description": "民企重返土拍，沪八条日光盘，20城房贷贴息，政策底已现"
       }
     ],
     "defensive": [
       {
-        "title": "规避碳酸锂及新能源上游短期波动",
+        "title": "配置黄金与短债对冲外部风险",
         "timeframe": "short",
-        "description": "碳酸锂跌超6%，集运欧线跌超4%，上游价格承压"
+        "description": "美债40万亿清算日担忧，美联储加息预期升温，黄金理财净值回升"
       },
       {
-        "title": "控制仓位应对低成交环境",
+        "title": "规避光通信短期追高",
         "timeframe": "short",
-        "description": "两市成交仅1.8万亿，市场缺乏增量资金，结构性行情为主"
+        "description": "中报齐增但股价承压，中际旭创遭减持，板块需消化估值"
       },
       {
-        "title": "关注银行息差企稳机会，防御性配置",
-        "timeframe": "medium",
-        "description": "息差企稳回升，债券ETF规模创新高，银行板块估值安全边际较高"
+        "title": "关注台风对沿海资产影响",
+        "timeframe": "short",
+        "description": "台风橙色预警持续，沿海基建与农业短期承压"
       }
     ]
   },
   "macro": {
-    "yield_trend": -0.002,
-    "aud_trend": -0.0204,
+    "yield_trend": -0.014,
+    "aud_trend": -0.0096,
     "summary": "宏观十年期收益率与人民币汇率宽幅震荡，宏观面流动性对A股市场整体影响中性。"
   },
   "sectors": [],
   "stocks": [],
   "trends": {
     "dates": [
-      "2026-08-25"
+      "2026-08-26"
     ],
     "series": [
       {
