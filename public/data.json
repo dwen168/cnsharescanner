@@ -57,7 +57,7 @@
       "top_n_portfolio": 5
     }
   },
-  "generated_at": "2026-08-28T15:35:04.545675+00:00",
+  "generated_at": "2026-08-28T19:12:00.177164+00:00",
   "data_lineage": "degraded",
   "trading_state": "medium_risk",
   "risk_level": "medium_risk",
@@ -660,8 +660,8 @@
     ]
   },
   "macro": {
-    "yield_trend": -0.006,
-    "aud_trend": -0.0029,
+    "yield_trend": 0.024,
+    "aud_trend": -0.0002,
     "summary": "宏观十年期收益率与人民币汇率宽幅震荡，宏观面流动性对A股市场整体影响中性。"
   },
   "sectors": [],
