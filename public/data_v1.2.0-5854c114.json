@@ -57,112 +57,111 @@
       "top_n_portfolio": 5
     }
   },
-  "generated_at": "2026-09-03T08:13:51.318963+00:00",
+  "generated_at": "2026-09-03T11:53:12.406045+00:00",
   "data_lineage": "real",
   "trading_state": "medium_risk",
   "risk_level": "medium_risk",
   "warnings": [
-    "检测到中度市场风险 (Waneye 得分 58, 威胁指数 11.4)，系统冻结新增仓，并下发减仓避险提示"
+    "检测到中度市场风险 (Waneye 得分 58, 威胁指数 11.1)，系统冻结新增仓，并下发减仓避险提示"
   ],
   "halt_signals": false,
   "waneye": {
     "score": 58,
     "sentiment": "中性",
     "highlights": [
-      "A股三大指数微幅收涨，沪指3942点涨0.02%，成交不足1.8万亿，市场震荡整理格局延续",
-      "中东局势急剧升温，伊朗袭击美军目标，油价逼近100美元，亚洲天然气价格创三年新高",
-      "美联储重磅发声引发全球股债汇异动，美元直线跳水，黄金飙升，全球债市遭抛售",
-      "AI主线持续活跃：博通AI芯片收入同比增逾两倍，英伟达市值超标普500五大板块总和，但AI基建泡沫争议升温",
-      "创新药板块政策利好催化，港股通创新药ETF涨超2%，千金药业、迪哲医药等涨停",
-      "券业并购首份全流程操作手册出炉，行业整合加速",
-      "潘功胜出席G20财长会议，确认继续实施适度宽松货币政策",
-      "8月京沪深二手房成交量同比上涨，但专家称房价缺乏大涨基础",
-      "商品期货跌多涨少，集运欧线主力跌超7%，碳酸锂、焦煤跌超3%"
+      "A股高开低走呈V形，科创50跌0.4%，46股涨停但高位股集体调整，市场分化加剧",
+      "中东地缘冲突升级，布伦特原油突破97美元，WTI涨至92.85美元，黄金飙升",
+      "潘功胜G20表态继续适度宽松货币政策，强调不靠汇率贬值换优势",
+      "AI产业持续活跃：腾讯WorkBuddy开放平台上线、微软Azure增速44-45%、燧原科技中签",
+      "半导体板块催化密集：精智达15.76亿订单、硅片涨价、芯联集成与理想战略合作",
+      "北京8·28新政后首场土拍大幅降温，地产市场冷热分化",
+      "个人贷款不良率普升，多家银行加大减值计提，银行资产质量承压",
+      "2026医保国谈9月5日举行，医药板块面临政策催化"
     ],
     "headlines": [
       {
-        "title": "欧洲三大股指开盘窄幅波动",
-        "url": "https://finance.eastmoney.com/a/202609033864002486.html"
+        "title": "俄罗斯副总理诺瓦克表示俄罗斯市场柴油和航空燃油供应充足",
+        "url": "https://finance.eastmoney.com/a/202609033864197793.html"
       },
       {
-        "title": "A股三大指数震荡整理 成交额不足1.8万亿 培育钻石概念股大涨",
-        "url": "https://finance.eastmoney.com/a/202609033864001670.html"
+        "title": "山东矿机：向特定对象发行股票获证监会同意注册批复",
+        "url": "https://finance.eastmoney.com/a/202609033864198080.html"
       },
       {
-        "title": "国内商品期货收盘 主力合约跌多涨少",
-        "url": "https://finance.eastmoney.com/a/202609033864001539.html"
+        "title": "冠昊生物：向特定对象发行股票获证监会同意注册批复",
+        "url": "https://finance.eastmoney.com/a/202609033864197618.html"
       },
       {
-        "title": "字节跳动将获得约296亿美元银团贷款",
-        "url": "https://finance.eastmoney.com/a/202609033864001816.html"
+        "title": "布伦特原油期货涨幅扩大至2%",
+        "url": "https://finance.eastmoney.com/a/202609033864195819.html"
       },
       {
-        "title": "四方科技一字跌停，公司回应",
-        "url": "https://finance.eastmoney.com/a/202609033864000949.html"
+        "title": "精智达：近日与某客户签订15.76亿元半导体测试设备采购协议",
+        "url": "https://finance.eastmoney.com/a/202609033864196180.html"
       },
       {
-        "title": "Meta：“西瓜”模型研发进展顺利",
-        "url": "https://finance.eastmoney.com/a/202609033864002142.html"
+        "title": "博济医药与华为签署合作协议",
+        "url": "https://finance.eastmoney.com/a/202609033864194650.html"
       },
       {
-        "title": "印度贸易部长：一旦美国能给予印度优于其他国家的关税优势 将立即公布美印贸易协议最终细节",
-        "url": "https://finance.eastmoney.com/a/202609033864001729.html"
+        "title": "投资23亿 罗罗在华布局首个飞机发动机直租项目",
+        "url": "https://finance.eastmoney.com/a/202609033864194355.html"
       },
       {
-        "title": "券业并购首份全流程“操作手册”出炉！中证协就券商并购示范实践征求行业意见",
-        "url": "https://finance.eastmoney.com/a/202609033863999567.html"
+        "title": "东阳光：完成回购股份约6亿元",
+        "url": "https://finance.eastmoney.com/a/202609033864194537.html"
       },
       {
-        "title": "两位高盛策略师同日释放一致信号：长期仍看好风险资产 但“最容易赚的钱”可能已经赚完了",
-        "url": "https://finance.eastmoney.com/a/202609033863997711.html"
+        "title": "埃及2025-26财年GDP增长率为5.1%",
+        "url": "https://finance.eastmoney.com/a/202609033864194187.html"
       },
       {
-        "title": "中国纺织品进出口商会：1-7月我国家用纺织品累计出口196.4亿美元 同比增长3.7%",
-        "url": "https://finance.eastmoney.com/a/202609033863994155.html"
+        "title": "摩根士丹利上调博通股票目标价",
+        "url": "https://finance.eastmoney.com/a/202609033864191198.html"
       },
       {
-        "title": "海关总署：防止脊髓灰质炎疫情传入我国",
-        "url": "https://finance.eastmoney.com/a/202609033863994923.html"
+        "title": "蒙特利尔银行上调雪佛龙目标价",
+        "url": "https://finance.eastmoney.com/a/202609033864189978.html"
       },
       {
-        "title": "日元兑美元日内涨1%",
-        "url": "https://finance.eastmoney.com/a/202609033863993885.html"
+        "title": "芯联集成与理想签署新一轮战略合作协议",
+        "url": "https://finance.eastmoney.com/a/202609033864188860.html"
       },
       {
-        "title": "政策利好催化创新药行情，港股通创新药ETF鹏华涨超2%",
-        "url": "https://finance.eastmoney.com/a/202609033864002330.html"
+        "title": "石大胜华：控股子公司拟投资6.87亿元建设锂电池电解液项目",
+        "url": "https://finance.eastmoney.com/a/202609033864184398.html"
       },
       {
-        "title": "高盛策略师：现在重新布局法国股市尚为时过早",
-        "url": "https://finance.eastmoney.com/a/202609033863994016.html"
+        "title": "蒙特利尔银行上调博通目标价",
+        "url": "https://finance.eastmoney.com/a/202609033864185264.html"
       },
       {
-        "title": "摩根大通证券郑振宁：中国、沙特资本市场互联合作进入新阶段",
-        "url": "https://finance.eastmoney.com/a/202609033863988084.html"
+        "title": "广东省新增1款已完成备案的生成式人工智能服务",
+        "url": "https://finance.eastmoney.com/a/202609033864181535.html"
       },
       {
-        "title": "美银：标普500指数8月向上突破的有效性持续得到验证",
-        "url": "https://finance.eastmoney.com/a/202609033863992287.html"
+        "title": "现房新政后北京首场土拍大幅降温 其中一宗地现场竞拍突发暂停",
+        "url": "https://finance.eastmoney.com/a/202609033864180879.html"
       },
       {
-        "title": "乌克兰两大情报部门当街交火",
-        "url": "https://finance.eastmoney.com/a/202609033863992598.html"
+        "title": "海通发展：拟定增募资不超20亿元全部用于船舶购置项目",
+        "url": "https://finance.eastmoney.com/a/202609033864181024.html"
       },
       {
-        "title": "华策影视等成立新公司 含AI软件开发业务",
-        "url": "https://finance.eastmoney.com/a/202609033863989172.html"
+        "title": "好上好：向特定对象发行股票申请获证监会同意注册批复",
+        "url": "https://finance.eastmoney.com/a/202609033864180536.html"
       },
       {
-        "title": "欧元对瑞郎跌幅扩大",
-        "url": "https://finance.eastmoney.com/a/202609033863986812.html"
+        "title": "台风“科罗旺”已进入48小时警戒线",
+        "url": "https://finance.eastmoney.com/a/202609033864180037.html"
       },
       {
-        "title": "长鑫科技成交额达100亿元",
-        "url": "https://finance.eastmoney.com/a/202609033863986769.html"
+        "title": "云意电气：拟向员工持股平台转让南京云意20%股权",
+        "url": "https://finance.eastmoney.com/a/202609033864179180.html"
       },
       {
-        "title": "000056，控制权或生变！公开拍卖1.75亿股",
-        "url": "https://www.stcn.com/article/detail/4170239.html"
+        "title": "*ST康佳：主动退市，明起停牌",
+        "url": "https://finance.sina.com.cn/stock/s/2026-09-03/doc-iniqpzpq4308303.shtml"
       },
       {
         "title": "09-03 07:55中远海运散运32.5万载重吨甲醇双燃料矿砂船命名中远海运散运32.5万载重吨甲醇双燃料矿砂船命名9月1日，由扬州中远海运重工有限公司承建、中远海运散货运输有限公司运营的32.5万载重吨甲醇双燃料矿砂船正式命名为“远海丝路”轮。该船总长339.9米，型宽62米，配28万立方米超大货舱，可满足多种大宗物资的远洋运输需求。",
@@ -177,88 +176,112 @@
         "url": "https://money.163.com/special/2025naecsummer/"
       },
       {
+        "title": "2026全球数商大会推介会成功举办｜诚邀全球伙伴共拓数据要素新机遇致力于为全球政企学研、产业主体与投资机构搭建高效对接平台。25分钟前",
+        "url": "https://www.yicai.com/news/103346518.html"
+      },
+      {
+        "title": "2026医保国谈将于9月5日举行",
+        "url": "https://wallstreetcn.com/livenews/3159899"
+      },
+      {
         "title": "2026网易经济学家年会",
         "url": "https://money.163.com/special/2026naecsummer/"
       },
       {
-        "title": "27岁音乐人哈拉木吉：在古建筑现场呼麦9月4日，河北定州开元寺将迎来五位年轻音乐人，以少数民族音乐的和鸣拉开2026古建音乐季序幕。3小时前",
-        "url": "https://www.yicai.com/news/103345524.html"
-      },
-      {
-        "title": "8月，京沪深二手房成交量均同比上涨",
-        "url": "https://www.stcn.com/article/detail/4170240.html"
-      },
-      {
-        "title": "8月车企销量榜出炉，一家独跑、五家混战09-02 21:360评",
-        "url": "https://finance.ifeng.com/c/8w6E5IbtYKP"
+        "title": "AI、电气化与资源竞争：全球经济的新逻辑",
+        "url": "https://opinion.caixin.com/2026-09-03/102481365.html"
       },
       {
         "title": "AI基建泡沫的边界：不只是GDP的25%",
         "url": "https://opinion.caixin.com/2026-09-03/102481312.html"
       },
       {
-        "title": "A股三大指数小幅收涨，两市成交不足1.8万亿",
-        "url": "https://wallstreetcn.com/livenews/3159721"
-      },
-      {
         "title": "A股主要指数高开！集泰股份、欢瑞世纪，4连板！",
         "url": "https://www.stcn.com/article/detail/4170356.html"
       },
       {
-        "title": "A股创新药概念局部回暖，千金药业尾盘涨停，德展健康此前封板，诺诚健华、迪哲医药、百利天恒涨幅居前。",
-        "url": "https://wallstreetcn.com/livenews/3159711"
+        "title": "A股整体小幅震荡！液冷服务器概念股午后爆发，贵金属概念集体走强",
+        "url": "https://www.stcn.com/article/detail/4170961.html"
       },
       {
-        "title": "ESG强制披露首年考 企业面临三大核心挑战",
-        "url": "https://finance.caixin.com/2026-09-02/102481150.html"
+        "title": "A股深“V”，最新解读来了",
+        "url": "https://finance.ifeng.com/c/8w7XI5DE8s0"
       },
       {
-        "title": "Snowflake上调全年产品收入指引，AI产品驱动增长进一步提速",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpqxy2170649.shtml"
+        "title": "MDPI第三届化学学科峰会在京召开，北大彭海琳获首届“唐有祺奖”",
+        "url": "https://wallstreetcn.com/livenews/3159881"
       },
       {
-        "title": "ST派瑞上半年净利润增长近五成，曾因财务造假被罚",
-        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-09-03/doc-iniqpqxu4345635.shtml"
+        "title": "Meta告知工程师：AI Token消耗量不再纳入绩效考评",
+        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpvfu1141067.shtml"
       },
       {
-        "title": "ST瑞贝卡中报承压，涉资金占用已被罚",
-        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-09-03/doc-iniqpqxy2171674.shtml"
+        "title": "Micro1 承诺出资100万美元为精神航空前员工提供AI培训，以竞标该航司数据",
+        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpzps1051380.shtml"
+      },
+      {
+        "title": "Soitec上调业绩指引，AI需求旺盛推动股价大涨",
+        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpzpu2010279.shtml"
+      },
+      {
+        "title": "ST信安索赔新进展 部分股民提交起诉",
+        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-09-03/doc-iniqpvfw6939397.shtml"
       },
       {
         "title": "T早报｜腾讯WorkBuddy布局生态；阿里更新Qwen 3.8-Max；Anthropic发布Fable 5.1和Mythos 5.1",
         "url": "https://www.caixin.com/2026-09-03/102481271.html"
       },
       {
-        "title": "一个月股价暴涨162%后，“妖股”一鸣食品今日盘中再度跌停妖股一鸣食品再遭恶炒。3小时前",
-        "url": "https://www.yicai.com/news/103345526.html"
+        "title": "WTI原油日内涨幅达2%，报92.85美元/桶。",
+        "url": "https://wallstreetcn.com/livenews/3159888"
       },
       {
-        "title": "上证指数收报3942.09点，涨0.02%。\n\n深证成指收报13625.12点，涨0.10%。\n\n创业板指收报3312.54点，涨0.01%。\n\n沪深300收报",
-        "url": "https://wallstreetcn.com/livenews/3159718"
+        "title": "“Token贷”兴起 银行竞逐算力金融赛道",
+        "url": "https://wallstreetcn.com/livenews/3159902"
       },
       {
-        "title": "下一个六氟化钨？猛涨超240%，这种工业气体价格“暴走”（附股）",
-        "url": "https://www.stcn.com/article/detail/4170241.html"
+        "title": "“凌晨1点，空姐突然推销上墨镜了” 海航系低成本航司卖货“折磨”乘客？知情人士“带货少要扣钱！”",
+        "url": "https://finance.sina.com.cn/chanjing/gsnews/2026-09-03/doc-iniqpzpu6843969.shtml"
+      },
+      {
+        "title": "“四天三板”液冷人气股，提示风险",
+        "url": "https://finance.sina.com.cn/wm/2026-09-03/doc-iniqpzpq4295808.shtml"
+      },
+      {
+        "title": "“私募冠军”叶飞拍短剧，刚上线就下架09-03 16:550评",
+        "url": "https://finance.ifeng.com/c/8w7ZEPwIAsD"
+      },
+      {
+        "title": "三只松鼠想通了，零食店的尽头是卖菜09-03 15:300评",
+        "url": "https://finance.ifeng.com/c/8w7TegRtCwu"
+      },
+      {
+        "title": "上海印发《关于促进农民收入持续较快增长的若干措施》",
+        "url": "https://wallstreetcn.com/livenews/3159876"
+      },
+      {
+        "title": "上海又一座超级枢纽正在成形，京东、波士顿科学率先落地布局东方枢纽正在尝试解决传统交通枢纽“流量穿堂而过”的难题。1小时前",
+        "url": "https://www.yicai.com/news/103346269.html"
+      },
+      {
+        "title": "上海多家银行明确：1991年前出生的人不能新办理40年期个人房贷",
+        "url": "https://finance.ifeng.com/c/8w7Un54ONm4"
+      },
+      {
+        "title": "不靠贬值换优势！潘功胜G20会议谈人民币汇率、货币政策、经济再平衡近年来，随着出口结构转型升级，企业议价能力和汇率风险管理能力不断增强，中国贸易对汇率敏感性大幅下降。46分钟前",
+        "url": "https://www.yicai.com/news/103346459.html"
       },
       {
         "title": "专家提醒：零收入绝非零申报 企业须警惕“不报税”的信用风险",
         "url": "https://www.cs.com.cn/xwzx/01/2026/09/03/detail_2026090310036682.html"
       },
       {
-        "title": "世界动力电池大会高端对话观点交锋｜多元场景牵引，技术迭代精进1小时前",
-        "url": "https://www.yicai.com/news/103345765.html"
+        "title": "两名新高管执掌KKR规模100亿美元的AI基础设施投资项目",
+        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpzpq4294970.shtml"
       },
       {
-        "title": "两成上市公司半年业绩增收不增利 股价与基本面存在明显温差",
-        "url": "https://finance.caixin.com/2026-09-02/102481140.html"
-      },
-      {
-        "title": "个人贷款不良率普升 多家银行加大减值计提和批量转让",
+        "title": "个人贷款不良率普升 多家银行加大减值计提和批量转让(含视频)",
         "url": "https://finance.caixin.com/2026-09-02/102481229.html"
-      },
-      {
-        "title": "中东战火升温，亚洲天然气价格创三年多新高",
-        "url": "https://original.ifeng.com/c/8w7FgimDHeE"
       },
       {
         "title": "中印日韩掀起抢油大战，中东油价逼近100美元",
@@ -269,24 +292,16 @@
         "url": "https://www.cs.com.cn/xwzx/01/2026/09/03/detail_2026090310036694.html"
       },
       {
-        "title": "中国科学院院士欧阳明高：十年内磷酸铁锂电池仍将占主导地位",
-        "url": "https://wallstreetcn.com/livenews/3159703"
-      },
-      {
         "title": "中国经济样本观察·企业样本篇丨“三大动力”有了“新动力”——哈电集团转型突围观察",
         "url": "https://www.cs.com.cn/xwzx/01/2026/09/03/detail_2026090310036686.html"
       },
       {
-        "title": "中小房企将出局、房价要大涨？ 专家：成本归位政策托底 房价缺乏大涨基础",
-        "url": "https://www.stcn.com/article/detail/4169918.html"
+        "title": "中报新指标首次亮相 海富通基金主动权益类产品盈利投资者数量占比94.88%",
+        "url": "https://www.cs.com.cn/tzjj/01/2026/09/03/detail_2026090310036717.html"
       },
       {
-        "title": "为他人煤炭资源配置等谋利 山西高官岳普煜被移送司法",
-        "url": "https://china.caixin.com/2026-09-02/102481172.html"
-      },
-      {
-        "title": "习近平会见埃及总统 就中东安全新架构提出4点倡议",
-        "url": "https://international.caixin.com/2026-09-02/102481187.html"
+        "title": "为何监管机构重点审视预测市场旗下交易机构",
+        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpzpu6824635.shtml"
       },
       {
         "title": "习近平结束出席2026年上海合作组织峰会和对吉尔吉斯斯坦、埃及的国事访问回到北京",
@@ -297,140 +312,116 @@
         "url": "https://www.cs.com.cn/ssgs/01/2026/08/07/detail_2026080710029893.html"
       },
       {
-        "title": "云创数据财务造假遭重罚，投资者索赔启动",
-        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-09-03/doc-iniqpqxy6999274.shtml"
-      },
-      {
         "title": "今日开盘：两市双双高开 沪指涨幅0.29%",
         "url": "https://finance.caixin.com/2026-09-03/102481283.html"
       },
       {
-        "title": "伊朗对美军相关目标发动导弹与无人机袭击，约旦等国启动防空拦截",
-        "url": "https://finance.sina.com.cn/world/2026-09-03/doc-iniqpqxu4323269.shtml"
+        "title": "以色列国防部长：若遭伊朗攻击，以色列将把伊朗送回石器时代。",
+        "url": "https://wallstreetcn.com/livenews/3159883"
       },
       {
-        "title": "俄罗斯副总理诺瓦克：由于产量规模庞大，OPEC+仍将继续对石油市场产生重大影响。",
-        "url": "https://wallstreetcn.com/livenews/3159700"
+        "title": "伊朗通胀飙至80%，美伊消耗战进入最危险时刻",
+        "url": "https://original.ifeng.com/c/8w7cm8NAhf4"
+      },
+      {
+        "title": "伦敦劳合社：预估美伊战争给海湾地区带来14亿英镑保险损失",
+        "url": "https://finance.sina.com.cn/world/2026-09-03/doc-iniqpzps1075798.shtml"
+      },
+      {
+        "title": "佳士得亚太CEO：亚太年轻藏家崛起 蓝筹藏品受热捧",
+        "url": "https://www.caixin.com/2026-09-03/102481345.html"
+      },
+      {
+        "title": "俄罗斯副总理诺瓦克：俄罗斯市场柴油和航空燃油供应充足。\n\n俄罗斯存在一定的汽油短缺。",
+        "url": "https://wallstreetcn.com/livenews/3159890"
+      },
+      {
+        "title": "保时捷重组销售架构，销售区域数量将缩减为四个",
+        "url": "https://wallstreetcn.com/livenews/3159877"
       },
       {
         "title": "兆威机电发布新一代灵巧手产品",
         "url": "https://www.cs.com.cn/ssgs/01/2026/09/03/detail_2026090310036646.html"
       },
       {
-        "title": "先声再明与罗氏就三特异抗体SIM0660全球开发达成合作",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/09/02/detail_2026090210036516.html"
-      },
-      {
         "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。2025-11-03 14:49",
         "url": "https://www.yicai.com/topic/102892546/"
-      },
-      {
-        "title": "冰湖扩张86.5%与冰川加速消融，喜马拉雅山区灾害链风险警示20世纪以来，全球山地冰川普遍出现退缩，不少小型冰川甚至面临消融殆尽的风险。1小时前",
-        "url": "https://www.yicai.com/news/103345663.html"
-      },
-      {
-        "title": "净利润同比增长74%创新高，半导体设备龙头业绩分化成熟制程环节的毛利率压力、部分公司合同负债的回落，以及高基数下的增速自然回落，都是市场在乐观预期之外的变量。2小时前",
-        "url": "https://www.yicai.com/news/103345655.html"
       },
       {
         "title": "凤凰鉴保官 | “好医保”评测04-29 22:060评",
         "url": "https://biz.ifeng.com/c/special/8sj9KUhlrXs"
       },
       {
-        "title": "加拿大央行按兵不动但释放鹰派信号，麦克勒姆称必要时可多次加息",
-        "url": "https://finance.sina.com.cn/world/2026-09-03/doc-iniqpqxu4320372.shtml"
-      },
-      {
-        "title": "北大荒风波不断：上任不足一年的高管被留置，刚经历14亿补税事件第一财经记者拨打了北大荒董事会秘书的联系电话，对方表示，对于黎东光被立案留置的原因和具体情况，他们也不清楚，但跟此前的补税事件没有关联。1小时前",
-        "url": "https://www.yicai.com/news/103345572.html"
+        "title": "刚刚，利好来了！十部门，重磅发布",
+        "url": "https://finance.sina.com.cn/stock/zqgd/2026-09-03/doc-iniqpzpu6817381.shtml"
       },
       {
         "title": "午后，突发！日韩股市，直线跳水！",
         "url": "https://www.stcn.com/article/detail/4170673.html"
       },
       {
-        "title": "午后突发，全球一度直线跳水，发生了什么？",
-        "url": "https://finance.ifeng.com/c/8w7Ocz7VDu3"
-      },
-      {
         "title": "午后突变！日韩股市盘中跳水，黄金飙升！美联储，重磅发布",
         "url": "https://www.stcn.com/article/detail/4170671.html"
       },
       {
-        "title": "卖爆之后，AI服务器盈利与供应链迎来考验巨额订单的另一面，是交付压力。1小时前",
-        "url": "https://www.yicai.com/news/103345660.html"
+        "title": "单月最猛暴涨41%，一起来看看“金基”有哪四大基因",
+        "url": "https://www.stcn.com/article/detail/4171290.html"
       },
       {
         "title": "南方基金龚涛：全球联动特征推升中证油脂油料期货指数投资吸引力",
         "url": "https://www.cs.com.cn/tzjj/01/2026/09/03/detail_2026090310036700.html"
       },
       {
-        "title": "博通公布2026财年三季度业绩：AI芯片收入同比增逾两倍，四季度指引略低于部分预期",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpqxy6995627.shtml"
-      },
-      {
-        "title": "博通预计未来两个财年AI收入连续翻倍，但收盘股价还是跌了博通CEO陈福阳表示，XPU（定制AI芯片）客户的需求呈指数级增长。3小时前",
-        "url": "https://www.yicai.com/news/103345400.html"
-      },
-      {
-        "title": "印尼盾涨幅扩大至0.5%，触及5月以来高位。",
-        "url": "https://wallstreetcn.com/livenews/3159708"
-      },
-      {
         "title": "发改委召开“六张网”重大项目协调推进机制会 研究完善政银企协作机制和项目库建设",
         "url": "https://www.stcn.com/article/detail/4170266.html"
       },
       {
-        "title": "可转债原股东配售今日缴款，四方科技一字板跌停，公司回应",
-        "url": "https://wallstreetcn.com/livenews/3159709"
+        "title": "商务部回应欧美奇谈怪论保护主义没有出路，合作共赢才是正道。55分钟前",
+        "url": "https://www.yicai.com/news/103346231.html"
       },
       {
-        "title": "向远而谋，向实而行：宁波通商银行的“攻守道”3小时前",
-        "url": "https://www.yicai.com/news/103345568.html"
+        "title": "商务部回应美利用G20炒作所谓“经济失衡”论调",
+        "url": "https://www.stcn.com/article/detail/4170713.html"
       },
       {
-        "title": "周鸿祎：尽快形成AI漏洞发现、自动化防御和智能体安全体系",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/09/02/detail_2026090210036513.html"
+        "title": "国际油价持续走高，布伦特原油突破97美元/桶，日内涨超1.3%。",
+        "url": "https://wallstreetcn.com/livenews/3159875"
       },
       {
-        "title": "商品期货收盘，集运欧线主力合约跌超7%，燃料油跌近4%，碳酸锂、焦炭、焦煤跌超3%，LU燃油、沥青跌超2%。钯涨超4%，硅铁、铂、沪银涨超2%。",
-        "url": "https://wallstreetcn.com/livenews/3159715"
+        "title": "图集｜福建持续强降雨致22条河流超警 台风“沙德尔”再度登陆",
+        "url": "https://photos.caixin.com/2026-09-03/102481389.html"
       },
       {
-        "title": "四方面22项重点任务！上海市加快国际贸易中心建设“十五五”规划划重点以更大力度破瓶颈、补短板、强韧性，进一步提升国际贸易中心发展能级。3小时前",
-        "url": "https://www.yicai.com/news/103345521.html"
-      },
-      {
-        "title": "国家体育总局：体育领域国家级专精特新“小巨人”企业已达294家",
-        "url": "https://www.stcn.com/article/detail/4170398.html"
-      },
-      {
-        "title": "国投期货庞春艳：乙二醇近远月的格局撕裂",
-        "url": "https://finance.sina.com.cn/money/future/fmnews/2026-09-03/doc-iniqpqxy2165184.shtml"
+        "title": "地产新政后北京首场土拍：暂停出让和百轮竞价并存北京迎来“8·28”新政后首场土拍，市场实际热度冷热分化。6分钟前",
+        "url": "https://www.yicai.com/news/103346533.html"
       },
       {
         "title": "地产股强势！三安光电异动拉升！直线冲涨停，成交额超30亿元",
         "url": "https://www.stcn.com/article/detail/4170611.html"
       },
       {
-        "title": "夜读精选｜中国光伏发电装机首超煤电 成为国内最大单一电源",
-        "url": "https://www.caixin.com/2026-09-02/102481179.html"
+        "title": "奥迪创新技术中心落户上海1小时前",
+        "url": "https://www.yicai.com/news/103346367.html"
       },
       {
-        "title": "大烨智能上半年扭亏为盈，仍处监管立案调查中",
-        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-09-03/doc-iniqpqxw1116256.shtml"
+        "title": "字节跳动将获得约296亿美元银团贷款09-03 14:570评",
+        "url": "https://finance.ifeng.com/c/8w7RoFzKWqW"
       },
       {
-        "title": "守护党史密档18年，上海市井烟火中隐秘战线的奇迹电影《密档》取材于中央文库真实历史，以反类型叙事展现了一对平凡夫妻在至暗时刻隐忍守护两万份核心档案的传奇历程。3小时前",
-        "url": "https://www.yicai.com/news/103345508.html"
+        "title": "宁德时代曾毓群警告：“速成”是以牺牲质量和信任为代价全方位抵制“速成车”。52分钟前",
+        "url": "https://www.yicai.com/news/103346433.html"
       },
       {
         "title": "密集回购！多家A股巨头，集体出手",
         "url": "https://www.stcn.com/article/detail/4170467.html"
       },
       {
-        "title": "工业和信息化部熊继军：支持各方聚力突破全固态电池、钠离子电池、锂金属电池等技术",
-        "url": "https://wallstreetcn.com/livenews/3159726"
+        "title": "山东辖区举办2026年上市公司财务总监培训会",
+        "url": "https://www.cs.com.cn/xwzx/01/2026/09/03/detail_2026090310036725.html"
+      },
+      {
+        "title": "工信部等十部门，重磅发布！促进中小企业发展",
+        "url": "https://www.stcn.com/article/detail/4171243.html"
       },
       {
         "title": "巴拿马运河的实况究竟如何",
@@ -445,76 +436,108 @@
         "url": "https://www.cs.com.cn/ssgs/01/2026/09/03/detail_2026090310036584.html"
       },
       {
-        "title": "康佳主动退市，家电巨头缘何集体陷增长瓶颈？09-02 21:260评",
-        "url": "https://finance.ifeng.com/c/8w6DHbt4tE9"
+        "title": "微软拆旧立新：AI重塑商业模式，调整财报披露结构2027财年第一季度Azure业务在固定汇率下收入预计增长44%至45%。48分钟前",
+        "url": "https://www.yicai.com/news/103346437.html"
       },
       {
-        "title": "张文宏：耐药结核治疗周期有望继续缩短，关键是提升公平",
-        "url": "https://www.caixin.com/2026-09-03/102481264.html"
+        "title": "恒润股份索赔持续推进 又有部分股民提交起诉",
+        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-09-03/doc-iniqpvfw6939927.shtml"
       },
       {
-        "title": "当厄尔尼诺遇上霍尔木兹：全球农产品的复合冲击09-02 22:140评",
-        "url": "https://finance.ifeng.com/c/8w6H7ZBIOdk"
+        "title": "揭秘涨停丨10股封单均超1亿元",
+        "url": "https://www.stcn.com/article/detail/4171287.html"
       },
       {
         "title": "收评：科创50指数高开低走跌0.4%，高位人气股集体调整",
         "url": "https://finance.ifeng.com/c/special/7w3fQMcHQAK"
       },
       {
-        "title": "收评|国内期货主力合约跌多涨少，集运欧线跌超6%",
-        "url": "https://finance.sina.com.cn/money/future/fmnews/2026-09-03/doc-iniqpqxw1118791.shtml"
+        "title": "日本央行又出手了？日元对美元连涨两日冲至156一线09-03 16:190评",
+        "url": "https://finance.ifeng.com/c/8w7Wt0oNs0g"
       },
       {
-        "title": "日元升至157水平 日本央行释放灵活加息信号",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpqxy2163548.shtml"
+        "title": "日本最高汇率官员三村淳：准备继续“汇率战”，对当前市场既不放心也不满意",
+        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpzpu2004454.shtml"
       },
       {
         "title": "日本油轮集体撤离霍尔木兹却撞见新蓝海",
         "url": "https://original.ifeng.com/c/8w7RvZUMpID"
       },
       {
-        "title": "日经225指数收盘下跌0.2%，报64,214.48点。\n\n日本东证指数收盘上涨0.5%，报4,102.04点。\n\n韩国首尔综指收盘上涨0.26%，报6579.",
-        "url": "https://wallstreetcn.com/livenews/3159698"
+        "title": "日本财务大臣：对汇率仍保持高度警惕，否认美国直接施压日本改变通胀政策",
+        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpzps1061249.shtml"
       },
       {
-        "title": "最高近17倍，这些公司盈利预测大幅上调（附名单）",
-        "url": "https://www.stcn.com/article/detail/4170625.html"
+        "title": "日本财务大臣片山皋月：自从与美国联合外汇行动以来仍保持紧迫感",
+        "url": "https://wallstreetcn.com/livenews/3159882"
       },
       {
-        "title": "欧股开盘涨跌不一，德国DAX指数涨0.04%，英国富时100指数涨0.12%，法国CAC40指数跌0.01%，欧洲斯托克50指数涨0.05%。",
-        "url": "https://wallstreetcn.com/livenews/3159723"
+        "title": "明起停牌！*ST康佳A，拟主动终止上市",
+        "url": "https://www.stcn.com/article/detail/4171241.html"
       },
       {
-        "title": "正力新能：上半年净利润同比增长68.6% 储能业务正成为第二增长极",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/09/02/detail_2026090210036509.html"
+        "title": "明起停牌，昔日“彩电一哥”拟主动退市",
+        "url": "https://finance.ifeng.com/c/8w7gQkTsEzB"
       },
       {
-        "title": "汇洲智能信披违规被处罚，投资者索赔条件初步明确",
-        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-09-03/doc-iniqpqxu4347950.shtml"
+        "title": "易米基金黄晓峰：AI硬件从“叙事驱动”转向“业绩兑现” 三类标的值得关注",
+        "url": "https://www.cs.com.cn/tzjj/01/2026/09/03/detail_2026090310036715.html"
       },
       {
-        "title": "沃达丰三公司推出电视服务 拓展英国宽带市场",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpqxu4337070.shtml"
+        "title": "昔日彩电一哥拟主动退市，明起停牌",
+        "url": "https://finance.sina.com.cn/wm/2026-09-03/doc-iniqpzpu6824506.shtml"
       },
       {
-        "title": "泰凯英：技术布局进入兑现期 上半年营收净利双增",
-        "url": "https://www.cs.com.cn/ssgs/01/2026/09/02/detail_2026090210036515.html"
+        "title": "普京：俄乌要实现和平应先自行达成协议。",
+        "url": "https://wallstreetcn.com/livenews/3159897"
+      },
+      {
+        "title": "普京：俄美接触仍在继续 有望取得成果",
+        "url": "https://wallstreetcn.com/livenews/3159887"
+      },
+      {
+        "title": "李运到坪山区调研并到比亚迪等企业走访服务 因地制宜发展新质生产力 推动经济社会高质量发展",
+        "url": "https://wallstreetcn.com/livenews/3159884"
+      },
+      {
+        "title": "欧洲央行施纳贝尔或将提前离职，转任国际货币基金组织要职。（德国商报）",
+        "url": "https://wallstreetcn.com/livenews/3159903"
+      },
+      {
+        "title": "比亚迪、奇瑞、赛力斯、吉利密集发文，响应出海竞争新规",
+        "url": "https://finance.sina.com.cn/roll/2026-09-03/doc-iniqpzpu1993062.shtml"
+      },
+      {
+        "title": "波音84亿美元收购交易深陷巨额亏损泥潭",
+        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpzpu6835778.shtml"
       },
       {
         "title": "浙江美大停牌前连续涨停 控制权转让是否提前泄密",
         "url": "https://www.cs.com.cn/ssgs/01/2026/07/11/detail_2026071110023757.html"
       },
       {
-        "title": "海关总署严防脊髓灰质炎疫情传入",
-        "url": "https://wallstreetcn.com/livenews/3159704"
-      },
-      {
-        "title": "海南华铁上半年营收31亿，投资者索赔持续征集",
-        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-09-03/doc-iniqpqxy2171854.shtml"
+        "title": "海外收入首超国内，比亚迪的估值逻辑正在重写1小时前",
+        "url": "https://www.yicai.com/news/103346360.html"
       },
       {
         "title": "涨价！两家半导体硅片公司回应",
         "url": "https://www.stcn.com/article/detail/4170238.html"
+      },
+      {
+        "title": "清越科技欺诈发行坐实：拟被罚1.72亿元 四名高管遭市场禁入，上市三年面临强制退市",
+        "url": "https://finance.sina.com.cn/stock/observe/2026-09-03/doc-iniqpvfu1142826.shtml"
+      },
+      {
+        "title": "潘功胜谈应对全球失衡 各国应制定中长期政策、避免“翻烧饼”",
+        "url": "https://finance.caixin.com/2026-09-03/102481417.html"
+      },
+      {
+        "title": "燧原科技中签号出炉：中签号码共有20,657个，每个中签号码只能认购500股燧原科技A股股票。",
+        "url": "https://wallstreetcn.com/livenews/3159900"
+      },
+      {
+        "title": "特朗普一句话安抚市场，全球债券从暴跌中反弹",
+        "url": "https://original.ifeng.com/c/8w7awcBAA7C"
       },
       {
         "title": "特稿｜民告官“诈骗案”：两份地方文件引发的强铲风波",
@@ -525,20 +548,8 @@
         "url": "https://www.cs.com.cn/ssgs/01/2026/09/03/detail_2026090310036586.html"
       },
       {
-        "title": "瑞士二季度GDP同比 2.8%，前值 0.5%。",
-        "url": "https://wallstreetcn.com/livenews/3159712"
-      },
-      {
-        "title": "瑞士二季度GDP季环比 1.9%，前值 0.7%。",
-        "url": "https://wallstreetcn.com/livenews/3159713"
-      },
-      {
         "title": "瑞银集团：继续加大在华布局",
         "url": "https://www.cs.com.cn/xwzx/01/2026/09/03/detail_2026090310036697.html"
-      },
-      {
-        "title": "男裤一哥，投资“翻车”",
-        "url": "https://news.ifeng.com/c/8w7NXacBNZf"
       },
       {
         "title": "疾病分组再调整：医保按病种付费3.0版影响几何？(含视频)",
@@ -549,44 +560,16 @@
         "url": "https://www.yicai.com/topic/102990833/"
       },
       {
-        "title": "目标总规模7万亿元，体育产业提质扩容思路明确大力发展赛事经济，丰富赛事消费场景。3小时前",
-        "url": "https://www.yicai.com/news/103345511.html"
-      },
-      {
-        "title": "直线涨停，超60万手买单封板！“牛市旗手”，突发异动",
-        "url": "https://www.stcn.com/article/detail/4170406.html"
-      },
-      {
         "title": "私募瞭望站｜当世界暂别AI主线，资金在轮动中寻觅破局",
         "url": "https://www.stcn.com/article/detail/4170460.html"
       },
       {
-        "title": "科技巨头G20聚焦AI发展：AI带动就业 数据中心是核心",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpqxy7001608.shtml"
-      },
-      {
-        "title": "立方数科退市后仍可维权，投资者索赔持续征集",
-        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-09-03/doc-iniqpqxw1120108.shtml"
+        "title": "精智达：与某客户签订了半导体测试设备采购协议，合同总金额为人民币15.76亿元。",
+        "url": "https://wallstreetcn.com/livenews/3159896"
       },
       {
         "title": "纪念中国人民抗日战争暨世界反法西斯战争胜利81周年座谈会在京举行",
         "url": "https://www.cs.com.cn/xwzx/01/2026/09/03/detail_2026090310036695.html"
-      },
-      {
-        "title": "美三大股指收涨！美股芯片巨头，重大发布！股价盘后巨震",
-        "url": "https://www.stcn.com/article/detail/4170130.html"
-      },
-      {
-        "title": "美元兑日元日内跌1%，现报157.15。",
-        "url": "https://wallstreetcn.com/livenews/3159702"
-      },
-      {
-        "title": "美元直线大跳水，美联储重磅发声，股债汇集体异动09-02 22:490评",
-        "url": "https://finance.ifeng.com/c/8w6ImF1oyCt"
-      },
-      {
-        "title": "美媒：全球债市遭遇抛售潮，中国却意外成了赢家",
-        "url": "https://original.ifeng.com/c/8w7EzfxLWqK"
       },
       {
         "title": "美方淡化对朝鲜的无核化诉求 韩方评估“金特会”可能随时重启",
@@ -595,6 +578,10 @@
       {
         "title": "美联储之“鹰”或难持久，降息仍是主导方向",
         "url": "https://opinion.caixin.com/2026-09-03/102481292.html"
+      },
+      {
+        "title": "美联储被警告：政策机密或通过地区联储董事会“泄露”",
+        "url": "https://finance.sina.com.cn/roll/2026-09-03/doc-iniqpvfw6938209.shtml"
       },
       {
         "title": "股市内参：总比别人领先一步",
@@ -609,12 +596,24 @@
         "url": "https://www.cs.com.cn/ssgs/01/2026/09/02/detail_2026090210036517.html"
       },
       {
-        "title": "英伟达市值超越标普500五大板块总和，相当于美国GDP的16.3%",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpqxu4318539.shtml"
+        "title": "自然资源部与中国气象局联合发布橙色地质灾害气象风险预警",
+        "url": "https://wallstreetcn.com/livenews/3159878"
       },
       {
-        "title": "许家印倒了，恒大冰泉还活着09-02 21:230评",
-        "url": "https://finance.ifeng.com/c/8w6E5IbtY8r"
+        "title": "莱比锡机场遇袭事件致德俄关系再恶化 俄领馆和文化机构遭关闭",
+        "url": "https://international.caixin.com/2026-09-03/102481443.html"
+      },
+      {
+        "title": "虚构的百亿份额：中国大模型融资荒诞一幕",
+        "url": "https://finance.ifeng.com/c/8w7aM6Ld2af"
+      },
+      {
+        "title": "记者手记｜英国报纸进入￡5时代",
+        "url": "https://www.caixin.com/2026-09-03/102481423.html"
+      },
+      {
+        "title": "谌贻琴在天津调研时强调 推动养老服务扩容提质增效 让广大老年人安享幸福晚年",
+        "url": "https://wallstreetcn.com/livenews/3159879"
       },
       {
         "title": "财经早知道｜潘功胜出席G20财长会议：继续实施好适度宽松的货币政策",
@@ -625,8 +624,8 @@
         "url": "https://www.cs.com.cn/yh/04/2026/07/17/detail_2026071710024969.html"
       },
       {
-        "title": "赛隆药业退市不免责，业绩“变脸”引发索赔",
-        "url": "https://finance.sina.com.cn/stock/gmwq/rightscase/2026-09-03/doc-iniqpqxw1120932.shtml"
+        "title": "赔付已落地！赵敬国律师团队代理的诉奥维通信索赔案部分投资者获赔成功 目前仍在索赔时效内",
+        "url": "https://finance.sina.com.cn/stock/observe/2026-09-03/doc-iniqpvfw6938978.shtml"
       },
       {
         "title": "路博迈基金谢恒：AI应用落地或将催生港股市场更多投资机会",
@@ -637,12 +636,8 @@
         "url": "https://www.cs.com.cn/sylm/jsbd/2026/08/20/detail_2026082010032756.html"
       },
       {
-        "title": "辽宁发行10年期一般债地方债，规模204.7600亿元，发行利率1.7400%，边际倍数1.67倍，倍数预期1.74。",
-        "url": "https://wallstreetcn.com/livenews/3159701"
-      },
-      {
-        "title": "这家中国公司一周飙涨64%，AI长剧首秀登顶亚太最牛股",
-        "url": "https://original.ifeng.com/c/8w7QiCv4iTw"
+        "title": "连板股追踪丨A股今日共46只个股涨停 这只零售股5连板传媒板块龙版传媒4连板。一图速览今日连板股>>2小时前",
+        "url": "https://www.yicai.com/news/103346251.html"
       },
       {
         "title": "退休三年多后 中国通号集团原总经理徐宗祥被查",
@@ -651,6 +646,14 @@
       {
         "title": "遭宁德时代减持！“铁锂一哥”：产品产销两旺",
         "url": "https://www.stcn.com/article/detail/4170237.html"
+      },
+      {
+        "title": "锚定7万亿目标！国家体育总局最新发声，三大风口明确",
+        "url": "https://www.stcn.com/article/detail/4170972.html"
+      },
+      {
+        "title": "锦龙股份1800万股法拍受热捧，“牛散”全盘拿下",
+        "url": "https://www.stcn.com/article/detail/4171270.html"
       },
       {
         "title": "需要重视的全球“资金失衡”",
@@ -665,97 +668,93 @@
         "url": "https://www.stcn.com/article/detail/4170459.html"
       },
       {
-        "title": "马来西亚央行将政策利率维持在2.75%不变，预估为2.75%。",
-        "url": "https://wallstreetcn.com/livenews/3159719"
+        "title": "黄金看涨队伍日益壮大，RBC：年末冲向“5000大关”，有三大顺风09-03 15:200评",
+        "url": "https://finance.ifeng.com/c/8w7TX3UTisH"
       },
       {
-        "title": "高新技术企业税收优惠监管趋严：一上市公司补税金约3.4亿中国对高新技术企业资格认定审核加严，确保政策精准落地3小时前",
-        "url": "https://www.yicai.com/news/103345300.html"
+        "title": "齐鲁股交项目获2026“数据要素×”大赛奖项 数智赋能区域性股权市场转型升级",
+        "url": "https://www.cs.com.cn/xwzx/01/2026/09/03/detail_2026090310036726.html"
       },
       {
-        "title": "高盛发布跨资产展望：未来一年超配股票、低配信用，但回报预期明显降温",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpqxw1106929.shtml"
-      },
-      {
-        "title": "黄仁勋、奥特曼亮相G20 呼吁各国拥抱AI",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-09-03/doc-iniqpqxw1104501.shtml"
+        "title": "龙虎榜丨机构今日买入这10股，卖出九鼎新材4543万元共31只个股出现了机构的身影。54分钟前",
+        "url": "https://www.yicai.com/news/103346449.html"
       }
     ],
     "risks": [
       {
-        "title": "中东地缘冲突升级",
+        "title": "中东地缘冲突升级（美伊对抗、伊朗通胀80%）",
         "impact": "High",
         "likelihood": "High",
-        "mitigation": "关注油价对通胀传导，配置黄金及能源板块对冲，规避高估值成长股"
+        "mitigation": "配置黄金及能源板块对冲，关注布伦特原油100美元关口"
       },
       {
-        "title": "AI估值泡沫风险",
-        "impact": "High",
-        "likelihood": "Medium",
-        "mitigation": "区分AI基建与应用层，关注有实际营收兑现的标的，警惕纯概念炒作"
-      },
-      {
-        "title": "全球债市抛售与流动性冲击",
-        "impact": "High",
-        "likelihood": "Medium",
-        "mitigation": "关注美联储后续表态，中国债市相对受益，保持组合流动性"
-      },
-      {
-        "title": "A股成交萎缩与赚钱效应不足",
+        "title": "银行个人贷款不良率上升",
         "impact": "Medium",
         "likelihood": "High",
-        "mitigation": "降低仓位，聚焦政策催化明确的结构性机会，避免追高"
+        "mitigation": "关注银行减值计提节奏，优选资产质量优的国有大行"
       },
       {
-        "title": "上市公司财务造假与信披违规",
+        "title": "AI基建泡沫风险",
         "impact": "Medium",
         "likelihood": "Medium",
-        "mitigation": "规避ST及被立案调查标的，关注投资者索赔风险"
+        "mitigation": "区分AI叙事与业绩兑现，关注有实际订单落地的标的"
+      },
+      {
+        "title": "台风及地质灾害影响",
+        "impact": "Low",
+        "likelihood": "High",
+        "mitigation": "关注福建、广东区域物流及农业板块短期扰动"
+      },
+      {
+        "title": "日本汇率干预引发全球资金波动",
+        "impact": "Medium",
+        "likelihood": "Medium",
+        "mitigation": "关注日元套息交易平仓对全球流动性的冲击"
       }
     ],
     "opportunities": [
       {
-        "title": "布局创新药板块，关注港股通创新药ETF及全球合作标的",
+        "title": "布局半导体设备与材料龙头，受益AI算力需求及国产替代",
         "timeframe": "medium",
-        "description": "政策利好+全球BD合作加速，板块估值修复空间大"
+        "description": "精智达15.76亿订单验证需求，硅片涨价确认景气，燧原科技上市催化"
       },
       {
-        "title": "关注券商并购整合主题，配置头部券商",
+        "title": "黄金及贵金属板块逢低配置，对冲地缘风险",
         "timeframe": "medium",
-        "description": "首份全流程操作手册落地，行业集中度提升确定性增强"
+        "description": "RBC目标5000美元，中东冲突+全球资金失衡+央行购金三重驱动"
       },
       {
-        "title": "配置黄金及能源板块对冲地缘风险",
+        "title": "关注医保国谈前医药板块博弈机会",
         "timeframe": "short",
-        "description": "中东冲突推升油价至100美元附近，黄金飙升，避险需求旺盛"
+        "description": "9月5日国谈临近，创新药及AI+医疗（博济医药×华为）有事件催化"
       },
       {
-        "title": "关注AI应用落地环节，优选有营收兑现的标的",
-        "timeframe": "medium",
-        "description": "博通AI收入翻倍验证需求，但基建端泡沫争议需规避纯概念"
+        "title": "新能源出海龙头中长期持有",
+        "timeframe": "long",
+        "description": "比亚迪海外收入首超国内，估值逻辑重写；广汽传祺进入100+国家"
       }
     ],
     "defensive": [
       {
-        "title": "降低整体仓位至五成以下，保留现金应对波动",
+        "title": "银行板块以高股息防御为主，规避中小行",
         "timeframe": "short",
-        "description": "成交不足1.8万亿，赚钱效应弱，地缘风险未消，高盛提示最容易赚的钱已赚完"
+        "description": "个人贷款不良率普升，减值压力加大，国有大行资产质量更优"
       },
       {
-        "title": "规避高位AI概念及妖股，警惕补跌风险",
+        "title": "地产板块观望为主，等待土拍数据验证",
         "timeframe": "short",
-        "description": "科创50高开低走，一鸣食品等妖股跌停，高位股调整压力加大"
+        "description": "北京首场土拍降温，需求端修复仍需时间，政策效果待观察"
       },
       {
-        "title": "关注中国国债配置价值，全球债市抛售后中国债市相对受益",
-        "timeframe": "medium",
-        "description": "适度宽松货币政策延续，全球资金再平衡利好中国资产"
+        "title": "规避高位AI概念炒作股，关注业绩兑现标的",
+        "timeframe": "short",
+        "description": "科创50高开低走，高位人气股集体调整，AI融资存在虚构份额风险"
       }
     ]
   },
   "macro": {
     "yield_trend": 0.132,
-    "aud_trend": -0.015,
+    "aud_trend": -0.0142,
     "summary": "十年期国债收益率走强，流动性边际收紧，对成长股及科技板块估值形成一定压制。"
   },
   "sectors": [
@@ -767,71 +766,19 @@
       "avg_chg": 14.75,
       "avg_vol_ratio": 0.43,
       "avg_rs_5d": 1.176,
-      "avg_sentiment": 0.25,
-      "heat_score": 81,
+      "avg_sentiment": 0.0,
+      "heat_score": 77,
       "heat_breakdown": {
         "tech_score": 95.0,
         "rs_bonus": 5.3,
         "macro_bonus": -2.6,
-        "sent_bonus": 3.8,
+        "sent_bonus": 0.0,
         "risk_penalty": 0.0,
         "opportunity_boost": 10.0
       },
       "signal": "📈 温和上涨",
       "zone": "mild",
       "stocks": [
-        {
-          "symbol": "600436",
-          "price": 122.46,
-          "chg_pct": -15.52,
-          "chg_5d": -1.36,
-          "volume": "1.4M",
-          "vol_ratio": 0.18,
-          "turnover": 168213871.32241058,
-          "rs_ratio_5d": 1.017,
-          "rs_ratio_20d": 1.205,
-          "rsi": 52.0,
-          "news_sentiment": 0.25,
-          "sentiment_value": 0.25,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 600436 今日下跌 15.5%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 81
-        },
-        {
-          "symbol": "300760",
-          "price": 167.67,
-          "chg_pct": 12.21,
-          "chg_5d": 20.04,
-          "volume": "7.1M",
-          "vol_ratio": 0.59,
-          "turnover": 1193585876.8353424,
-          "rs_ratio_5d": 1.238,
-          "rs_ratio_20d": 1.314,
-          "rsi": 77.7,
-          "news_sentiment": 0.25,
-          "sentiment_value": 0.25,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": true,
-          "ai_insight": "🔵 300760 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 81
-        },
         {
           "symbol": "300015",
           "price": 8.27,
@@ -843,8 +790,8 @@
           "rs_ratio_5d": 1.045,
           "rs_ratio_20d": 1.095,
           "rsi": 47.2,
-          "news_sentiment": 0.25,
-          "sentiment_value": 0.25,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -856,59 +803,7 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 81
-        },
-        {
-          "symbol": "603259",
-          "price": 156.63,
-          "chg_pct": 32.86,
-          "chg_5d": 30.26,
-          "volume": "30.1M",
-          "vol_ratio": 0.38,
-          "turnover": 4715166485.751465,
-          "rs_ratio_5d": 1.344,
-          "rs_ratio_20d": 1.629,
-          "rsi": 73.7,
-          "news_sentiment": 0.25,
-          "sentiment_value": 0.25,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": true,
-          "ai_insight": "🔵 603259 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 81
-        },
-        {
-          "symbol": "600276",
-          "price": 45.96,
-          "chg_pct": -13.59,
-          "chg_5d": -17.56,
-          "volume": "50.3M",
-          "vol_ratio": 0.41,
-          "turnover": 2311408324.356537,
-          "rs_ratio_5d": 0.85,
-          "rs_ratio_20d": 1.035,
-          "rsi": 35.3,
-          "news_sentiment": 0.25,
-          "sentiment_value": 0.25,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 600276 今日下跌 13.6%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 81
+          "heat_score": 77
         },
         {
           "symbol": "000999",
@@ -921,8 +816,8 @@
           "rs_ratio_5d": 1.045,
           "rs_ratio_20d": 1.174,
           "rsi": 55.9,
-          "news_sentiment": 0.25,
-          "sentiment_value": 0.25,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -934,15 +829,119 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 81
+          "heat_score": 77
+        },
+        {
+          "symbol": "300760",
+          "price": 167.67,
+          "chg_pct": 12.21,
+          "chg_5d": 20.04,
+          "volume": "7.1M",
+          "vol_ratio": 0.59,
+          "turnover": 1193585876.8353424,
+          "rs_ratio_5d": 1.238,
+          "rs_ratio_20d": 1.314,
+          "rsi": 77.7,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": true,
+          "ai_insight": "🔵 300760 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 77
+        },
+        {
+          "symbol": "600276",
+          "price": 45.96,
+          "chg_pct": -13.59,
+          "chg_5d": -17.56,
+          "volume": "50.3M",
+          "vol_ratio": 0.41,
+          "turnover": 2311408324.356537,
+          "rs_ratio_5d": 0.85,
+          "rs_ratio_20d": 1.035,
+          "rsi": 35.3,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 600276 今日下跌 13.6%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 77
+        },
+        {
+          "symbol": "603259",
+          "price": 156.63,
+          "chg_pct": 32.86,
+          "chg_5d": 30.26,
+          "volume": "30.1M",
+          "vol_ratio": 0.38,
+          "turnover": 4715166485.751465,
+          "rs_ratio_5d": 1.344,
+          "rs_ratio_20d": 1.629,
+          "rsi": 73.7,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": true,
+          "ai_insight": "🔵 603259 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 77
+        },
+        {
+          "symbol": "600436",
+          "price": 122.46,
+          "chg_pct": -15.52,
+          "chg_5d": -1.36,
+          "volume": "1.4M",
+          "vol_ratio": 0.18,
+          "turnover": 168213871.32241058,
+          "rs_ratio_5d": 1.017,
+          "rs_ratio_20d": 1.205,
+          "rsi": 52.0,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 600436 今日下跌 15.5%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 77
         }
       ],
       "matched_risks": [],
       "matched_opportunities": [
         {
-          "title": "布局创新药板块，关注港股通创新药ETF及全球合作标的",
-          "timeframe": "medium",
-          "description": "政策利好+全球BD合作加速，板块估值修复空间大",
+          "title": "关注医保国谈前医药板块博弈机会",
+          "timeframe": "short",
+          "description": "9月5日国谈临近，创新药及AI+医疗（博济医药×华为）有事件催化",
           "match_confidence": "high"
         }
       ],
@@ -970,16 +969,16 @@
       "zone": "warming",
       "stocks": [
         {
-          "symbol": "600893",
-          "price": 39.16,
-          "chg_pct": 21.13,
-          "chg_5d": 18.2,
-          "volume": "27.3M",
-          "vol_ratio": 0.7,
-          "turnover": 1070639956.5482254,
-          "rs_ratio_5d": 1.219,
-          "rs_ratio_20d": 1.048,
-          "rsi": 56.6,
+          "symbol": "002179",
+          "price": 34.64,
+          "chg_pct": 5.93,
+          "chg_5d": -1.67,
+          "volume": "11.9M",
+          "vol_ratio": 0.21,
+          "turnover": 413130280.8807068,
+          "rs_ratio_5d": 1.014,
+          "rs_ratio_20d": 0.901,
+          "rsi": 37.8,
           "news_sentiment": 0.0,
           "sentiment_value": 0.0,
           "sentiment_source": "sector",
@@ -989,7 +988,7 @@
           "zone": "neutral",
           "ma_bullish": false,
           "breakout": false,
-          "ai_insight": "🔵 600893 当前无明显异动信号，持续跟踪中。",
+          "ai_insight": "🔵 002179 当前无明显异动信号，持续跟踪中。",
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
@@ -1022,58 +1021,6 @@
           "heat_score": 70
         },
         {
-          "symbol": "000768",
-          "price": 23.04,
-          "chg_pct": 16.54,
-          "chg_5d": 17.97,
-          "volume": "36.8M",
-          "vol_ratio": 1.5,
-          "turnover": 847789711.7681351,
-          "rs_ratio_5d": 1.217,
-          "rs_ratio_20d": 1.22,
-          "rsi": 67.9,
-          "news_sentiment": 0.0,
-          "sentiment_value": 0.0,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "潜伏区 (轻仓)",
-          "zone": "accumulation",
-          "ma_bullish": false,
-          "breakout": true,
-          "ai_insight": "📡 000768 底部异常放量。大幅跑赢大盘，疑似主力资金借利好配合悄然建仓，突破拐点临近。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 70
-        },
-        {
-          "symbol": "002179",
-          "price": 34.64,
-          "chg_pct": 5.93,
-          "chg_5d": -1.67,
-          "volume": "11.9M",
-          "vol_ratio": 0.21,
-          "turnover": 413130280.8807068,
-          "rs_ratio_5d": 1.014,
-          "rs_ratio_20d": 0.901,
-          "rsi": 37.8,
-          "news_sentiment": 0.0,
-          "sentiment_value": 0.0,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "🔵 002179 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 70
-        },
-        {
           "symbol": "600150",
           "price": 34.32,
           "chg_pct": 7.33,
@@ -1094,6 +1041,58 @@
           "ma_bullish": false,
           "breakout": false,
           "ai_insight": "🔵 600150 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 70
+        },
+        {
+          "symbol": "600893",
+          "price": 39.16,
+          "chg_pct": 21.13,
+          "chg_5d": 18.2,
+          "volume": "27.3M",
+          "vol_ratio": 0.7,
+          "turnover": 1070639956.5482254,
+          "rs_ratio_5d": 1.219,
+          "rs_ratio_20d": 1.048,
+          "rsi": 56.6,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "🔵 600893 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 70
+        },
+        {
+          "symbol": "000768",
+          "price": 23.04,
+          "chg_pct": 16.54,
+          "chg_5d": 17.97,
+          "volume": "36.8M",
+          "vol_ratio": 1.5,
+          "turnover": 847789711.7681351,
+          "rs_ratio_5d": 1.217,
+          "rs_ratio_20d": 1.22,
+          "rsi": 67.9,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "潜伏区 (轻仓)",
+          "zone": "accumulation",
+          "ma_bullish": false,
+          "breakout": true,
+          "ai_insight": "📡 000768 底部异常放量。大幅跑赢大盘，疑似主力资金借利好配合悄然建仓，突破拐点临近。",
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
@@ -1138,45 +1137,19 @@
       "avg_chg": 16.21,
       "avg_vol_ratio": 0.52,
       "avg_rs_5d": 1.225,
-      "avg_sentiment": 0.27,
-      "heat_score": 68,
+      "avg_sentiment": 0.08,
+      "heat_score": 66,
       "heat_breakdown": {
         "tech_score": 105.0,
         "rs_bonus": 6.8,
         "macro_bonus": -0.1,
-        "sent_bonus": 4.1,
+        "sent_bonus": 1.2,
         "risk_penalty": 15.0,
         "opportunity_boost": 10.0
       },
       "signal": "📈 温和上涨",
       "zone": "mild",
       "stocks": [
-        {
-          "symbol": "600362",
-          "price": 46.88,
-          "chg_pct": 20.11,
-          "chg_5d": 18.89,
-          "volume": "40.8M",
-          "vol_ratio": 0.59,
-          "turnover": 1912907221.5037308,
-          "rs_ratio_5d": 1.226,
-          "rs_ratio_20d": 0.963,
-          "rsi": 56.9,
-          "news_sentiment": 0.27,
-          "sentiment_value": 0.27,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "🔵 600362 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 68
-        },
         {
           "symbol": "601899",
           "price": 33.31,
@@ -1188,8 +1161,8 @@
           "rs_ratio_5d": 1.271,
           "rs_ratio_20d": 1.25,
           "rsi": 70.2,
-          "news_sentiment": 0.27,
-          "sentiment_value": 0.27,
+          "news_sentiment": 0.08,
+          "sentiment_value": 0.08,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -1201,7 +1174,7 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 68
+          "heat_score": 66
         },
         {
           "symbol": "603993",
@@ -1214,8 +1187,8 @@
           "rs_ratio_5d": 1.138,
           "rs_ratio_20d": 0.955,
           "rsi": 52.2,
-          "news_sentiment": 0.27,
-          "sentiment_value": 0.27,
+          "news_sentiment": 0.08,
+          "sentiment_value": 0.08,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -1227,7 +1200,7 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 68
+          "heat_score": 66
         },
         {
           "symbol": "600111",
@@ -1240,8 +1213,8 @@
           "rs_ratio_5d": 1.032,
           "rs_ratio_20d": 0.801,
           "rsi": 30.9,
-          "news_sentiment": 0.27,
-          "sentiment_value": 0.27,
+          "news_sentiment": 0.08,
+          "sentiment_value": 0.08,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -1253,7 +1226,7 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 68
+          "heat_score": 66
         },
         {
           "symbol": "601600",
@@ -1266,8 +1239,8 @@
           "rs_ratio_5d": 1.267,
           "rs_ratio_20d": 1.123,
           "rsi": 59.6,
-          "news_sentiment": 0.27,
-          "sentiment_value": 0.27,
+          "news_sentiment": 0.08,
+          "sentiment_value": 0.08,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -1279,7 +1252,7 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 68
+          "heat_score": 66
         },
         {
           "symbol": "000878",
@@ -1292,8 +1265,8 @@
           "rs_ratio_5d": 1.261,
           "rs_ratio_20d": 1.002,
           "rsi": 59.1,
-          "news_sentiment": 0.27,
-          "sentiment_value": 0.27,
+          "news_sentiment": 0.08,
+          "sentiment_value": 0.08,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -1305,23 +1278,49 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 68
+          "heat_score": 66
+        },
+        {
+          "symbol": "600362",
+          "price": 46.88,
+          "chg_pct": 20.11,
+          "chg_5d": 18.89,
+          "volume": "40.8M",
+          "vol_ratio": 0.59,
+          "turnover": 1912907221.5037308,
+          "rs_ratio_5d": 1.226,
+          "rs_ratio_20d": 0.963,
+          "rsi": 56.9,
+          "news_sentiment": 0.08,
+          "sentiment_value": 0.08,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "🔵 600362 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 66
         }
       ],
       "matched_risks": [
         {
-          "title": "中东地缘冲突升级",
+          "title": "中东地缘冲突升级（美伊对抗、伊朗通胀80%）",
           "impact": "High",
           "likelihood": "High",
-          "mitigation": "关注油价对通胀传导，配置黄金及能源板块对冲，规避高估值成长股",
+          "mitigation": "配置黄金及能源板块对冲，关注布伦特原油100美元关口",
           "match_confidence": "high"
         }
       ],
       "matched_opportunities": [
         {
-          "title": "配置黄金及能源板块对冲地缘风险",
-          "timeframe": "short",
-          "description": "中东冲突推升油价至100美元附近，黄金飙升，避险需求旺盛",
+          "title": "黄金及贵金属板块逢低配置，对冲地缘风险",
+          "timeframe": "medium",
+          "description": "RBC目标5000美元，中东冲突+全球资金失衡+央行购金三重驱动",
           "match_confidence": "high"
         }
       ],
@@ -1335,123 +1334,19 @@
       "avg_chg": 4.74,
       "avg_vol_ratio": 19.96,
       "avg_rs_5d": 1.039,
-      "avg_sentiment": 0.03,
-      "heat_score": 43,
+      "avg_sentiment": -0.02,
+      "heat_score": 59,
       "heat_breakdown": {
         "tech_score": 339.0,
         "rs_bonus": 1.2,
         "macro_bonus": 2.6,
-        "sent_bonus": 0.4,
-        "risk_penalty": 30.0,
-        "opportunity_boost": 0.0
+        "sent_bonus": -0.3,
+        "risk_penalty": 23.0,
+        "opportunity_boost": 10.0
       },
       "signal": "🔥 热点爆发",
       "zone": "hot",
       "stocks": [
-        {
-          "symbol": "601328",
-          "price": 7.32,
-          "chg_pct": 7.17,
-          "chg_5d": 8.12,
-          "volume": "226.9M",
-          "vol_ratio": 1.1,
-          "turnover": 1661090665.6342492,
-          "rs_ratio_5d": 1.115,
-          "rs_ratio_20d": 1.247,
-          "rsi": 75.8,
-          "news_sentiment": 0.03,
-          "sentiment_value": 0.03,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": true,
-          "ai_insight": "🔵 601328 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 43
-        },
-        {
-          "symbol": "000001",
-          "price": 3942.09,
-          "chg_pct": 4.73,
-          "chg_5d": 0.72,
-          "volume": "2454.4M",
-          "vol_ratio": 20.0,
-          "turnover": 9675376331521.008,
-          "rs_ratio_5d": 1.039,
-          "rs_ratio_20d": 1.052,
-          "rsi": 45.9,
-          "news_sentiment": 0.03,
-          "sentiment_value": 0.03,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "潜伏区 (轻仓)",
-          "zone": "accumulation",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "📡 000001 底部异常放量。走势强于大盘，疑似主力资金借利好配合悄然建仓，突破拐点临近。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 43
-        },
-        {
-          "symbol": "601318",
-          "price": 58.0,
-          "chg_pct": 14.4,
-          "chg_5d": 17.1,
-          "volume": "108.7M",
-          "vol_ratio": 1.07,
-          "turnover": 6305294086.0,
-          "rs_ratio_5d": 1.208,
-          "rs_ratio_20d": 1.24,
-          "rsi": 75.4,
-          "news_sentiment": 0.03,
-          "sentiment_value": 0.03,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": true,
-          "ai_insight": "🔵 601318 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 43
-        },
-        {
-          "symbol": "600036",
-          "price": 41.07,
-          "chg_pct": 8.02,
-          "chg_5d": 10.26,
-          "volume": "76.9M",
-          "vol_ratio": 0.8,
-          "turnover": 3157116301.0506516,
-          "rs_ratio_5d": 1.137,
-          "rs_ratio_20d": 1.246,
-          "rsi": 77.9,
-          "news_sentiment": 0.03,
-          "sentiment_value": 0.03,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": true,
-          "ai_insight": "🔵 600036 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 43
-        },
         {
           "symbol": "601288",
           "price": 6.89,
@@ -1463,8 +1358,8 @@
           "rs_ratio_5d": 1.116,
           "rs_ratio_20d": 1.196,
           "rsi": 71.0,
-          "news_sentiment": 0.03,
-          "sentiment_value": 0.03,
+          "news_sentiment": -0.02,
+          "sentiment_value": -0.02,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -1476,7 +1371,7 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 43
+          "heat_score": 59
         },
         {
           "symbol": "601988",
@@ -1489,8 +1384,8 @@
           "rs_ratio_5d": 1.139,
           "rs_ratio_20d": 1.249,
           "rsi": 72.5,
-          "news_sentiment": 0.03,
-          "sentiment_value": 0.03,
+          "news_sentiment": -0.02,
+          "sentiment_value": -0.02,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -1502,7 +1397,59 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 43
+          "heat_score": 59
+        },
+        {
+          "symbol": "000001",
+          "price": 3942.09,
+          "chg_pct": 4.73,
+          "chg_5d": 0.72,
+          "volume": "2454.4M",
+          "vol_ratio": 20.0,
+          "turnover": 9675376331521.008,
+          "rs_ratio_5d": 1.039,
+          "rs_ratio_20d": 1.052,
+          "rsi": 45.9,
+          "news_sentiment": -0.02,
+          "sentiment_value": -0.02,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "潜伏区 (轻仓)",
+          "zone": "accumulation",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "📡 000001 底部异常放量。走势强于大盘，疑似主力资金借利好配合悄然建仓，突破拐点临近。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 59
+        },
+        {
+          "symbol": "601328",
+          "price": 7.32,
+          "chg_pct": 7.17,
+          "chg_5d": 8.12,
+          "volume": "226.9M",
+          "vol_ratio": 1.1,
+          "turnover": 1661090665.6342492,
+          "rs_ratio_5d": 1.115,
+          "rs_ratio_20d": 1.247,
+          "rsi": 75.8,
+          "news_sentiment": -0.02,
+          "sentiment_value": -0.02,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": true,
+          "ai_insight": "🔵 601328 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 59
         },
         {
           "symbol": "601398",
@@ -1515,8 +1462,8 @@
           "rs_ratio_5d": 1.109,
           "rs_ratio_20d": 1.25,
           "rsi": 73.2,
-          "news_sentiment": 0.03,
-          "sentiment_value": 0.03,
+          "news_sentiment": -0.02,
+          "sentiment_value": -0.02,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -1528,7 +1475,7 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 43
+          "heat_score": 59
         },
         {
           "symbol": "600000",
@@ -1541,8 +1488,8 @@
           "rs_ratio_5d": 1.089,
           "rs_ratio_20d": 1.178,
           "rsi": 71.4,
-          "news_sentiment": 0.03,
-          "sentiment_value": 0.03,
+          "news_sentiment": -0.02,
+          "sentiment_value": -0.02,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -1554,7 +1501,59 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 43
+          "heat_score": 59
+        },
+        {
+          "symbol": "600036",
+          "price": 41.07,
+          "chg_pct": 8.02,
+          "chg_5d": 10.26,
+          "volume": "76.9M",
+          "vol_ratio": 0.8,
+          "turnover": 3157116301.0506516,
+          "rs_ratio_5d": 1.137,
+          "rs_ratio_20d": 1.246,
+          "rsi": 77.9,
+          "news_sentiment": -0.02,
+          "sentiment_value": -0.02,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": true,
+          "ai_insight": "🔵 600036 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 59
+        },
+        {
+          "symbol": "601318",
+          "price": 58.0,
+          "chg_pct": 14.4,
+          "chg_5d": 17.1,
+          "volume": "108.7M",
+          "vol_ratio": 1.07,
+          "turnover": 6305294086.0,
+          "rs_ratio_5d": 1.208,
+          "rs_ratio_20d": 1.24,
+          "rsi": 75.4,
+          "news_sentiment": -0.02,
+          "sentiment_value": -0.02,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": true,
+          "ai_insight": "🔵 601318 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 59
         },
         {
           "symbol": "002142",
@@ -1567,8 +1566,8 @@
           "rs_ratio_5d": 1.131,
           "rs_ratio_20d": 1.276,
           "rsi": 77.1,
-          "news_sentiment": 0.03,
-          "sentiment_value": 0.03,
+          "news_sentiment": -0.02,
+          "sentiment_value": -0.02,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -1580,420 +1579,41 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 43
+          "heat_score": 59
         }
       ],
       "matched_risks": [
         {
-          "title": "中东地缘冲突升级",
+          "title": "中东地缘冲突升级（美伊对抗、伊朗通胀80%）",
           "impact": "High",
           "likelihood": "High",
-          "mitigation": "关注油价对通胀传导，配置黄金及能源板块对冲，规避高估值成长股",
+          "mitigation": "配置黄金及能源板块对冲，关注布伦特原油100美元关口",
           "match_confidence": "high"
         },
         {
-          "title": "全球债市抛售与流动性冲击",
-          "impact": "High",
-          "likelihood": "Medium",
-          "mitigation": "关注美联储后续表态，中国债市相对受益，保持组合流动性",
-          "match_confidence": "high"
-        }
-      ],
-      "matched_opportunities": [],
-      "matched_defensive": [
-        {
-          "title": "关注中国国债配置价值，全球债市抛售后中国债市相对受益",
-          "timeframe": "medium",
-          "description": "适度宽松货币政策延续，全球资金再平衡利好中国资产",
-          "match_confidence": "high"
-        }
-      ]
-    },
-    {
-      "name": "白酒消费 Consumer",
-      "type": "industry",
-      "up_count": 2,
-      "down_count": 4,
-      "avg_chg": 0.55,
-      "avg_vol_ratio": 0.47,
-      "avg_rs_5d": 1.083,
-      "avg_sentiment": 0.4,
-      "heat_score": 16,
-      "heat_breakdown": {
-        "tech_score": 10.3,
-        "rs_bonus": 2.5,
-        "macro_bonus": -2.0,
-        "sent_bonus": 6.0,
-        "risk_penalty": 0.0,
-        "opportunity_boost": 0.0
-      },
-      "signal": "📈 温和上涨",
-      "zone": "mild",
-      "stocks": [
-        {
-          "symbol": "000568",
-          "price": 76.0,
-          "chg_pct": -2.58,
-          "chg_5d": 4.67,
-          "volume": "11.2M",
-          "vol_ratio": 0.75,
-          "turnover": 854675480.0,
-          "rs_ratio_5d": 1.079,
-          "rs_ratio_20d": 1.099,
-          "rsi": 50.0,
-          "news_sentiment": 0.4,
-          "sentiment_value": 0.4,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 000568 今日下跌 2.6%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 16
-        },
-        {
-          "symbol": "002304",
-          "price": 38.75,
-          "chg_pct": -2.56,
-          "chg_5d": 1.71,
-          "volume": "3.5M",
-          "vol_ratio": 0.45,
-          "turnover": 133815646.25,
-          "rs_ratio_5d": 1.049,
-          "rs_ratio_20d": 1.084,
-          "rsi": 45.8,
-          "news_sentiment": 0.4,
-          "sentiment_value": 0.4,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 002304 今日下跌 2.6%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 16
-        },
-        {
-          "symbol": "000858",
-          "price": 70.68,
-          "chg_pct": -2.86,
-          "chg_5d": 0.45,
-          "volume": "18.0M",
-          "vol_ratio": 0.47,
-          "turnover": 1272668609.0150146,
-          "rs_ratio_5d": 1.036,
-          "rs_ratio_20d": 1.062,
-          "rsi": 42.2,
-          "news_sentiment": 0.4,
-          "sentiment_value": 0.4,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 000858 今日下跌 2.9%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 16
-        },
-        {
-          "symbol": "603288",
-          "price": 34.12,
-          "chg_pct": -5.22,
-          "chg_5d": -0.81,
-          "volume": "13.0M",
-          "vol_ratio": 0.5,
-          "turnover": 443114413.04845047,
-          "rs_ratio_5d": 1.023,
-          "rs_ratio_20d": 1.148,
-          "rsi": 49.0,
-          "news_sentiment": 0.4,
-          "sentiment_value": 0.4,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 603288 今日下跌 5.2%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 16
-        },
-        {
-          "symbol": "600519",
-          "price": 1298.88,
-          "chg_pct": 3.66,
-          "chg_5d": 7.26,
-          "volume": "1.8M",
-          "vol_ratio": 0.38,
-          "turnover": 2305206771.8658447,
-          "rs_ratio_5d": 1.106,
-          "rs_ratio_20d": 1.19,
-          "rsi": 69.5,
-          "news_sentiment": 0.4,
-          "sentiment_value": 0.4,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": true,
-          "ai_insight": "🔵 600519 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 16
-        },
-        {
-          "symbol": "600809",
-          "price": 116.96,
-          "chg_pct": 5.72,
-          "chg_5d": 12.17,
-          "volume": "4.7M",
-          "vol_ratio": 0.38,
-          "turnover": 545951614.7664566,
-          "rs_ratio_5d": 1.157,
-          "rs_ratio_20d": 1.202,
-          "rsi": 63.8,
-          "news_sentiment": 0.4,
-          "sentiment_value": 0.4,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": true,
-          "ai_insight": "🔵 600809 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 16
-        }
-      ],
-      "matched_risks": [],
-      "matched_opportunities": [],
-      "matched_defensive": [
-        {
-          "title": "规避高位AI概念及妖股，警惕补跌风险",
-          "timeframe": "short",
-          "description": "科创50高开低走，一鸣食品等妖股跌停，高位股调整压力加大",
-          "match_confidence": "high"
-        }
-      ]
-    },
-    {
-      "name": "证券券商 Brokerage",
-      "type": "industry",
-      "up_count": 3,
-      "down_count": 3,
-      "avg_chg": -0.22,
-      "avg_vol_ratio": 0.48,
-      "avg_rs_5d": 1.02,
-      "avg_sentiment": 0.1,
-      "heat_score": 12,
-      "heat_breakdown": {
-        "tech_score": 5.9,
-        "rs_bonus": 0.6,
-        "macro_bonus": 2.6,
-        "sent_bonus": 1.5,
-        "risk_penalty": 8.0,
-        "opportunity_boost": 10.0
-      },
-      "signal": "❄️ 冷淡",
-      "zone": "cold",
-      "stocks": [
-        {
-          "symbol": "000776",
-          "price": 22.15,
-          "chg_pct": 5.02,
-          "chg_5d": 6.8,
-          "volume": "107.8M",
-          "vol_ratio": 0.82,
-          "turnover": 2388705597.01145,
-          "rs_ratio_5d": 1.102,
-          "rs_ratio_20d": 1.111,
-          "rsi": 54.2,
-          "news_sentiment": 0.1,
-          "sentiment_value": 0.1,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "🔵 000776 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 12
-        },
-        {
-          "symbol": "601211",
-          "price": 17.69,
-          "chg_pct": -3.33,
-          "chg_5d": -3.54,
-          "volume": "59.7M",
-          "vol_ratio": 0.37,
-          "turnover": 1055827451.9052219,
-          "rs_ratio_5d": 0.995,
-          "rs_ratio_20d": 1.105,
-          "rsi": 45.9,
-          "news_sentiment": 0.1,
-          "sentiment_value": 0.1,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 601211 今日下跌 3.3%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 12
-        },
-        {
-          "symbol": "300059",
-          "price": 19.01,
-          "chg_pct": -3.5,
-          "chg_5d": -4.18,
-          "volume": "173.6M",
-          "vol_ratio": 0.32,
-          "turnover": 3300967708.2339,
-          "rs_ratio_5d": 0.988,
-          "rs_ratio_20d": 1.008,
-          "rsi": 42.5,
-          "news_sentiment": 0.1,
-          "sentiment_value": 0.1,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 300059 今日下跌 3.5%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": true,
-          "heat_score": 12
-        },
-        {
-          "symbol": "601688",
-          "price": 19.5,
-          "chg_pct": 0.28,
-          "chg_5d": 0.63,
-          "volume": "51.1M",
-          "vol_ratio": 0.42,
-          "turnover": 995561677.5,
-          "rs_ratio_5d": 1.038,
-          "rs_ratio_20d": 1.04,
-          "rsi": 46.6,
-          "news_sentiment": 0.1,
-          "sentiment_value": 0.1,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "🔵 601688 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": true,
-          "heat_score": 12
-        },
-        {
-          "symbol": "600999",
-          "price": 18.45,
-          "chg_pct": -2.48,
-          "chg_5d": -7.84,
-          "volume": "64.6M",
-          "vol_ratio": 0.42,
-          "turnover": 1191962354.6397057,
-          "rs_ratio_5d": 0.95,
-          "rs_ratio_20d": 1.066,
-          "rsi": 42.3,
-          "news_sentiment": 0.1,
-          "sentiment_value": 0.1,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 600999 今日下跌 2.5%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": true,
-          "heat_score": 12
-        },
-        {
-          "symbol": "600030",
-          "price": 27.86,
-          "chg_pct": 0.94,
-          "chg_5d": -0.92,
-          "volume": "118.1M",
-          "vol_ratio": 0.47,
-          "turnover": 3290692943.0118713,
-          "rs_ratio_5d": 1.022,
-          "rs_ratio_20d": 1.081,
-          "rsi": 50.6,
-          "news_sentiment": 0.1,
-          "sentiment_value": 0.1,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "🔵 600030 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": true,
-          "heat_score": 12
-        }
-      ],
-      "matched_risks": [
-        {
-          "title": "A股成交萎缩与赚钱效应不足",
+          "title": "银行个人贷款不良率上升",
           "impact": "Medium",
           "likelihood": "High",
-          "mitigation": "降低仓位，聚焦政策催化明确的结构性机会，避免追高",
+          "mitigation": "关注银行减值计提节奏，优选资产质量优的国有大行",
           "match_confidence": "high"
         }
       ],
       "matched_opportunities": [
         {
-          "title": "关注券商并购整合主题，配置头部券商",
+          "title": "黄金及贵金属板块逢低配置，对冲地缘风险",
           "timeframe": "medium",
-          "description": "首份全流程操作手册落地，行业集中度提升确定性增强",
+          "description": "RBC目标5000美元，中东冲突+全球资金失衡+央行购金三重驱动",
           "match_confidence": "high"
         }
       ],
-      "matched_defensive": []
+      "matched_defensive": [
+        {
+          "title": "银行板块以高股息防御为主，规避中小行",
+          "timeframe": "short",
+          "description": "个人贷款不良率普升，减值压力加大，国有大行资产质量更优",
+          "match_confidence": "high"
+        }
+      ]
     },
     {
       "name": "光伏能源 Solar/Energy",
@@ -2004,55 +1624,29 @@
       "avg_vol_ratio": 0.54,
       "avg_rs_5d": 1.034,
       "avg_sentiment": 0.0,
-      "heat_score": 9,
+      "heat_score": 19,
       "heat_breakdown": {
         "tech_score": 8.6,
         "rs_bonus": 1.0,
         "macro_bonus": -0.1,
         "sent_bonus": 0.0,
         "risk_penalty": 0.0,
-        "opportunity_boost": 0.0
+        "opportunity_boost": 10.0
       },
       "signal": "📈 温和上涨",
       "zone": "mild",
       "stocks": [
         {
-          "symbol": "601012",
-          "price": 11.7,
-          "chg_pct": -0.43,
-          "chg_5d": 0.6,
-          "volume": "50.4M",
-          "vol_ratio": 0.38,
-          "turnover": 589110750.2962427,
-          "rs_ratio_5d": 1.038,
-          "rs_ratio_20d": 0.983,
-          "rsi": 37.1,
-          "news_sentiment": 0.0,
-          "sentiment_value": 0.0,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "🔵 601012 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": true,
-          "heat_score": 9
-        },
-        {
-          "symbol": "601857",
-          "price": 11.21,
-          "chg_pct": 8.94,
-          "chg_5d": 16.05,
-          "volume": "93.8M",
-          "vol_ratio": 0.51,
-          "turnover": 1051682217.5088129,
-          "rs_ratio_5d": 1.197,
-          "rs_ratio_20d": 1.324,
-          "rsi": 78.2,
+          "symbol": "600900",
+          "price": 28.44,
+          "chg_pct": 1.61,
+          "chg_5d": 2.95,
+          "volume": "73.8M",
+          "vol_ratio": 0.54,
+          "turnover": 2099199526.0196018,
+          "rs_ratio_5d": 1.062,
+          "rs_ratio_20d": 1.207,
+          "rsi": 70.9,
           "news_sentiment": 0.0,
           "sentiment_value": 0.0,
           "sentiment_source": "sector",
@@ -2062,37 +1656,11 @@
           "zone": "neutral",
           "ma_bullish": false,
           "breakout": true,
-          "ai_insight": "🔵 601857 当前无明显异动信号，持续跟踪中。",
+          "ai_insight": "🔵 600900 当前无明显异动信号，持续跟踪中。",
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 9
-        },
-        {
-          "symbol": "600438",
-          "price": 11.28,
-          "chg_pct": 7.63,
-          "chg_5d": 5.62,
-          "volume": "21.2M",
-          "vol_ratio": 0.35,
-          "turnover": 238600070.27167606,
-          "rs_ratio_5d": 1.089,
-          "rs_ratio_20d": 0.964,
-          "rsi": 41.7,
-          "news_sentiment": 0.0,
-          "sentiment_value": 0.0,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "🔵 600438 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 9
+          "heat_score": 19
         },
         {
           "symbol": "600028",
@@ -2118,85 +1686,7 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 9
-        },
-        {
-          "symbol": "601088",
-          "price": 47.78,
-          "chg_pct": 8.71,
-          "chg_5d": 12.03,
-          "volume": "21.8M",
-          "vol_ratio": 0.5,
-          "turnover": 1043502129.400177,
-          "rs_ratio_5d": 1.155,
-          "rs_ratio_20d": 1.311,
-          "rsi": 73.7,
-          "news_sentiment": 0.0,
-          "sentiment_value": 0.0,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": true,
-          "ai_insight": "🔵 601088 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 9
-        },
-        {
-          "symbol": "600900",
-          "price": 28.44,
-          "chg_pct": 1.61,
-          "chg_5d": 2.95,
-          "volume": "73.8M",
-          "vol_ratio": 0.54,
-          "turnover": 2099199526.0196018,
-          "rs_ratio_5d": 1.062,
-          "rs_ratio_20d": 1.207,
-          "rsi": 70.9,
-          "news_sentiment": 0.0,
-          "sentiment_value": 0.0,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": true,
-          "ai_insight": "🔵 600900 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 9
-        },
-        {
-          "symbol": "300274",
-          "price": 87.08,
-          "chg_pct": -14.3,
-          "chg_5d": -19.37,
-          "volume": "40.8M",
-          "vol_ratio": 0.54,
-          "turnover": 3552312684.135437,
-          "rs_ratio_5d": 0.832,
-          "rs_ratio_20d": 0.592,
-          "rsi": 16.6,
-          "news_sentiment": 0.0,
-          "sentiment_value": 0.0,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 300274 今日下跌 14.3%，量价背离，暂时观望为主。RSI(17)进入超卖区间，反弹概率较大。",
-          "bear_signal": "死亡交叉 ✗",
-          "bear_zone": "distribution_lite",
-          "ma_bearish": true,
-          "heat_score": 9
+          "heat_score": 19
         },
         {
           "symbol": "600011",
@@ -2222,7 +1712,7 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 9
+          "heat_score": 19
         },
         {
           "symbol": "600938",
@@ -2248,11 +1738,148 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 9
+          "heat_score": 19
+        },
+        {
+          "symbol": "600438",
+          "price": 11.28,
+          "chg_pct": 7.63,
+          "chg_5d": 5.62,
+          "volume": "21.2M",
+          "vol_ratio": 0.35,
+          "turnover": 238600070.27167606,
+          "rs_ratio_5d": 1.089,
+          "rs_ratio_20d": 0.964,
+          "rsi": 41.7,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "🔵 600438 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 19
+        },
+        {
+          "symbol": "300274",
+          "price": 87.08,
+          "chg_pct": -14.3,
+          "chg_5d": -19.37,
+          "volume": "40.8M",
+          "vol_ratio": 0.54,
+          "turnover": 3552312684.135437,
+          "rs_ratio_5d": 0.832,
+          "rs_ratio_20d": 0.592,
+          "rsi": 16.6,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 300274 今日下跌 14.3%，量价背离，暂时观望为主。RSI(17)进入超卖区间，反弹概率较大。",
+          "bear_signal": "死亡交叉 ✗",
+          "bear_zone": "distribution_lite",
+          "ma_bearish": true,
+          "heat_score": 19
+        },
+        {
+          "symbol": "601012",
+          "price": 11.7,
+          "chg_pct": -0.43,
+          "chg_5d": 0.6,
+          "volume": "50.4M",
+          "vol_ratio": 0.38,
+          "turnover": 589110750.2962427,
+          "rs_ratio_5d": 1.038,
+          "rs_ratio_20d": 0.983,
+          "rsi": 37.1,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "🔵 601012 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": true,
+          "heat_score": 19
+        },
+        {
+          "symbol": "601857",
+          "price": 11.21,
+          "chg_pct": 8.94,
+          "chg_5d": 16.05,
+          "volume": "93.8M",
+          "vol_ratio": 0.51,
+          "turnover": 1051682217.5088129,
+          "rs_ratio_5d": 1.197,
+          "rs_ratio_20d": 1.324,
+          "rsi": 78.2,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": true,
+          "ai_insight": "🔵 601857 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 19
+        },
+        {
+          "symbol": "601088",
+          "price": 47.78,
+          "chg_pct": 8.71,
+          "chg_5d": 12.03,
+          "volume": "21.8M",
+          "vol_ratio": 0.5,
+          "turnover": 1043502129.400177,
+          "rs_ratio_5d": 1.155,
+          "rs_ratio_20d": 1.311,
+          "rsi": 73.7,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": true,
+          "ai_insight": "🔵 601088 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 19
         }
       ],
       "matched_risks": [],
-      "matched_opportunities": [],
+      "matched_opportunities": [
+        {
+          "title": "布局半导体设备与材料龙头，受益AI算力需求及国产替代",
+          "timeframe": "medium",
+          "description": "精智达15.76亿订单验证需求，硅片涨价确认景气，燧原科技上市催化",
+          "match_confidence": "high"
+        }
+      ],
       "matched_defensive": []
     },
     {
@@ -2263,45 +1890,19 @@
       "avg_chg": -0.92,
       "avg_vol_ratio": 0.6,
       "avg_rs_5d": 1.022,
-      "avg_sentiment": 0.33,
-      "heat_score": 8,
+      "avg_sentiment": -0.08,
+      "heat_score": 12,
       "heat_breakdown": {
         "tech_score": 3.4,
         "rs_bonus": 0.6,
         "macro_bonus": -0.1,
-        "sent_bonus": 5.0,
+        "sent_bonus": -1.2,
         "risk_penalty": 0.0,
-        "opportunity_boost": 0.0
+        "opportunity_boost": 10.0
       },
       "signal": "❄️ 冷淡",
       "zone": "cold",
       "stocks": [
-        {
-          "symbol": "002460",
-          "price": 50.52,
-          "chg_pct": 4.21,
-          "chg_5d": -0.91,
-          "volume": "26.4M",
-          "vol_ratio": 0.46,
-          "turnover": 1333115153.9594078,
-          "rs_ratio_5d": 1.022,
-          "rs_ratio_20d": 0.782,
-          "rsi": 29.4,
-          "news_sentiment": 0.33,
-          "sentiment_value": 0.33,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "🔵 002460 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": true,
-          "heat_score": 8
-        },
         {
           "symbol": "002466",
           "price": 46.92,
@@ -2313,8 +1914,8 @@
           "rs_ratio_5d": 1.061,
           "rs_ratio_20d": 0.803,
           "rsi": 32.1,
-          "news_sentiment": 0.33,
-          "sentiment_value": 0.33,
+          "news_sentiment": -0.08,
+          "sentiment_value": -0.08,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -2326,85 +1927,7 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": true,
-          "heat_score": 8
-        },
-        {
-          "symbol": "300750",
-          "price": 349.5,
-          "chg_pct": -2.56,
-          "chg_5d": -2.31,
-          "volume": "26.3M",
-          "vol_ratio": 0.7,
-          "turnover": 9187098198.0,
-          "rs_ratio_5d": 1.008,
-          "rs_ratio_20d": 0.953,
-          "rsi": 36.6,
-          "news_sentiment": 0.33,
-          "sentiment_value": 0.33,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 300750 今日下跌 2.6%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": true,
-          "heat_score": 8
-        },
-        {
-          "symbol": "002074",
-          "price": 26.14,
-          "chg_pct": -2.86,
-          "chg_5d": 6.49,
-          "volume": "10.7M",
-          "vol_ratio": 0.34,
-          "turnover": 278495501.2173157,
-          "rs_ratio_5d": 1.098,
-          "rs_ratio_20d": 0.949,
-          "rsi": 41.8,
-          "news_sentiment": 0.33,
-          "sentiment_value": 0.33,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 002074 今日下跌 2.9%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 8
-        },
-        {
-          "symbol": "000338",
-          "price": 26.18,
-          "chg_pct": 7.71,
-          "chg_5d": -0.39,
-          "volume": "75.7M",
-          "vol_ratio": 0.69,
-          "turnover": 1981814085.0216675,
-          "rs_ratio_5d": 1.027,
-          "rs_ratio_20d": 0.941,
-          "rsi": 43.9,
-          "news_sentiment": 0.33,
-          "sentiment_value": 0.33,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "🔵 000338 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 8
+          "heat_score": 12
         },
         {
           "symbol": "002594",
@@ -2417,8 +1940,8 @@
           "rs_ratio_5d": 1.039,
           "rs_ratio_20d": 1.112,
           "rsi": 48.0,
-          "news_sentiment": 0.33,
-          "sentiment_value": 0.33,
+          "news_sentiment": -0.08,
+          "sentiment_value": -0.08,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -2430,7 +1953,33 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 8
+          "heat_score": 12
+        },
+        {
+          "symbol": "000338",
+          "price": 26.18,
+          "chg_pct": 7.71,
+          "chg_5d": -0.39,
+          "volume": "75.7M",
+          "vol_ratio": 0.69,
+          "turnover": 1981814085.0216675,
+          "rs_ratio_5d": 1.027,
+          "rs_ratio_20d": 0.941,
+          "rsi": 43.9,
+          "news_sentiment": -0.08,
+          "sentiment_value": -0.08,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "🔵 000338 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 12
         },
         {
           "symbol": "300014",
@@ -2443,8 +1992,8 @@
           "rs_ratio_5d": 1.02,
           "rs_ratio_20d": 0.809,
           "rsi": 29.7,
-          "news_sentiment": 0.33,
-          "sentiment_value": 0.33,
+          "news_sentiment": -0.08,
+          "sentiment_value": -0.08,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -2456,7 +2005,456 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": true,
-          "heat_score": 8
+          "heat_score": 12
+        },
+        {
+          "symbol": "002460",
+          "price": 50.52,
+          "chg_pct": 4.21,
+          "chg_5d": -0.91,
+          "volume": "26.4M",
+          "vol_ratio": 0.46,
+          "turnover": 1333115153.9594078,
+          "rs_ratio_5d": 1.022,
+          "rs_ratio_20d": 0.782,
+          "rsi": 29.4,
+          "news_sentiment": -0.08,
+          "sentiment_value": -0.08,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "🔵 002460 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": true,
+          "heat_score": 12
+        },
+        {
+          "symbol": "300750",
+          "price": 349.5,
+          "chg_pct": -2.56,
+          "chg_5d": -2.31,
+          "volume": "26.3M",
+          "vol_ratio": 0.7,
+          "turnover": 9187098198.0,
+          "rs_ratio_5d": 1.008,
+          "rs_ratio_20d": 0.953,
+          "rsi": 36.6,
+          "news_sentiment": -0.08,
+          "sentiment_value": -0.08,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 300750 今日下跌 2.6%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": true,
+          "heat_score": 12
+        },
+        {
+          "symbol": "002074",
+          "price": 26.14,
+          "chg_pct": -2.86,
+          "chg_5d": 6.49,
+          "volume": "10.7M",
+          "vol_ratio": 0.34,
+          "turnover": 278495501.2173157,
+          "rs_ratio_5d": 1.098,
+          "rs_ratio_20d": 0.949,
+          "rsi": 41.8,
+          "news_sentiment": -0.08,
+          "sentiment_value": -0.08,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 002074 今日下跌 2.9%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 12
+        }
+      ],
+      "matched_risks": [],
+      "matched_opportunities": [
+        {
+          "title": "新能源出海龙头中长期持有",
+          "timeframe": "long",
+          "description": "比亚迪海外收入首超国内，估值逻辑重写；广汽传祺进入100+国家",
+          "match_confidence": "high"
+        }
+      ],
+      "matched_defensive": []
+    },
+    {
+      "name": "证券券商 Brokerage",
+      "type": "industry",
+      "up_count": 3,
+      "down_count": 3,
+      "avg_chg": -0.22,
+      "avg_vol_ratio": 0.48,
+      "avg_rs_5d": 1.02,
+      "avg_sentiment": 0.12,
+      "heat_score": 10,
+      "heat_breakdown": {
+        "tech_score": 5.9,
+        "rs_bonus": 0.6,
+        "macro_bonus": 2.6,
+        "sent_bonus": 1.8,
+        "risk_penalty": 0.0,
+        "opportunity_boost": 0.0
+      },
+      "signal": "❄️ 冷淡",
+      "zone": "cold",
+      "stocks": [
+        {
+          "symbol": "600999",
+          "price": 18.45,
+          "chg_pct": -2.48,
+          "chg_5d": -7.84,
+          "volume": "64.6M",
+          "vol_ratio": 0.42,
+          "turnover": 1191962354.6397057,
+          "rs_ratio_5d": 0.95,
+          "rs_ratio_20d": 1.066,
+          "rsi": 42.3,
+          "news_sentiment": 0.12,
+          "sentiment_value": 0.12,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 600999 今日下跌 2.5%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": true,
+          "heat_score": 10
+        },
+        {
+          "symbol": "000776",
+          "price": 22.15,
+          "chg_pct": 5.02,
+          "chg_5d": 6.8,
+          "volume": "107.8M",
+          "vol_ratio": 0.82,
+          "turnover": 2388705597.01145,
+          "rs_ratio_5d": 1.102,
+          "rs_ratio_20d": 1.111,
+          "rsi": 54.2,
+          "news_sentiment": 0.12,
+          "sentiment_value": 0.12,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "🔵 000776 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 10
+        },
+        {
+          "symbol": "300059",
+          "price": 19.01,
+          "chg_pct": -3.5,
+          "chg_5d": -4.18,
+          "volume": "173.6M",
+          "vol_ratio": 0.32,
+          "turnover": 3300967708.2339,
+          "rs_ratio_5d": 0.988,
+          "rs_ratio_20d": 1.008,
+          "rsi": 42.5,
+          "news_sentiment": 0.12,
+          "sentiment_value": 0.12,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 300059 今日下跌 3.5%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": true,
+          "heat_score": 10
+        },
+        {
+          "symbol": "601688",
+          "price": 19.5,
+          "chg_pct": 0.28,
+          "chg_5d": 0.63,
+          "volume": "51.1M",
+          "vol_ratio": 0.42,
+          "turnover": 995561677.5,
+          "rs_ratio_5d": 1.038,
+          "rs_ratio_20d": 1.04,
+          "rsi": 46.6,
+          "news_sentiment": 0.12,
+          "sentiment_value": 0.12,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "🔵 601688 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": true,
+          "heat_score": 10
+        },
+        {
+          "symbol": "601211",
+          "price": 17.69,
+          "chg_pct": -3.33,
+          "chg_5d": -3.54,
+          "volume": "59.7M",
+          "vol_ratio": 0.37,
+          "turnover": 1055827451.9052219,
+          "rs_ratio_5d": 0.995,
+          "rs_ratio_20d": 1.105,
+          "rsi": 45.9,
+          "news_sentiment": 0.12,
+          "sentiment_value": 0.12,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 601211 今日下跌 3.3%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 10
+        },
+        {
+          "symbol": "600030",
+          "price": 27.86,
+          "chg_pct": 0.94,
+          "chg_5d": -0.92,
+          "volume": "118.1M",
+          "vol_ratio": 0.47,
+          "turnover": 3290692943.0118713,
+          "rs_ratio_5d": 1.022,
+          "rs_ratio_20d": 1.081,
+          "rsi": 50.6,
+          "news_sentiment": 0.12,
+          "sentiment_value": 0.12,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "🔵 600030 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": true,
+          "heat_score": 10
+        }
+      ],
+      "matched_risks": [],
+      "matched_opportunities": [],
+      "matched_defensive": []
+    },
+    {
+      "name": "白酒消费 Consumer",
+      "type": "industry",
+      "up_count": 2,
+      "down_count": 4,
+      "avg_chg": 0.55,
+      "avg_vol_ratio": 0.47,
+      "avg_rs_5d": 1.083,
+      "avg_sentiment": 0.0,
+      "heat_score": 10,
+      "heat_breakdown": {
+        "tech_score": 10.3,
+        "rs_bonus": 2.5,
+        "macro_bonus": -2.0,
+        "sent_bonus": 0.0,
+        "risk_penalty": 0.0,
+        "opportunity_boost": 0.0
+      },
+      "signal": "📈 温和上涨",
+      "zone": "mild",
+      "stocks": [
+        {
+          "symbol": "603288",
+          "price": 34.12,
+          "chg_pct": -5.22,
+          "chg_5d": -0.81,
+          "volume": "13.0M",
+          "vol_ratio": 0.5,
+          "turnover": 443114413.04845047,
+          "rs_ratio_5d": 1.023,
+          "rs_ratio_20d": 1.148,
+          "rsi": 49.0,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 603288 今日下跌 5.2%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 10
+        },
+        {
+          "symbol": "000858",
+          "price": 70.68,
+          "chg_pct": -2.86,
+          "chg_5d": 0.45,
+          "volume": "18.0M",
+          "vol_ratio": 0.47,
+          "turnover": 1272668609.0150146,
+          "rs_ratio_5d": 1.036,
+          "rs_ratio_20d": 1.062,
+          "rsi": 42.2,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 000858 今日下跌 2.9%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 10
+        },
+        {
+          "symbol": "000568",
+          "price": 76.0,
+          "chg_pct": -2.58,
+          "chg_5d": 4.67,
+          "volume": "11.2M",
+          "vol_ratio": 0.75,
+          "turnover": 854675480.0,
+          "rs_ratio_5d": 1.079,
+          "rs_ratio_20d": 1.099,
+          "rsi": 50.0,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 000568 今日下跌 2.6%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 10
+        },
+        {
+          "symbol": "600519",
+          "price": 1298.88,
+          "chg_pct": 3.66,
+          "chg_5d": 7.26,
+          "volume": "1.8M",
+          "vol_ratio": 0.38,
+          "turnover": 2305206771.8658447,
+          "rs_ratio_5d": 1.106,
+          "rs_ratio_20d": 1.19,
+          "rsi": 69.5,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": true,
+          "ai_insight": "🔵 600519 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 10
+        },
+        {
+          "symbol": "002304",
+          "price": 38.75,
+          "chg_pct": -2.56,
+          "chg_5d": 1.71,
+          "volume": "3.5M",
+          "vol_ratio": 0.45,
+          "turnover": 133815646.25,
+          "rs_ratio_5d": 1.049,
+          "rs_ratio_20d": 1.084,
+          "rsi": 45.8,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 002304 今日下跌 2.6%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 10
+        },
+        {
+          "symbol": "600809",
+          "price": 116.96,
+          "chg_pct": 5.72,
+          "chg_5d": 12.17,
+          "volume": "4.7M",
+          "vol_ratio": 0.38,
+          "turnover": 545951614.7664566,
+          "rs_ratio_5d": 1.157,
+          "rs_ratio_20d": 1.202,
+          "rsi": 63.8,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": true,
+          "ai_insight": "🔵 600809 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 10
         }
       ],
       "matched_risks": [],
@@ -2471,97 +2469,19 @@
       "avg_chg": -10.22,
       "avg_vol_ratio": 0.34,
       "avg_rs_5d": 0.803,
-      "avg_sentiment": 0.07,
-      "heat_score": 0,
+      "avg_sentiment": 0.0,
+      "heat_score": 6,
       "heat_breakdown": {
         "tech_score": -56.2,
         "rs_bonus": -5.9,
         "macro_bonus": -3.3,
-        "sent_bonus": 1.1,
+        "sent_bonus": 0.0,
         "risk_penalty": 0.0,
-        "opportunity_boost": 0.0
+        "opportunity_boost": 10.0
       },
       "signal": "🚨 资金流出",
       "zone": "outflow",
       "stocks": [
-        {
-          "symbol": "603501",
-          "price": 79.3,
-          "chg_pct": -23.84,
-          "chg_5d": -22.63,
-          "volume": "14.2M",
-          "vol_ratio": 0.37,
-          "turnover": 1126882622.2666168,
-          "rs_ratio_5d": 0.798,
-          "rs_ratio_20d": 0.973,
-          "rsi": 33.2,
-          "news_sentiment": 0.07,
-          "sentiment_value": 0.07,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 603501 今日下跌 23.8%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 0
-        },
-        {
-          "symbol": "603986",
-          "price": 383.2,
-          "chg_pct": -17.26,
-          "chg_5d": -30.43,
-          "volume": "23.9M",
-          "vol_ratio": 0.41,
-          "turnover": 9141852476.81836,
-          "rs_ratio_5d": 0.718,
-          "rs_ratio_20d": 0.617,
-          "rsi": 30.5,
-          "news_sentiment": 0.07,
-          "sentiment_value": 0.07,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 603986 今日下跌 17.3%，量价背离，暂时观望为主。",
-          "bear_signal": "死亡交叉 ✗",
-          "bear_zone": "distribution_lite",
-          "ma_bearish": true,
-          "heat_score": 0
-        },
-        {
-          "symbol": "688012",
-          "price": 341.0,
-          "chg_pct": -2.76,
-          "chg_5d": -16.54,
-          "volume": "12.2M",
-          "vol_ratio": 0.37,
-          "turnover": 4157123498.0,
-          "rs_ratio_5d": 0.861,
-          "rs_ratio_20d": 1.017,
-          "rsi": 40.0,
-          "news_sentiment": 0.07,
-          "sentiment_value": 0.07,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 688012 今日下跌 2.8%，量价背离，暂时观望为主。",
-          "bear_signal": "死亡交叉 ✗",
-          "bear_zone": "distribution_lite",
-          "ma_bearish": true,
-          "heat_score": 0
-        },
         {
           "symbol": "000725",
           "price": 5.71,
@@ -2573,8 +2493,8 @@
           "rs_ratio_5d": 0.862,
           "rs_ratio_20d": 0.916,
           "rsi": 36.2,
-          "news_sentiment": 0.07,
-          "sentiment_value": 0.07,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -2586,33 +2506,7 @@
           "bear_signal": "死亡交叉 ✗",
           "bear_zone": "distribution_lite",
           "ma_bearish": true,
-          "heat_score": 0
-        },
-        {
-          "symbol": "688981",
-          "price": 123.87,
-          "chg_pct": -11.45,
-          "chg_5d": -24.28,
-          "volume": "22.2M",
-          "vol_ratio": 0.21,
-          "turnover": 2744194487.4673004,
-          "rs_ratio_5d": 0.781,
-          "rs_ratio_20d": 0.946,
-          "rsi": 36.3,
-          "news_sentiment": 0.07,
-          "sentiment_value": 0.07,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 688981 今日下跌 11.4%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 0
+          "heat_score": 6
         },
         {
           "symbol": "002371",
@@ -2625,8 +2519,8 @@
           "rs_ratio_5d": 0.885,
           "rs_ratio_20d": 0.979,
           "rsi": 37.6,
-          "news_sentiment": 0.07,
-          "sentiment_value": 0.07,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -2638,7 +2532,33 @@
           "bear_signal": "死亡交叉 ✗",
           "bear_zone": "distribution_lite",
           "ma_bearish": true,
-          "heat_score": 0
+          "heat_score": 6
+        },
+        {
+          "symbol": "603501",
+          "price": 79.3,
+          "chg_pct": -23.84,
+          "chg_5d": -22.63,
+          "volume": "14.2M",
+          "vol_ratio": 0.37,
+          "turnover": 1126882622.2666168,
+          "rs_ratio_5d": 0.798,
+          "rs_ratio_20d": 0.973,
+          "rsi": 33.2,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 603501 今日下跌 23.8%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 6
         },
         {
           "symbol": "002049",
@@ -2651,8 +2571,8 @@
           "rs_ratio_5d": 0.792,
           "rs_ratio_20d": 0.854,
           "rsi": 27.0,
-          "news_sentiment": 0.07,
-          "sentiment_value": 0.07,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -2664,11 +2584,96 @@
           "bear_signal": "死亡交叉 ✗",
           "bear_zone": "distribution_lite",
           "ma_bearish": true,
-          "heat_score": 0
+          "heat_score": 6
+        },
+        {
+          "symbol": "688981",
+          "price": 123.87,
+          "chg_pct": -11.45,
+          "chg_5d": -24.28,
+          "volume": "22.2M",
+          "vol_ratio": 0.21,
+          "turnover": 2744194487.4673004,
+          "rs_ratio_5d": 0.781,
+          "rs_ratio_20d": 0.946,
+          "rsi": 36.3,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 688981 今日下跌 11.4%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 6
+        },
+        {
+          "symbol": "688012",
+          "price": 341.0,
+          "chg_pct": -2.76,
+          "chg_5d": -16.54,
+          "volume": "12.2M",
+          "vol_ratio": 0.37,
+          "turnover": 4157123498.0,
+          "rs_ratio_5d": 0.861,
+          "rs_ratio_20d": 1.017,
+          "rsi": 40.0,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 688012 今日下跌 2.8%，量价背离，暂时观望为主。",
+          "bear_signal": "死亡交叉 ✗",
+          "bear_zone": "distribution_lite",
+          "ma_bearish": true,
+          "heat_score": 6
+        },
+        {
+          "symbol": "603986",
+          "price": 383.2,
+          "chg_pct": -17.26,
+          "chg_5d": -30.43,
+          "volume": "23.9M",
+          "vol_ratio": 0.41,
+          "turnover": 9141852476.81836,
+          "rs_ratio_5d": 0.718,
+          "rs_ratio_20d": 0.617,
+          "rsi": 30.5,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 603986 今日下跌 17.3%，量价背离，暂时观望为主。",
+          "bear_signal": "死亡交叉 ✗",
+          "bear_zone": "distribution_lite",
+          "ma_bearish": true,
+          "heat_score": 6
         }
       ],
       "matched_risks": [],
-      "matched_opportunities": [],
+      "matched_opportunities": [
+        {
+          "title": "布局半导体设备与材料龙头，受益AI算力需求及国产替代",
+          "timeframe": "medium",
+          "description": "精智达15.76亿订单验证需求，硅片涨价确认景气，燧原科技上市催化",
+          "match_confidence": "high"
+        }
+      ],
       "matched_defensive": []
     },
     {
@@ -2679,15 +2684,15 @@
       "avg_chg": -7.24,
       "avg_vol_ratio": 0.65,
       "avg_rs_5d": 0.87,
-      "avg_sentiment": 0.1,
-      "heat_score": 0,
+      "avg_sentiment": 0.0,
+      "heat_score": 6,
       "heat_breakdown": {
         "tech_score": -33.7,
         "rs_bonus": -3.9,
         "macro_bonus": -3.3,
-        "sent_bonus": 1.5,
+        "sent_bonus": 0.0,
         "risk_penalty": 0.0,
-        "opportunity_boost": 0.0
+        "opportunity_boost": 10.0
       },
       "signal": "🚨 资金流出",
       "zone": "outflow",
@@ -2703,8 +2708,8 @@
           "rs_ratio_5d": 0.774,
           "rs_ratio_20d": 0.737,
           "rsi": 30.9,
-          "news_sentiment": 0.1,
-          "sentiment_value": 0.1,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -2716,111 +2721,7 @@
           "bear_signal": "死亡交叉 ✗",
           "bear_zone": "distribution_lite",
           "ma_bearish": true,
-          "heat_score": 0
-        },
-        {
-          "symbol": "000977",
-          "price": 86.35,
-          "chg_pct": 11.56,
-          "chg_5d": 1.01,
-          "volume": "111.4M",
-          "vol_ratio": 0.93,
-          "turnover": 9616843282.21209,
-          "rs_ratio_5d": 1.042,
-          "rs_ratio_20d": 1.45,
-          "rsi": 64.3,
-          "news_sentiment": 0.1,
-          "sentiment_value": 0.1,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "🔵 000977 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 0
-        },
-        {
-          "symbol": "002230",
-          "price": 39.2,
-          "chg_pct": -4.67,
-          "chg_5d": -6.44,
-          "volume": "16.4M",
-          "vol_ratio": 0.33,
-          "turnover": 643160214.1176605,
-          "rs_ratio_5d": 0.965,
-          "rs_ratio_20d": 0.995,
-          "rsi": 37.6,
-          "news_sentiment": 0.1,
-          "sentiment_value": 0.1,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 002230 今日下跌 4.7%，量价背离，暂时观望为主。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 0
-        },
-        {
-          "symbol": "601138",
-          "price": 63.2,
-          "chg_pct": 11.01,
-          "chg_5d": 1.35,
-          "volume": "91.9M",
-          "vol_ratio": 0.53,
-          "turnover": 5809471228.53093,
-          "rs_ratio_5d": 1.045,
-          "rs_ratio_20d": 0.901,
-          "rsi": 43.8,
-          "news_sentiment": 0.1,
-          "sentiment_value": 0.1,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "🔵 601138 当前无明显异动信号，持续跟踪中。",
-          "bear_signal": null,
-          "bear_zone": "neutral",
-          "ma_bearish": false,
-          "heat_score": 0
-        },
-        {
-          "symbol": "300308",
-          "price": 813.0,
-          "chg_pct": -17.0,
-          "chg_5d": -26.62,
-          "volume": "21.6M",
-          "vol_ratio": 0.65,
-          "turnover": 17595669570.0,
-          "rs_ratio_5d": 0.757,
-          "rs_ratio_20d": 0.654,
-          "rsi": 25.9,
-          "news_sentiment": 0.1,
-          "sentiment_value": 0.1,
-          "sentiment_source": "sector",
-          "news_freshness": 1.0,
-          "latest_headline": "",
-          "signal": "观望",
-          "zone": "neutral",
-          "ma_bullish": false,
-          "breakout": false,
-          "ai_insight": "⚠️ 300308 今日下跌 17.0%，量价背离，暂时观望为主。RSI(26)进入超卖区间，反弹概率较大。",
-          "bear_signal": "死亡交叉 ✗",
-          "bear_zone": "distribution_lite",
-          "ma_bearish": true,
-          "heat_score": 0
+          "heat_score": 6
         },
         {
           "symbol": "688111",
@@ -2833,8 +2734,8 @@
           "rs_ratio_5d": 1.088,
           "rs_ratio_20d": 1.178,
           "rsi": 57.7,
-          "news_sentiment": 0.1,
-          "sentiment_value": 0.1,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
           "sentiment_source": "sector",
           "news_freshness": 1.0,
           "latest_headline": "",
@@ -2846,31 +2747,141 @@
           "bear_signal": null,
           "bear_zone": "neutral",
           "ma_bearish": false,
-          "heat_score": 0
+          "heat_score": 6
+        },
+        {
+          "symbol": "601138",
+          "price": 63.2,
+          "chg_pct": 11.01,
+          "chg_5d": 1.35,
+          "volume": "91.9M",
+          "vol_ratio": 0.53,
+          "turnover": 5809471228.53093,
+          "rs_ratio_5d": 1.045,
+          "rs_ratio_20d": 0.901,
+          "rsi": 43.8,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "🔵 601138 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 6
+        },
+        {
+          "symbol": "300308",
+          "price": 813.0,
+          "chg_pct": -17.0,
+          "chg_5d": -26.62,
+          "volume": "21.6M",
+          "vol_ratio": 0.65,
+          "turnover": 17595669570.0,
+          "rs_ratio_5d": 0.757,
+          "rs_ratio_20d": 0.654,
+          "rsi": 25.9,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 300308 今日下跌 17.0%，量价背离，暂时观望为主。RSI(26)进入超卖区间，反弹概率较大。",
+          "bear_signal": "死亡交叉 ✗",
+          "bear_zone": "distribution_lite",
+          "ma_bearish": true,
+          "heat_score": 6
+        },
+        {
+          "symbol": "000977",
+          "price": 86.35,
+          "chg_pct": 11.56,
+          "chg_5d": 1.01,
+          "volume": "111.4M",
+          "vol_ratio": 0.93,
+          "turnover": 9616843282.21209,
+          "rs_ratio_5d": 1.042,
+          "rs_ratio_20d": 1.45,
+          "rsi": 64.3,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "🔵 000977 当前无明显异动信号，持续跟踪中。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 6
+        },
+        {
+          "symbol": "002230",
+          "price": 39.2,
+          "chg_pct": -4.67,
+          "chg_5d": -6.44,
+          "volume": "16.4M",
+          "vol_ratio": 0.33,
+          "turnover": 643160214.1176605,
+          "rs_ratio_5d": 0.965,
+          "rs_ratio_20d": 0.995,
+          "rsi": 37.6,
+          "news_sentiment": 0.0,
+          "sentiment_value": 0.0,
+          "sentiment_source": "sector",
+          "news_freshness": 1.0,
+          "latest_headline": "",
+          "signal": "观望",
+          "zone": "neutral",
+          "ma_bullish": false,
+          "breakout": false,
+          "ai_insight": "⚠️ 002230 今日下跌 4.7%，量价背离，暂时观望为主。",
+          "bear_signal": null,
+          "bear_zone": "neutral",
+          "ma_bearish": false,
+          "heat_score": 6
         }
       ],
       "matched_risks": [
         {
-          "title": "AI估值泡沫风险",
-          "impact": "High",
+          "title": "AI基建泡沫风险",
+          "impact": "Medium",
           "likelihood": "Medium",
-          "mitigation": "区分AI基建与应用层，关注有实际营收兑现的标的，警惕纯概念炒作",
+          "mitigation": "区分AI叙事与业绩兑现，关注有实际订单落地的标的",
           "match_confidence": "low"
         }
       ],
       "matched_opportunities": [
         {
-          "title": "关注AI应用落地环节，优选有营收兑现的标的",
+          "title": "布局半导体设备与材料龙头，受益AI算力需求及国产替代",
           "timeframe": "medium",
-          "description": "博通AI收入翻倍验证需求，但基建端泡沫争议需规避纯概念",
+          "description": "精智达15.76亿订单验证需求，硅片涨价确认景气，燧原科技上市催化",
+          "match_confidence": "high"
+        },
+        {
+          "title": "关注医保国谈前医药板块博弈机会",
+          "timeframe": "short",
+          "description": "9月5日国谈临近，创新药及AI+医疗（博济医药×华为）有事件催化",
           "match_confidence": "low"
         }
       ],
       "matched_defensive": [
         {
-          "title": "规避高位AI概念及妖股，警惕补跌风险",
+          "title": "规避高位AI概念炒作股，关注业绩兑现标的",
           "timeframe": "short",
-          "description": "科创50高开低走，一鸣食品等妖股跌停，高位股调整压力加大",
+          "description": "科创50高开低走，高位人气股集体调整，AI融资存在虚构份额风险",
           "match_confidence": "low"
         }
       ]
@@ -2888,8 +2899,8 @@
       "rs_ratio_5d": 1.039,
       "rs_ratio_20d": 1.052,
       "rsi": 45.9,
-      "news_sentiment": 0.03,
-      "sentiment_value": 0.03,
+      "news_sentiment": -0.02,
+      "sentiment_value": -0.02,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -2901,7 +2912,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 43
+      "heat_score": 59
     },
     {
       "symbol": "000768",
@@ -2940,8 +2951,8 @@
       "rs_ratio_5d": 1.089,
       "rs_ratio_20d": 1.178,
       "rsi": 71.4,
-      "news_sentiment": 0.03,
-      "sentiment_value": 0.03,
+      "news_sentiment": -0.02,
+      "sentiment_value": -0.02,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -2953,7 +2964,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 43
+      "heat_score": 59
     },
     {
       "symbol": "601328",
@@ -2966,8 +2977,8 @@
       "rs_ratio_5d": 1.115,
       "rs_ratio_20d": 1.247,
       "rsi": 75.8,
-      "news_sentiment": 0.03,
-      "sentiment_value": 0.03,
+      "news_sentiment": -0.02,
+      "sentiment_value": -0.02,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -2979,7 +2990,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 43
+      "heat_score": 59
     },
     {
       "symbol": "601318",
@@ -2992,8 +3003,8 @@
       "rs_ratio_5d": 1.208,
       "rs_ratio_20d": 1.24,
       "rsi": 75.4,
-      "news_sentiment": 0.03,
-      "sentiment_value": 0.03,
+      "news_sentiment": -0.02,
+      "sentiment_value": -0.02,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3005,7 +3016,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 43
+      "heat_score": 59
     },
     {
       "symbol": "600760",
@@ -3044,8 +3055,8 @@
       "rs_ratio_5d": 1.045,
       "rs_ratio_20d": 1.174,
       "rsi": 55.9,
-      "news_sentiment": 0.25,
-      "sentiment_value": 0.25,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3057,7 +3068,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 81
+      "heat_score": 77
     },
     {
       "symbol": "000977",
@@ -3070,8 +3081,8 @@
       "rs_ratio_5d": 1.042,
       "rs_ratio_20d": 1.45,
       "rsi": 64.3,
-      "news_sentiment": 0.1,
-      "sentiment_value": 0.1,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3083,7 +3094,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 0
+      "heat_score": 6
     },
     {
       "symbol": "601988",
@@ -3096,8 +3107,8 @@
       "rs_ratio_5d": 1.139,
       "rs_ratio_20d": 1.249,
       "rsi": 72.5,
-      "news_sentiment": 0.03,
-      "sentiment_value": 0.03,
+      "news_sentiment": -0.02,
+      "sentiment_value": -0.02,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3109,7 +3120,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 43
+      "heat_score": 59
     },
     {
       "symbol": "601288",
@@ -3122,8 +3133,8 @@
       "rs_ratio_5d": 1.116,
       "rs_ratio_20d": 1.196,
       "rsi": 71.0,
-      "news_sentiment": 0.03,
-      "sentiment_value": 0.03,
+      "news_sentiment": -0.02,
+      "sentiment_value": -0.02,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3135,7 +3146,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 43
+      "heat_score": 59
     },
     {
       "symbol": "000878",
@@ -3148,8 +3159,8 @@
       "rs_ratio_5d": 1.261,
       "rs_ratio_20d": 1.002,
       "rsi": 59.1,
-      "news_sentiment": 0.27,
-      "sentiment_value": 0.27,
+      "news_sentiment": 0.08,
+      "sentiment_value": 0.08,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3161,7 +3172,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 68
+      "heat_score": 66
     },
     {
       "symbol": "000776",
@@ -3174,8 +3185,8 @@
       "rs_ratio_5d": 1.102,
       "rs_ratio_20d": 1.111,
       "rsi": 54.2,
-      "news_sentiment": 0.1,
-      "sentiment_value": 0.1,
+      "news_sentiment": 0.12,
+      "sentiment_value": 0.12,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3187,7 +3198,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 12
+      "heat_score": 10
     },
     {
       "symbol": "600036",
@@ -3200,8 +3211,8 @@
       "rs_ratio_5d": 1.137,
       "rs_ratio_20d": 1.246,
       "rsi": 77.9,
-      "news_sentiment": 0.03,
-      "sentiment_value": 0.03,
+      "news_sentiment": -0.02,
+      "sentiment_value": -0.02,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3213,7 +3224,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 43
+      "heat_score": 59
     },
     {
       "symbol": "002142",
@@ -3226,8 +3237,8 @@
       "rs_ratio_5d": 1.131,
       "rs_ratio_20d": 1.276,
       "rsi": 77.1,
-      "news_sentiment": 0.03,
-      "sentiment_value": 0.03,
+      "news_sentiment": -0.02,
+      "sentiment_value": -0.02,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3239,7 +3250,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 43
+      "heat_score": 59
     },
     {
       "symbol": "600150",
@@ -3278,8 +3289,8 @@
       "rs_ratio_5d": 1.109,
       "rs_ratio_20d": 1.25,
       "rsi": 73.2,
-      "news_sentiment": 0.03,
-      "sentiment_value": 0.03,
+      "news_sentiment": -0.02,
+      "sentiment_value": -0.02,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3291,7 +3302,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 43
+      "heat_score": 59
     },
     {
       "symbol": "000568",
@@ -3304,8 +3315,8 @@
       "rs_ratio_5d": 1.079,
       "rs_ratio_20d": 1.099,
       "rsi": 50.0,
-      "news_sentiment": 0.4,
-      "sentiment_value": 0.4,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3317,7 +3328,33 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 16
+      "heat_score": 10
+    },
+    {
+      "symbol": "300750",
+      "price": 349.5,
+      "chg_pct": -2.56,
+      "chg_5d": -2.31,
+      "volume": "26.3M",
+      "vol_ratio": 0.7,
+      "turnover": 9187098198.0,
+      "rs_ratio_5d": 1.008,
+      "rs_ratio_20d": 0.953,
+      "rsi": 36.6,
+      "news_sentiment": -0.08,
+      "sentiment_value": -0.08,
+      "sentiment_source": "sector",
+      "news_freshness": 1.0,
+      "latest_headline": "",
+      "signal": "观望",
+      "zone": "neutral",
+      "ma_bullish": false,
+      "breakout": false,
+      "ai_insight": "⚠️ 300750 今日下跌 2.6%，量价背离，暂时观望为主。",
+      "bear_signal": null,
+      "bear_zone": "neutral",
+      "ma_bearish": true,
+      "heat_score": 12
     },
     {
       "symbol": "600893",
@@ -3346,32 +3383,6 @@
       "heat_score": 70
     },
     {
-      "symbol": "300750",
-      "price": 349.5,
-      "chg_pct": -2.56,
-      "chg_5d": -2.31,
-      "volume": "26.3M",
-      "vol_ratio": 0.7,
-      "turnover": 9187098198.0,
-      "rs_ratio_5d": 1.008,
-      "rs_ratio_20d": 0.953,
-      "rsi": 36.6,
-      "news_sentiment": 0.33,
-      "sentiment_value": 0.33,
-      "sentiment_source": "sector",
-      "news_freshness": 1.0,
-      "latest_headline": "",
-      "signal": "观望",
-      "zone": "neutral",
-      "ma_bullish": false,
-      "breakout": false,
-      "ai_insight": "⚠️ 300750 今日下跌 2.6%，量价背离，暂时观望为主。",
-      "bear_signal": null,
-      "bear_zone": "neutral",
-      "ma_bearish": true,
-      "heat_score": 8
-    },
-    {
       "symbol": "600028",
       "price": 5.45,
       "chg_pct": 8.35,
@@ -3395,7 +3406,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 9
+      "heat_score": 19
     },
     {
       "symbol": "000338",
@@ -3408,8 +3419,8 @@
       "rs_ratio_5d": 1.027,
       "rs_ratio_20d": 0.941,
       "rsi": 43.9,
-      "news_sentiment": 0.33,
-      "sentiment_value": 0.33,
+      "news_sentiment": -0.08,
+      "sentiment_value": -0.08,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3421,7 +3432,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 8
+      "heat_score": 12
     },
     {
       "symbol": "601600",
@@ -3434,8 +3445,8 @@
       "rs_ratio_5d": 1.267,
       "rs_ratio_20d": 1.123,
       "rsi": 59.6,
-      "news_sentiment": 0.27,
-      "sentiment_value": 0.27,
+      "news_sentiment": 0.08,
+      "sentiment_value": 0.08,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3447,7 +3458,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 68
+      "heat_score": 66
     },
     {
       "symbol": "300308",
@@ -3460,8 +3471,8 @@
       "rs_ratio_5d": 0.757,
       "rs_ratio_20d": 0.654,
       "rsi": 25.9,
-      "news_sentiment": 0.1,
-      "sentiment_value": 0.1,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3473,7 +3484,7 @@
       "bear_signal": "死亡交叉 ✗",
       "bear_zone": "distribution_lite",
       "ma_bearish": true,
-      "heat_score": 0
+      "heat_score": 6
     },
     {
       "symbol": "600938",
@@ -3499,33 +3510,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 9
-    },
-    {
-      "symbol": "600362",
-      "price": 46.88,
-      "chg_pct": 20.11,
-      "chg_5d": 18.89,
-      "volume": "40.8M",
-      "vol_ratio": 0.59,
-      "turnover": 1912907221.5037308,
-      "rs_ratio_5d": 1.226,
-      "rs_ratio_20d": 0.963,
-      "rsi": 56.9,
-      "news_sentiment": 0.27,
-      "sentiment_value": 0.27,
-      "sentiment_source": "sector",
-      "news_freshness": 1.0,
-      "latest_headline": "",
-      "signal": "观望",
-      "zone": "neutral",
-      "ma_bullish": false,
-      "breakout": false,
-      "ai_insight": "🔵 600362 当前无明显异动信号，持续跟踪中。",
-      "bear_signal": null,
-      "bear_zone": "neutral",
-      "ma_bearish": false,
-      "heat_score": 68
+      "heat_score": 19
     },
     {
       "symbol": "300760",
@@ -3538,8 +3523,8 @@
       "rs_ratio_5d": 1.238,
       "rs_ratio_20d": 1.314,
       "rsi": 77.7,
-      "news_sentiment": 0.25,
-      "sentiment_value": 0.25,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3551,7 +3536,33 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 81
+      "heat_score": 77
+    },
+    {
+      "symbol": "600362",
+      "price": 46.88,
+      "chg_pct": 20.11,
+      "chg_5d": 18.89,
+      "volume": "40.8M",
+      "vol_ratio": 0.59,
+      "turnover": 1912907221.5037308,
+      "rs_ratio_5d": 1.226,
+      "rs_ratio_20d": 0.963,
+      "rsi": 56.9,
+      "news_sentiment": 0.08,
+      "sentiment_value": 0.08,
+      "sentiment_source": "sector",
+      "news_freshness": 1.0,
+      "latest_headline": "",
+      "signal": "观望",
+      "zone": "neutral",
+      "ma_bullish": false,
+      "breakout": false,
+      "ai_insight": "🔵 600362 当前无明显异动信号，持续跟踪中。",
+      "bear_signal": null,
+      "bear_zone": "neutral",
+      "ma_bearish": false,
+      "heat_score": 66
     },
     {
       "symbol": "600900",
@@ -3577,7 +3588,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 9
+      "heat_score": 19
     },
     {
       "symbol": "300274",
@@ -3603,33 +3614,7 @@
       "bear_signal": "死亡交叉 ✗",
       "bear_zone": "distribution_lite",
       "ma_bearish": true,
-      "heat_score": 9
-    },
-    {
-      "symbol": "601138",
-      "price": 63.2,
-      "chg_pct": 11.01,
-      "chg_5d": 1.35,
-      "volume": "91.9M",
-      "vol_ratio": 0.53,
-      "turnover": 5809471228.53093,
-      "rs_ratio_5d": 1.045,
-      "rs_ratio_20d": 0.901,
-      "rsi": 43.8,
-      "news_sentiment": 0.1,
-      "sentiment_value": 0.1,
-      "sentiment_source": "sector",
-      "news_freshness": 1.0,
-      "latest_headline": "",
-      "signal": "观望",
-      "zone": "neutral",
-      "ma_bullish": false,
-      "breakout": false,
-      "ai_insight": "🔵 601138 当前无明显异动信号，持续跟踪中。",
-      "bear_signal": null,
-      "bear_zone": "neutral",
-      "ma_bearish": false,
-      "heat_score": 0
+      "heat_score": 19
     },
     {
       "symbol": "600011",
@@ -3655,7 +3640,33 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 9
+      "heat_score": 19
+    },
+    {
+      "symbol": "601138",
+      "price": 63.2,
+      "chg_pct": 11.01,
+      "chg_5d": 1.35,
+      "volume": "91.9M",
+      "vol_ratio": 0.53,
+      "turnover": 5809471228.53093,
+      "rs_ratio_5d": 1.045,
+      "rs_ratio_20d": 0.901,
+      "rsi": 43.8,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
+      "sentiment_source": "sector",
+      "news_freshness": 1.0,
+      "latest_headline": "",
+      "signal": "观望",
+      "zone": "neutral",
+      "ma_bullish": false,
+      "breakout": false,
+      "ai_insight": "🔵 601138 当前无明显异动信号，持续跟踪中。",
+      "bear_signal": null,
+      "bear_zone": "neutral",
+      "ma_bearish": false,
+      "heat_score": 6
     },
     {
       "symbol": "601857",
@@ -3681,7 +3692,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 9
+      "heat_score": 19
     },
     {
       "symbol": "601899",
@@ -3694,8 +3705,8 @@
       "rs_ratio_5d": 1.271,
       "rs_ratio_20d": 1.25,
       "rsi": 70.2,
-      "news_sentiment": 0.27,
-      "sentiment_value": 0.27,
+      "news_sentiment": 0.08,
+      "sentiment_value": 0.08,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3707,7 +3718,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 68
+      "heat_score": 66
     },
     {
       "symbol": "300502",
@@ -3720,8 +3731,8 @@
       "rs_ratio_5d": 0.774,
       "rs_ratio_20d": 0.737,
       "rsi": 30.9,
-      "news_sentiment": 0.1,
-      "sentiment_value": 0.1,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3733,7 +3744,33 @@
       "bear_signal": "死亡交叉 ✗",
       "bear_zone": "distribution_lite",
       "ma_bearish": true,
-      "heat_score": 0
+      "heat_score": 6
+    },
+    {
+      "symbol": "603288",
+      "price": 34.12,
+      "chg_pct": -5.22,
+      "chg_5d": -0.81,
+      "volume": "13.0M",
+      "vol_ratio": 0.5,
+      "turnover": 443114413.04845047,
+      "rs_ratio_5d": 1.023,
+      "rs_ratio_20d": 1.148,
+      "rsi": 49.0,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
+      "sentiment_source": "sector",
+      "news_freshness": 1.0,
+      "latest_headline": "",
+      "signal": "观望",
+      "zone": "neutral",
+      "ma_bullish": false,
+      "breakout": false,
+      "ai_insight": "⚠️ 603288 今日下跌 5.2%，量价背离，暂时观望为主。",
+      "bear_signal": null,
+      "bear_zone": "neutral",
+      "ma_bearish": false,
+      "heat_score": 10
     },
     {
       "symbol": "601088",
@@ -3759,33 +3796,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 9
-    },
-    {
-      "symbol": "603288",
-      "price": 34.12,
-      "chg_pct": -5.22,
-      "chg_5d": -0.81,
-      "volume": "13.0M",
-      "vol_ratio": 0.5,
-      "turnover": 443114413.04845047,
-      "rs_ratio_5d": 1.023,
-      "rs_ratio_20d": 1.148,
-      "rsi": 49.0,
-      "news_sentiment": 0.4,
-      "sentiment_value": 0.4,
-      "sentiment_source": "sector",
-      "news_freshness": 1.0,
-      "latest_headline": "",
-      "signal": "观望",
-      "zone": "neutral",
-      "ma_bullish": false,
-      "breakout": false,
-      "ai_insight": "⚠️ 603288 今日下跌 5.2%，量价背离，暂时观望为主。",
-      "bear_signal": null,
-      "bear_zone": "neutral",
-      "ma_bearish": false,
-      "heat_score": 16
+      "heat_score": 19
     },
     {
       "symbol": "002466",
@@ -3798,8 +3809,8 @@
       "rs_ratio_5d": 1.061,
       "rs_ratio_20d": 0.803,
       "rsi": 32.1,
-      "news_sentiment": 0.33,
-      "sentiment_value": 0.33,
+      "news_sentiment": -0.08,
+      "sentiment_value": -0.08,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3811,7 +3822,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": true,
-      "heat_score": 8
+      "heat_score": 12
     },
     {
       "symbol": "000858",
@@ -3824,8 +3835,8 @@
       "rs_ratio_5d": 1.036,
       "rs_ratio_20d": 1.062,
       "rsi": 42.2,
-      "news_sentiment": 0.4,
-      "sentiment_value": 0.4,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3837,7 +3848,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 16
+      "heat_score": 10
     },
     {
       "symbol": "600030",
@@ -3850,8 +3861,8 @@
       "rs_ratio_5d": 1.022,
       "rs_ratio_20d": 1.081,
       "rsi": 50.6,
-      "news_sentiment": 0.1,
-      "sentiment_value": 0.1,
+      "news_sentiment": 0.12,
+      "sentiment_value": 0.12,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3863,7 +3874,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": true,
-      "heat_score": 12
+      "heat_score": 10
     },
     {
       "symbol": "002460",
@@ -3876,8 +3887,8 @@
       "rs_ratio_5d": 1.022,
       "rs_ratio_20d": 0.782,
       "rsi": 29.4,
-      "news_sentiment": 0.33,
-      "sentiment_value": 0.33,
+      "news_sentiment": -0.08,
+      "sentiment_value": -0.08,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3889,7 +3900,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": true,
-      "heat_score": 8
+      "heat_score": 12
     },
     {
       "symbol": "002304",
@@ -3902,8 +3913,8 @@
       "rs_ratio_5d": 1.049,
       "rs_ratio_20d": 1.084,
       "rsi": 45.8,
-      "news_sentiment": 0.4,
-      "sentiment_value": 0.4,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3915,33 +3926,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 16
-    },
-    {
-      "symbol": "601688",
-      "price": 19.5,
-      "chg_pct": 0.28,
-      "chg_5d": 0.63,
-      "volume": "51.1M",
-      "vol_ratio": 0.42,
-      "turnover": 995561677.5,
-      "rs_ratio_5d": 1.038,
-      "rs_ratio_20d": 1.04,
-      "rsi": 46.6,
-      "news_sentiment": 0.1,
-      "sentiment_value": 0.1,
-      "sentiment_source": "sector",
-      "news_freshness": 1.0,
-      "latest_headline": "",
-      "signal": "观望",
-      "zone": "neutral",
-      "ma_bullish": false,
-      "breakout": false,
-      "ai_insight": "🔵 601688 当前无明显异动信号，持续跟踪中。",
-      "bear_signal": null,
-      "bear_zone": "neutral",
-      "ma_bearish": true,
-      "heat_score": 12
+      "heat_score": 10
     },
     {
       "symbol": "600999",
@@ -3954,8 +3939,8 @@
       "rs_ratio_5d": 0.95,
       "rs_ratio_20d": 1.066,
       "rsi": 42.3,
-      "news_sentiment": 0.1,
-      "sentiment_value": 0.1,
+      "news_sentiment": 0.12,
+      "sentiment_value": 0.12,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3967,7 +3952,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": true,
-      "heat_score": 12
+      "heat_score": 10
     },
     {
       "symbol": "688111",
@@ -3980,8 +3965,8 @@
       "rs_ratio_5d": 1.088,
       "rs_ratio_20d": 1.178,
       "rsi": 57.7,
-      "news_sentiment": 0.1,
-      "sentiment_value": 0.1,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -3993,21 +3978,21 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 0
+      "heat_score": 6
     },
     {
-      "symbol": "603986",
-      "price": 383.2,
-      "chg_pct": -17.26,
-      "chg_5d": -30.43,
-      "volume": "23.9M",
-      "vol_ratio": 0.41,
-      "turnover": 9141852476.81836,
-      "rs_ratio_5d": 0.718,
-      "rs_ratio_20d": 0.617,
-      "rsi": 30.5,
-      "news_sentiment": 0.07,
-      "sentiment_value": 0.07,
+      "symbol": "601688",
+      "price": 19.5,
+      "chg_pct": 0.28,
+      "chg_5d": 0.63,
+      "volume": "51.1M",
+      "vol_ratio": 0.42,
+      "turnover": 995561677.5,
+      "rs_ratio_5d": 1.038,
+      "rs_ratio_20d": 1.04,
+      "rsi": 46.6,
+      "news_sentiment": 0.12,
+      "sentiment_value": 0.12,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4015,11 +4000,11 @@
       "zone": "neutral",
       "ma_bullish": false,
       "breakout": false,
-      "ai_insight": "⚠️ 603986 今日下跌 17.3%，量价背离，暂时观望为主。",
-      "bear_signal": "死亡交叉 ✗",
-      "bear_zone": "distribution_lite",
+      "ai_insight": "🔵 601688 当前无明显异动信号，持续跟踪中。",
+      "bear_signal": null,
+      "bear_zone": "neutral",
       "ma_bearish": true,
-      "heat_score": 0
+      "heat_score": 10
     },
     {
       "symbol": "600276",
@@ -4032,8 +4017,8 @@
       "rs_ratio_5d": 0.85,
       "rs_ratio_20d": 1.035,
       "rsi": 35.3,
-      "news_sentiment": 0.25,
-      "sentiment_value": 0.25,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4045,7 +4030,33 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 81
+      "heat_score": 77
+    },
+    {
+      "symbol": "603986",
+      "price": 383.2,
+      "chg_pct": -17.26,
+      "chg_5d": -30.43,
+      "volume": "23.9M",
+      "vol_ratio": 0.41,
+      "turnover": 9141852476.81836,
+      "rs_ratio_5d": 0.718,
+      "rs_ratio_20d": 0.617,
+      "rsi": 30.5,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
+      "sentiment_source": "sector",
+      "news_freshness": 1.0,
+      "latest_headline": "",
+      "signal": "观望",
+      "zone": "neutral",
+      "ma_bullish": false,
+      "breakout": false,
+      "ai_insight": "⚠️ 603986 今日下跌 17.3%，量价背离，暂时观望为主。",
+      "bear_signal": "死亡交叉 ✗",
+      "bear_zone": "distribution_lite",
+      "ma_bearish": true,
+      "heat_score": 6
     },
     {
       "symbol": "002625",
@@ -4084,8 +4095,8 @@
       "rs_ratio_5d": 0.885,
       "rs_ratio_20d": 0.979,
       "rsi": 37.6,
-      "news_sentiment": 0.07,
-      "sentiment_value": 0.07,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4097,7 +4108,33 @@
       "bear_signal": "死亡交叉 ✗",
       "bear_zone": "distribution_lite",
       "ma_bearish": true,
-      "heat_score": 0
+      "heat_score": 6
+    },
+    {
+      "symbol": "603993",
+      "price": 18.61,
+      "chg_pct": 6.89,
+      "chg_5d": 10.38,
+      "volume": "120.9M",
+      "vol_ratio": 0.38,
+      "turnover": 2250360485.074997,
+      "rs_ratio_5d": 1.138,
+      "rs_ratio_20d": 0.955,
+      "rsi": 52.2,
+      "news_sentiment": 0.08,
+      "sentiment_value": 0.08,
+      "sentiment_source": "sector",
+      "news_freshness": 1.0,
+      "latest_headline": "",
+      "signal": "观望",
+      "zone": "neutral",
+      "ma_bullish": false,
+      "breakout": false,
+      "ai_insight": "🔵 603993 当前无明显异动信号，持续跟踪中。",
+      "bear_signal": null,
+      "bear_zone": "neutral",
+      "ma_bearish": false,
+      "heat_score": 66
     },
     {
       "symbol": "601012",
@@ -4123,33 +4160,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": true,
-      "heat_score": 9
-    },
-    {
-      "symbol": "603993",
-      "price": 18.61,
-      "chg_pct": 6.89,
-      "chg_5d": 10.38,
-      "volume": "120.9M",
-      "vol_ratio": 0.38,
-      "turnover": 2250360485.074997,
-      "rs_ratio_5d": 1.138,
-      "rs_ratio_20d": 0.955,
-      "rsi": 52.2,
-      "news_sentiment": 0.27,
-      "sentiment_value": 0.27,
-      "sentiment_source": "sector",
-      "news_freshness": 1.0,
-      "latest_headline": "",
-      "signal": "观望",
-      "zone": "neutral",
-      "ma_bullish": false,
-      "breakout": false,
-      "ai_insight": "🔵 603993 当前无明显异动信号，持续跟踪中。",
-      "bear_signal": null,
-      "bear_zone": "neutral",
-      "ma_bearish": false,
-      "heat_score": 68
+      "heat_score": 19
     },
     {
       "symbol": "603259",
@@ -4162,8 +4173,8 @@
       "rs_ratio_5d": 1.344,
       "rs_ratio_20d": 1.629,
       "rsi": 73.7,
-      "news_sentiment": 0.25,
-      "sentiment_value": 0.25,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4175,7 +4186,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 81
+      "heat_score": 77
     },
     {
       "symbol": "600519",
@@ -4188,8 +4199,8 @@
       "rs_ratio_5d": 1.106,
       "rs_ratio_20d": 1.19,
       "rsi": 69.5,
-      "news_sentiment": 0.4,
-      "sentiment_value": 0.4,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4201,7 +4212,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 16
+      "heat_score": 10
     },
     {
       "symbol": "600809",
@@ -4214,8 +4225,8 @@
       "rs_ratio_5d": 1.157,
       "rs_ratio_20d": 1.202,
       "rsi": 63.8,
-      "news_sentiment": 0.4,
-      "sentiment_value": 0.4,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4227,85 +4238,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 16
-    },
-    {
-      "symbol": "603501",
-      "price": 79.3,
-      "chg_pct": -23.84,
-      "chg_5d": -22.63,
-      "volume": "14.2M",
-      "vol_ratio": 0.37,
-      "turnover": 1126882622.2666168,
-      "rs_ratio_5d": 0.798,
-      "rs_ratio_20d": 0.973,
-      "rsi": 33.2,
-      "news_sentiment": 0.07,
-      "sentiment_value": 0.07,
-      "sentiment_source": "sector",
-      "news_freshness": 1.0,
-      "latest_headline": "",
-      "signal": "观望",
-      "zone": "neutral",
-      "ma_bullish": false,
-      "breakout": false,
-      "ai_insight": "⚠️ 603501 今日下跌 23.8%，量价背离，暂时观望为主。",
-      "bear_signal": null,
-      "bear_zone": "neutral",
-      "ma_bearish": false,
-      "heat_score": 0
-    },
-    {
-      "symbol": "688012",
-      "price": 341.0,
-      "chg_pct": -2.76,
-      "chg_5d": -16.54,
-      "volume": "12.2M",
-      "vol_ratio": 0.37,
-      "turnover": 4157123498.0,
-      "rs_ratio_5d": 0.861,
-      "rs_ratio_20d": 1.017,
-      "rsi": 40.0,
-      "news_sentiment": 0.07,
-      "sentiment_value": 0.07,
-      "sentiment_source": "sector",
-      "news_freshness": 1.0,
-      "latest_headline": "",
-      "signal": "观望",
-      "zone": "neutral",
-      "ma_bullish": false,
-      "breakout": false,
-      "ai_insight": "⚠️ 688012 今日下跌 2.8%，量价背离，暂时观望为主。",
-      "bear_signal": "死亡交叉 ✗",
-      "bear_zone": "distribution_lite",
-      "ma_bearish": true,
-      "heat_score": 0
-    },
-    {
-      "symbol": "601211",
-      "price": 17.69,
-      "chg_pct": -3.33,
-      "chg_5d": -3.54,
-      "volume": "59.7M",
-      "vol_ratio": 0.37,
-      "turnover": 1055827451.9052219,
-      "rs_ratio_5d": 0.995,
-      "rs_ratio_20d": 1.105,
-      "rsi": 45.9,
-      "news_sentiment": 0.1,
-      "sentiment_value": 0.1,
-      "sentiment_source": "sector",
-      "news_freshness": 1.0,
-      "latest_headline": "",
-      "signal": "观望",
-      "zone": "neutral",
-      "ma_bullish": false,
-      "breakout": false,
-      "ai_insight": "⚠️ 601211 今日下跌 3.3%，量价背离，暂时观望为主。",
-      "bear_signal": null,
-      "bear_zone": "neutral",
-      "ma_bearish": false,
-      "heat_score": 12
+      "heat_score": 10
     },
     {
       "symbol": "002594",
@@ -4318,8 +4251,8 @@
       "rs_ratio_5d": 1.039,
       "rs_ratio_20d": 1.112,
       "rsi": 48.0,
-      "news_sentiment": 0.33,
-      "sentiment_value": 0.33,
+      "news_sentiment": -0.08,
+      "sentiment_value": -0.08,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4331,7 +4264,85 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 8
+      "heat_score": 12
+    },
+    {
+      "symbol": "603501",
+      "price": 79.3,
+      "chg_pct": -23.84,
+      "chg_5d": -22.63,
+      "volume": "14.2M",
+      "vol_ratio": 0.37,
+      "turnover": 1126882622.2666168,
+      "rs_ratio_5d": 0.798,
+      "rs_ratio_20d": 0.973,
+      "rsi": 33.2,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
+      "sentiment_source": "sector",
+      "news_freshness": 1.0,
+      "latest_headline": "",
+      "signal": "观望",
+      "zone": "neutral",
+      "ma_bullish": false,
+      "breakout": false,
+      "ai_insight": "⚠️ 603501 今日下跌 23.8%，量价背离，暂时观望为主。",
+      "bear_signal": null,
+      "bear_zone": "neutral",
+      "ma_bearish": false,
+      "heat_score": 6
+    },
+    {
+      "symbol": "601211",
+      "price": 17.69,
+      "chg_pct": -3.33,
+      "chg_5d": -3.54,
+      "volume": "59.7M",
+      "vol_ratio": 0.37,
+      "turnover": 1055827451.9052219,
+      "rs_ratio_5d": 0.995,
+      "rs_ratio_20d": 1.105,
+      "rsi": 45.9,
+      "news_sentiment": 0.12,
+      "sentiment_value": 0.12,
+      "sentiment_source": "sector",
+      "news_freshness": 1.0,
+      "latest_headline": "",
+      "signal": "观望",
+      "zone": "neutral",
+      "ma_bullish": false,
+      "breakout": false,
+      "ai_insight": "⚠️ 601211 今日下跌 3.3%，量价背离，暂时观望为主。",
+      "bear_signal": null,
+      "bear_zone": "neutral",
+      "ma_bearish": false,
+      "heat_score": 10
+    },
+    {
+      "symbol": "688012",
+      "price": 341.0,
+      "chg_pct": -2.76,
+      "chg_5d": -16.54,
+      "volume": "12.2M",
+      "vol_ratio": 0.37,
+      "turnover": 4157123498.0,
+      "rs_ratio_5d": 0.861,
+      "rs_ratio_20d": 1.017,
+      "rsi": 40.0,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
+      "sentiment_source": "sector",
+      "news_freshness": 1.0,
+      "latest_headline": "",
+      "signal": "观望",
+      "zone": "neutral",
+      "ma_bullish": false,
+      "breakout": false,
+      "ai_insight": "⚠️ 688012 今日下跌 2.8%，量价背离，暂时观望为主。",
+      "bear_signal": "死亡交叉 ✗",
+      "bear_zone": "distribution_lite",
+      "ma_bearish": true,
+      "heat_score": 6
     },
     {
       "symbol": "600438",
@@ -4357,33 +4368,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 9
-    },
-    {
-      "symbol": "002074",
-      "price": 26.14,
-      "chg_pct": -2.86,
-      "chg_5d": 6.49,
-      "volume": "10.7M",
-      "vol_ratio": 0.34,
-      "turnover": 278495501.2173157,
-      "rs_ratio_5d": 1.098,
-      "rs_ratio_20d": 0.949,
-      "rsi": 41.8,
-      "news_sentiment": 0.33,
-      "sentiment_value": 0.33,
-      "sentiment_source": "sector",
-      "news_freshness": 1.0,
-      "latest_headline": "",
-      "signal": "观望",
-      "zone": "neutral",
-      "ma_bullish": false,
-      "breakout": false,
-      "ai_insight": "⚠️ 002074 今日下跌 2.9%，量价背离，暂时观望为主。",
-      "bear_signal": null,
-      "bear_zone": "neutral",
-      "ma_bearish": false,
-      "heat_score": 8
+      "heat_score": 19
     },
     {
       "symbol": "300015",
@@ -4396,8 +4381,8 @@
       "rs_ratio_5d": 1.045,
       "rs_ratio_20d": 1.095,
       "rsi": 47.2,
-      "news_sentiment": 0.25,
-      "sentiment_value": 0.25,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4409,7 +4394,33 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 81
+      "heat_score": 77
+    },
+    {
+      "symbol": "002074",
+      "price": 26.14,
+      "chg_pct": -2.86,
+      "chg_5d": 6.49,
+      "volume": "10.7M",
+      "vol_ratio": 0.34,
+      "turnover": 278495501.2173157,
+      "rs_ratio_5d": 1.098,
+      "rs_ratio_20d": 0.949,
+      "rsi": 41.8,
+      "news_sentiment": -0.08,
+      "sentiment_value": -0.08,
+      "sentiment_source": "sector",
+      "news_freshness": 1.0,
+      "latest_headline": "",
+      "signal": "观望",
+      "zone": "neutral",
+      "ma_bullish": false,
+      "breakout": false,
+      "ai_insight": "⚠️ 002074 今日下跌 2.9%，量价背离，暂时观望为主。",
+      "bear_signal": null,
+      "bear_zone": "neutral",
+      "ma_bearish": false,
+      "heat_score": 12
     },
     {
       "symbol": "002230",
@@ -4422,8 +4433,8 @@
       "rs_ratio_5d": 0.965,
       "rs_ratio_20d": 0.995,
       "rsi": 37.6,
-      "news_sentiment": 0.1,
-      "sentiment_value": 0.1,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4435,7 +4446,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 0
+      "heat_score": 6
     },
     {
       "symbol": "300059",
@@ -4448,8 +4459,8 @@
       "rs_ratio_5d": 0.988,
       "rs_ratio_20d": 1.008,
       "rsi": 42.5,
-      "news_sentiment": 0.1,
-      "sentiment_value": 0.1,
+      "news_sentiment": 0.12,
+      "sentiment_value": 0.12,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4461,7 +4472,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": true,
-      "heat_score": 12
+      "heat_score": 10
     },
     {
       "symbol": "300014",
@@ -4474,8 +4485,8 @@
       "rs_ratio_5d": 1.02,
       "rs_ratio_20d": 0.809,
       "rsi": 29.7,
-      "news_sentiment": 0.33,
-      "sentiment_value": 0.33,
+      "news_sentiment": -0.08,
+      "sentiment_value": -0.08,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4487,7 +4498,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": true,
-      "heat_score": 8
+      "heat_score": 12
     },
     {
       "symbol": "000725",
@@ -4500,8 +4511,8 @@
       "rs_ratio_5d": 0.862,
       "rs_ratio_20d": 0.916,
       "rsi": 36.2,
-      "news_sentiment": 0.07,
-      "sentiment_value": 0.07,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4513,7 +4524,7 @@
       "bear_signal": "死亡交叉 ✗",
       "bear_zone": "distribution_lite",
       "ma_bearish": true,
-      "heat_score": 0
+      "heat_score": 6
     },
     {
       "symbol": "600111",
@@ -4526,8 +4537,8 @@
       "rs_ratio_5d": 1.032,
       "rs_ratio_20d": 0.801,
       "rsi": 30.9,
-      "news_sentiment": 0.27,
-      "sentiment_value": 0.27,
+      "news_sentiment": 0.08,
+      "sentiment_value": 0.08,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4539,7 +4550,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 68
+      "heat_score": 66
     },
     {
       "symbol": "002179",
@@ -4578,8 +4589,8 @@
       "rs_ratio_5d": 0.781,
       "rs_ratio_20d": 0.946,
       "rsi": 36.3,
-      "news_sentiment": 0.07,
-      "sentiment_value": 0.07,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4591,7 +4602,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 0
+      "heat_score": 6
     },
     {
       "symbol": "600436",
@@ -4604,8 +4615,8 @@
       "rs_ratio_5d": 1.017,
       "rs_ratio_20d": 1.205,
       "rsi": 52.0,
-      "news_sentiment": 0.25,
-      "sentiment_value": 0.25,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4617,7 +4628,7 @@
       "bear_signal": null,
       "bear_zone": "neutral",
       "ma_bearish": false,
-      "heat_score": 81
+      "heat_score": 77
     },
     {
       "symbol": "002049",
@@ -4630,8 +4641,8 @@
       "rs_ratio_5d": 0.792,
       "rs_ratio_20d": 0.854,
       "rsi": 27.0,
-      "news_sentiment": 0.07,
-      "sentiment_value": 0.07,
+      "news_sentiment": 0.0,
+      "sentiment_value": 0.0,
       "sentiment_source": "sector",
       "news_freshness": 1.0,
       "latest_headline": "",
@@ -4643,7 +4654,7 @@
       "bear_signal": "死亡交叉 ✗",
       "bear_zone": "distribution_lite",
       "ma_bearish": true,
-      "heat_score": 0
+      "heat_score": 6
     }
   ],
   "trends": {
@@ -5092,8 +5103,8 @@
         "rs_ratio_5d": 1.039,
         "rs_ratio_20d": 1.052,
         "rsi": 45.9,
-        "news_sentiment": 0.03,
-        "sentiment_value": 0.03,
+        "news_sentiment": -0.02,
+        "sentiment_value": -0.02,
         "sentiment_source": "sector",
         "news_freshness": 1.0,
         "latest_headline": "",
@@ -5105,7 +5116,7 @@
         "bear_signal": null,
         "bear_zone": "neutral",
         "ma_bearish": false,
-        "heat_score": 43
+        "heat_score": 59
       },
       {
         "symbol": "000768",
@@ -5144,8 +5155,8 @@
         "rs_ratio_5d": 1.089,
         "rs_ratio_20d": 1.178,
         "rsi": 71.4,
-        "news_sentiment": 0.03,
-        "sentiment_value": 0.03,
+        "news_sentiment": -0.02,
+        "sentiment_value": -0.02,
         "sentiment_source": "sector",
         "news_freshness": 1.0,
         "latest_headline": "",
@@ -5157,7 +5168,7 @@
         "bear_signal": null,
         "bear_zone": "neutral",
         "ma_bearish": false,
-        "heat_score": 43
+        "heat_score": 59
       }
     ]
   },
@@ -5175,8 +5186,8 @@
         "rs_ratio_5d": 0.757,
         "rs_ratio_20d": 0.654,
         "rsi": 25.9,
-        "news_sentiment": 0.1,
-        "sentiment_value": 0.1,
+        "news_sentiment": 0.0,
+        "sentiment_value": 0.0,
         "sentiment_source": "sector",
         "news_freshness": 1.0,
         "latest_headline": "",
@@ -5188,7 +5199,7 @@
         "bear_signal": "死亡交叉 ✗",
         "bear_zone": "distribution_lite",
         "ma_bearish": true,
-        "heat_score": 0
+        "heat_score": 6
       },
       {
         "symbol": "300274",
@@ -5214,7 +5225,7 @@
         "bear_signal": "死亡交叉 ✗",
         "bear_zone": "distribution_lite",
         "ma_bearish": true,
-        "heat_score": 9
+        "heat_score": 19
       },
       {
         "symbol": "300502",
@@ -5227,8 +5238,8 @@
         "rs_ratio_5d": 0.774,
         "rs_ratio_20d": 0.737,
         "rsi": 30.9,
-        "news_sentiment": 0.1,
-        "sentiment_value": 0.1,
+        "news_sentiment": 0.0,
+        "sentiment_value": 0.0,
         "sentiment_source": "sector",
         "news_freshness": 1.0,
         "latest_headline": "",
@@ -5240,7 +5251,7 @@
         "bear_signal": "死亡交叉 ✗",
         "bear_zone": "distribution_lite",
         "ma_bearish": true,
-        "heat_score": 0
+        "heat_score": 6
       },
       {
         "symbol": "603986",
@@ -5253,8 +5264,8 @@
         "rs_ratio_5d": 0.718,
         "rs_ratio_20d": 0.617,
         "rsi": 30.5,
-        "news_sentiment": 0.07,
-        "sentiment_value": 0.07,
+        "news_sentiment": 0.0,
+        "sentiment_value": 0.0,
         "sentiment_source": "sector",
         "news_freshness": 1.0,
         "latest_headline": "",
@@ -5266,7 +5277,7 @@
         "bear_signal": "死亡交叉 ✗",
         "bear_zone": "distribution_lite",
         "ma_bearish": true,
-        "heat_score": 0
+        "heat_score": 6
       },
       {
         "symbol": "002371",
@@ -5279,8 +5290,8 @@
         "rs_ratio_5d": 0.885,
         "rs_ratio_20d": 0.979,
         "rsi": 37.6,
-        "news_sentiment": 0.07,
-        "sentiment_value": 0.07,
+        "news_sentiment": 0.0,
+        "sentiment_value": 0.0,
         "sentiment_source": "sector",
         "news_freshness": 1.0,
         "latest_headline": "",
@@ -5292,7 +5303,7 @@
         "bear_signal": "死亡交叉 ✗",
         "bear_zone": "distribution_lite",
         "ma_bearish": true,
-        "heat_score": 0
+        "heat_score": 6
       },
       {
         "symbol": "688012",
@@ -5305,8 +5316,8 @@
         "rs_ratio_5d": 0.861,
         "rs_ratio_20d": 1.017,
         "rsi": 40.0,
-        "news_sentiment": 0.07,
-        "sentiment_value": 0.07,
+        "news_sentiment": 0.0,
+        "sentiment_value": 0.0,
         "sentiment_source": "sector",
         "news_freshness": 1.0,
         "latest_headline": "",
@@ -5318,7 +5329,7 @@
         "bear_signal": "死亡交叉 ✗",
         "bear_zone": "distribution_lite",
         "ma_bearish": true,
-        "heat_score": 0
+        "heat_score": 6
       },
       {
         "symbol": "000725",
@@ -5331,8 +5342,8 @@
         "rs_ratio_5d": 0.862,
         "rs_ratio_20d": 0.916,
         "rsi": 36.2,
-        "news_sentiment": 0.07,
-        "sentiment_value": 0.07,
+        "news_sentiment": 0.0,
+        "sentiment_value": 0.0,
         "sentiment_source": "sector",
         "news_freshness": 1.0,
         "latest_headline": "",
@@ -5344,7 +5355,7 @@
         "bear_signal": "死亡交叉 ✗",
         "bear_zone": "distribution_lite",
         "ma_bearish": true,
-        "heat_score": 0
+        "heat_score": 6
       },
       {
         "symbol": "002049",
@@ -5357,8 +5368,8 @@
         "rs_ratio_5d": 0.792,
         "rs_ratio_20d": 0.854,
         "rsi": 27.0,
-        "news_sentiment": 0.07,
-        "sentiment_value": 0.07,
+        "news_sentiment": 0.0,
+        "sentiment_value": 0.0,
         "sentiment_source": "sector",
         "news_freshness": 1.0,
         "latest_headline": "",
@@ -5370,7 +5381,7 @@
         "bear_signal": "死亡交叉 ✗",
         "bear_zone": "distribution_lite",
         "ma_bearish": true,
-        "heat_score": 0
+        "heat_score": 6
       }
     ]
   }

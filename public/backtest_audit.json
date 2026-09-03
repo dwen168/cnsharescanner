@@ -61,7 +61,7 @@
   "matured_signals": 239,
   "pending_signals": 26,
   "cutoff_tier": "6mo",
-  "last_updated": "2026-09-03T08:13:54.418298",
+  "last_updated": "2026-09-03T11:53:15.232724",
   "overall": {
     "1d": {
       "win_rate": 41.0,
@@ -2821,7 +2821,7 @@
       "price": 9.27,
       "vol_ratio": 1.25,
       "rs_ratio_5d": 1.089,
-      "heat_score": 43,
+      "heat_score": 59,
       "ret_1d": null,
       "ret_1d_executable": null,
       "bench_ret_1d": null,
@@ -2909,7 +2909,7 @@
       "price": 3942.09,
       "vol_ratio": 20.0,
       "rs_ratio_5d": 1.039,
-      "heat_score": 43,
+      "heat_score": 59,
       "ret_1d": null,
       "ret_1d_executable": null,
       "bench_ret_1d": null,
