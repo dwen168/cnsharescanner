@@ -61,7 +61,7 @@
   "matured_signals": 239,
   "pending_signals": 36,
   "cutoff_tier": "6mo",
-  "last_updated": "2026-09-08T08:16:49.018020",
+  "last_updated": "2026-09-08T11:56:56.036523",
   "overall": {
     "1d": {
       "win_rate": 41.0,
@@ -2860,12 +2860,12 @@
     {
       "date": "2026-09-08",
       "symbol": "000001",
-      "signal": "底部放量(利空降级)",
-      "zone": "watch",
+      "signal": "潜伏区 (轻仓)",
+      "zone": "accumulation",
       "price": 3940.55,
       "vol_ratio": 20.0,
       "rs_ratio_5d": 1.037,
-      "heat_score": 64,
+      "heat_score": 39,
       "ret_1d": null,
       "ret_1d_executable": null,
       "bench_ret_1d": null,
@@ -2898,8 +2898,8 @@
       "alpha_10d_executable": null,
       "market_ret_10d": null,
       "market_ret_10d_executable": null,
-      "bear_signal": "利空共振 ↓",
-      "bear_zone": "distribution_lite"
+      "bear_signal": null,
+      "bear_zone": "neutral"
     },
     {
       "date": "2026-09-08",
@@ -2909,7 +2909,7 @@
       "price": 18.32,
       "vol_ratio": 1.86,
       "rs_ratio_5d": 1.303,
-      "heat_score": 82,
+      "heat_score": 40,
       "ret_1d": null,
       "ret_1d_executable": null,
       "bench_ret_1d": null,
@@ -2953,7 +2953,7 @@
       "price": 48.53,
       "vol_ratio": 1.67,
       "rs_ratio_5d": 1.268,
-      "heat_score": 82,
+      "heat_score": 40,
       "ret_1d": null,
       "ret_1d_executable": null,
       "bench_ret_1d": null,
