@@ -61,7 +61,7 @@
   "matured_signals": 287,
   "pending_signals": 9,
   "cutoff_tier": "6mo",
-  "last_updated": "2026-09-24T12:29:10.257913",
+  "last_updated": "2026-09-25T05:54:45.281070",
   "overall": {
     "1d": {
       "win_rate": 42.51,
@@ -129,13 +129,13 @@
       "avg_return_executable": -0.09,
       "avg_return_executable_gross": 0.11,
       "avg_return_executable_net": -0.09,
-      "avg_benchmark_return": -100.0,
-      "avg_alpha": 104.92,
-      "avg_alpha_gross": 105.12,
-      "avg_alpha_net": 104.92,
-      "avg_alpha_executable": 105.16,
-      "avg_alpha_executable_gross": 105.36,
-      "avg_alpha_executable_net": 105.16,
+      "avg_benchmark_return": Infinity,
+      "avg_alpha": -Infinity,
+      "avg_alpha_gross": -Infinity,
+      "avg_alpha_net": -Infinity,
+      "avg_alpha_executable": -Infinity,
+      "avg_alpha_executable_gross": -Infinity,
+      "avg_alpha_executable_net": -Infinity,
       "sample_size": 287,
       "confidence": "high"
     }
@@ -286,13 +286,13 @@
         "avg_return_executable": -0.53,
         "avg_return_executable_gross": -0.33,
         "avg_return_executable_net": -0.53,
-        "avg_benchmark_return": -100.0,
-        "avg_alpha": 105.51,
-        "avg_alpha_gross": 105.71,
-        "avg_alpha_net": 105.51,
-        "avg_alpha_executable": 105.16,
-        "avg_alpha_executable_gross": 105.36,
-        "avg_alpha_executable_net": 105.16,
+        "avg_benchmark_return": Infinity,
+        "avg_alpha": -Infinity,
+        "avg_alpha_gross": -Infinity,
+        "avg_alpha_net": -Infinity,
+        "avg_alpha_executable": -Infinity,
+        "avg_alpha_executable_gross": -Infinity,
+        "avg_alpha_executable_net": -Infinity,
         "sample_size": 211,
         "confidence": "high"
       }
@@ -364,13 +364,13 @@
         "avg_return_executable": 0.57,
         "avg_return_executable_gross": 0.77,
         "avg_return_executable_net": 0.57,
-        "avg_benchmark_return": -100.0,
-        "avg_alpha": 103.51,
-        "avg_alpha_gross": 103.71,
-        "avg_alpha_net": 103.51,
-        "avg_alpha_executable": NaN,
-        "avg_alpha_executable_gross": NaN,
-        "avg_alpha_executable_net": NaN,
+        "avg_benchmark_return": Infinity,
+        "avg_alpha": -Infinity,
+        "avg_alpha_gross": -Infinity,
+        "avg_alpha_net": -Infinity,
+        "avg_alpha_executable": -Infinity,
+        "avg_alpha_executable_gross": -Infinity,
+        "avg_alpha_executable_net": -Infinity,
         "sample_size": 39,
         "confidence": "low"
       }
@@ -444,13 +444,13 @@
         "avg_return_executable": -0.09,
         "avg_return_executable_gross": 0.11,
         "avg_return_executable_net": -0.09,
-        "avg_benchmark_return": -100.0,
-        "avg_alpha": 104.92,
-        "avg_alpha_gross": 105.12,
-        "avg_alpha_net": 104.92,
-        "avg_alpha_executable": 105.16,
-        "avg_alpha_executable_gross": 105.36,
-        "avg_alpha_executable_net": 105.16,
+        "avg_benchmark_return": Infinity,
+        "avg_alpha": -Infinity,
+        "avg_alpha_gross": -Infinity,
+        "avg_alpha_net": -Infinity,
+        "avg_alpha_executable": -Infinity,
+        "avg_alpha_executable_gross": -Infinity,
+        "avg_alpha_executable_net": -Infinity,
         "sample_size": 287,
         "confidence": "high"
       }
@@ -568,13 +568,13 @@
       "avg_return_executable": -0.94,
       "avg_return_executable_gross": -0.74,
       "avg_return_executable_net": -0.94,
-      "avg_benchmark_return": -5.71,
-      "avg_alpha": 4.28,
-      "avg_alpha_gross": 4.48,
-      "avg_alpha_net": 4.28,
-      "avg_alpha_executable": 1.91,
-      "avg_alpha_executable_gross": 4.97,
-      "avg_alpha_executable_net": 1.91,
+      "avg_benchmark_return": Infinity,
+      "avg_alpha": -Infinity,
+      "avg_alpha_gross": -Infinity,
+      "avg_alpha_net": -Infinity,
+      "avg_alpha_executable": -Infinity,
+      "avg_alpha_executable_gross": -Infinity,
+      "avg_alpha_executable_net": -Infinity,
       "max_drawdown": -46.74,
       "max_drawdown_executable": -42.84,
       "sample_size": 35
@@ -1450,7 +1450,7 @@
         "date": "2026-09-10",
         "equity_theoretical": 59.5,
         "equity_executable": 70.55,
-        "equity_benchmark": 0.0
+        "equity_benchmark": NaN
       }
     ]
   },
@@ -4051,10 +4051,10 @@
       "market_ret_5d_executable": -1.2,
       "ret_10d": -1.17,
       "ret_10d_executable": -0.58,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null,
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity,
       "market_ret_10d": -2.4,
       "market_ret_10d_executable": -1.66,
       "bear_signal": null,
@@ -4095,10 +4095,10 @@
       "market_ret_5d_executable": -1.2,
       "ret_10d": -2.68,
       "ret_10d_executable": -2.89,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null,
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity,
       "market_ret_10d": -2.4,
       "market_ret_10d_executable": -1.66,
       "bear_signal": null,
@@ -4139,10 +4139,10 @@
       "market_ret_5d_executable": -1.2,
       "ret_10d": -14.59,
       "ret_10d_executable": -9.01,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null,
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity,
       "market_ret_10d": -2.4,
       "market_ret_10d_executable": -1.66,
       "bear_signal": "利空共振 ↓",
@@ -4183,10 +4183,10 @@
       "market_ret_5d_executable": -1.2,
       "ret_10d": -5.96,
       "ret_10d_executable": -5.11,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null,
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity,
       "market_ret_10d": -2.4,
       "market_ret_10d_executable": -1.66,
       "bear_signal": null,
@@ -4227,10 +4227,10 @@
       "market_ret_5d_executable": -1.2,
       "ret_10d": -12.56,
       "ret_10d_executable": -6.99,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null,
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity,
       "market_ret_10d": -2.4,
       "market_ret_10d_executable": -1.66,
       "bear_signal": "利空共振 ↓",
@@ -4271,10 +4271,10 @@
       "market_ret_5d_executable": -1.2,
       "ret_10d": -6.69,
       "ret_10d_executable": -3.57,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null,
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity,
       "market_ret_10d": -2.4,
       "market_ret_10d_executable": -1.66,
       "bear_signal": null,
@@ -16766,36 +16766,36 @@
         "win_rate_executable": 45.83,
         "avg_return": -0.44,
         "avg_return_executable": -0.24,
-        "avg_benchmark_return": -100.0,
-        "avg_alpha": 102.8,
-        "avg_alpha_executable": 100.53,
+        "avg_benchmark_return": Infinity,
+        "avg_alpha": -Infinity,
+        "avg_alpha_executable": -Infinity,
         "sample_size": 264,
         "avg_return_gross": -0.24,
         "avg_return_net": -0.44,
         "avg_return_executable_gross": -0.04,
         "avg_return_executable_net": -0.24,
-        "avg_alpha_gross": 103.0,
-        "avg_alpha_net": 102.8,
-        "avg_alpha_executable_gross": 100.73,
-        "avg_alpha_executable_net": 100.53
+        "avg_alpha_gross": -Infinity,
+        "avg_alpha_net": -Infinity,
+        "avg_alpha_executable_gross": -Infinity,
+        "avg_alpha_executable_net": -Infinity
       },
       "subset_return_stats": {
         "win_rate": 44.7,
         "win_rate_executable": 45.83,
         "avg_return": -0.44,
         "avg_return_executable": -0.24,
-        "avg_benchmark_return": -100.0,
-        "avg_alpha": 102.8,
-        "avg_alpha_executable": 100.53,
+        "avg_benchmark_return": Infinity,
+        "avg_alpha": -Infinity,
+        "avg_alpha_executable": -Infinity,
         "sample_size": 264,
         "avg_return_gross": -0.24,
         "avg_return_net": -0.44,
         "avg_return_executable_gross": -0.04,
         "avg_return_executable_net": -0.24,
-        "avg_alpha_gross": 103.0,
-        "avg_alpha_net": 102.8,
-        "avg_alpha_executable_gross": 100.73,
-        "avg_alpha_executable_net": 100.53
+        "avg_alpha_gross": -Infinity,
+        "avg_alpha_net": -Infinity,
+        "avg_alpha_executable_gross": -Infinity,
+        "avg_alpha_executable_net": -Infinity
       }
     }
   },
@@ -17260,10 +17260,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -1.04,
       "ret_10d_executable": -0.65,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -17291,10 +17291,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -10.46,
       "ret_10d_executable": -6.48,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -17322,10 +17322,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -1.27,
       "ret_10d_executable": -1.45,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -17353,10 +17353,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -2.25,
       "ret_10d_executable": -2.52,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -17384,10 +17384,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -7.08,
       "ret_10d_executable": -5.92,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-09",
@@ -25878,10 +25878,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -1.04,
       "ret_10d_executable": -0.65,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -25909,10 +25909,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -10.46,
       "ret_10d_executable": -6.48,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -25940,10 +25940,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -1.27,
       "ret_10d_executable": -1.45,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -25971,10 +25971,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -2.25,
       "ret_10d_executable": -2.52,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -26002,10 +26002,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -7.08,
       "ret_10d_executable": -5.92,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-09",
@@ -34496,10 +34496,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -1.04,
       "ret_10d_executable": -0.65,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -34527,10 +34527,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -10.46,
       "ret_10d_executable": -6.48,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -34558,10 +34558,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -1.27,
       "ret_10d_executable": -1.45,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -34589,10 +34589,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -2.25,
       "ret_10d_executable": -2.52,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -34620,10 +34620,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -7.08,
       "ret_10d_executable": -5.92,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-09",
@@ -43114,10 +43114,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -1.04,
       "ret_10d_executable": -0.65,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -43145,10 +43145,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -10.46,
       "ret_10d_executable": -6.48,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -43176,10 +43176,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -1.27,
       "ret_10d_executable": -1.45,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -43207,10 +43207,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -2.25,
       "ret_10d_executable": -2.52,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-10",
@@ -43238,10 +43238,10 @@
       "alpha_5d_executable": null,
       "ret_10d": -7.08,
       "ret_10d_executable": -5.92,
-      "bench_ret_10d": null,
-      "bench_ret_10d_executable": null,
-      "alpha_10d": null,
-      "alpha_10d_executable": null
+      "bench_ret_10d": Infinity,
+      "bench_ret_10d_executable": Infinity,
+      "alpha_10d": -Infinity,
+      "alpha_10d_executable": -Infinity
     },
     {
       "date": "2026-09-09",
