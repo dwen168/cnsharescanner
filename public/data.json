@@ -57,7 +57,7 @@
       "top_n_portfolio": 5
     }
   },
-  "generated_at": "2026-11-18T12:04:15.943948+00:00",
+  "generated_at": "2026-11-18T16:06:59.006376+00:00",
   "data_lineage": "degraded",
   "trading_state": "medium_risk",
   "risk_level": "medium_risk",
@@ -668,9 +668,9 @@
     ]
   },
   "macro": {
-    "yield_trend": 0.105,
-    "aud_trend": -0.0158,
-    "summary": "十年期国债收益率走强，流动性边际收紧，对成长股及科技板块估值形成一定压制。"
+    "yield_trend": -0.031,
+    "aud_trend": -0.0142,
+    "summary": "宏观十年期收益率与人民币汇率宽幅震荡，宏观面流动性对A股市场整体影响中性。"
   },
   "sectors": [],
   "stocks": [],
